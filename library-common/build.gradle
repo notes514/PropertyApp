@@ -58,4 +58,6 @@ dependencies {
     //banner
     api 'com.github.zhpanvip:BannerViewPager:2.6.6'
     api 'com.github.zhpanvip:viewpagerindicator:1.0.0'
+    // 标题栏
+    api 'com.github.getActivity:TitleBar:9.3'
 }

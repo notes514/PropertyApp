@@ -8,7 +8,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/login_bg_layout"
+        android:id="@+id/regist_bg_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".login.LoginActivity">
@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:leftIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="@string/login"
+            app:title="@string/regist"
             app:titleColor="@color/user_color_login_bg"
             app:titleGravity="left"
             app:titleSize="16sp"
@@ -52,6 +52,34 @@
                 android:maxLines="1"
                 android:padding="@dimen/dp_10"
                 android:textColor="@color/user_color_login_bg"
+                android:textSize="@dimen/sp_14" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/input_phone"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textSize="12sp"
+            app:hintTextAppearance="@style/inputStyle"
+            app:hintTextColor="@color/user_color_login_bg"
+            app:layout_constraintTop_toBottomOf="@+id/edit_username_layout"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/shape_input"
+                android:drawableStart="@drawable/ic_baseline_phone_android_24"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/user_color_login_bg"
+                android:textColorHint="@color/user_color_login_bg"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,7 +94,7 @@
             android:textSize="12sp"
             app:hintTextAppearance="@style/inputStyle"
             app:hintTextColor="@color/user_color_login_bg"
-            app:layout_constraintTop_toBottomOf="@+id/edit_username_layout"
+            app:layout_constraintTop_toBottomOf="@+id/edit_phone_layout"
             app:passwordToggleEnabled="true"
             tools:ignore="MissingConstraints">
 
@@ -76,7 +104,6 @@
                 android:layout_height="48dp"
                 android:background="@drawable/shape_input"
                 android:drawableStart="@drawable/ic_user_login_password"
-                android:drawableEnd="@drawable/ic_user_login_password_visibility"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:padding="@dimen/dp_10"
@@ -93,7 +120,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/shape_button_bg"
-            android:text="@string/login"
+            android:text="@string/regist"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,29 +128,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_password_layout" />
 
-        <TextView
-            android:id="@+id/tv_forgot_password"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/forgot_password"
-            android:textColor="@color/user_color_login_bg"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_regist" />
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/btn_regist">
 
-        <TextView
-            android:id="@+id/tv_regist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="@string/regist"
-            android:textColor="@color/user_color_login_bg"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_regist" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/account_already_exists"
+                android:textColor="@color/user_color_login_bg" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="@color/common_color_blue"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

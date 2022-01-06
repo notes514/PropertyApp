@@ -35,6 +35,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.34120370370370373" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_baseline_phone_android_24.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_launcher_background.xml" value="0.34120370370370373" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_input.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_password.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_password_visibility.xml" value="0.34120370370370373" />
@@ -44,12 +45,14 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/shape_input.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_login_bg.xml" value="0.36770833333333336" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_login_bg2.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout-land/user_activity_login.xml" value="0.42552083333333335" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout-sw600dp/user_activity_login.xml" value="0.27578125" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/custom_toolbar_layout.xml" value="0.24166666666666667" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/include_toolbar.xml" value="0.33" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_attention.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_login.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_login1.xml" value="0.25" />
-        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_regist.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_regist.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_register.xml" value="0.36614583333333334" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_footer_view.xml" value="0.11666666666666667" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_view_layout.xml" value="0.33" />

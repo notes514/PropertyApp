@@ -19,6 +19,7 @@ import com.guet.base.viewmodel.IMvvmBaseViewModel;
 import com.guet.common.router.RouterFragmentPath;
 import com.guet.user.adapter.RecyclerAdapter;
 import com.guet.user.databinding.UserFragmentLayoutBinding;
+import com.guet.user.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,10 +61,6 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
         adapter.setNewData(items);
     }
 
-    private void start(Context context) {
-        startActivity(new Intent(context, LoginActivity.class));
-    }
-
     private void initView() {
         if (getActivity() == null) {
             return;
@@ -78,16 +75,16 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
         adapter.setFooterView(getFooterView());
         viewDataBinding.rvTables.setAdapter(adapter);
         viewDataBinding.ivMore.setOnClickListener(v -> {
-            start(getContext());
+            LoginActivity.startAction(getActivity());
         });
         viewDataBinding.tvLike.setOnClickListener(v -> {
-            start(getContext());
+            LoginActivity.startAction(getActivity());
         });
         viewDataBinding.tvReply.setOnClickListener(v -> {
-            start(getContext());
+            LoginActivity.startAction(getActivity());
         });
         viewDataBinding.ivAvatar.setOnClickListener(v -> {
-            start(getContext());
+            LoginActivity.startAction(getActivity());
         });
     }
 

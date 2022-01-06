@@ -1,3 +1,11 @@
-<resources>
-    <string name="app_name">Module-user</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="ResourceName">Module-user</string>
+    <string name="login" tools:ignore="ExtraTranslation,ResourceName">登录</string>
+    <string name="regist" tools:ignore="ExtraTranslation,ResourceName">注册</string>
+    <string name="input_username" tools:ignore="ExtraTranslation,ResourceName">请输入用户名</string>
+    <string name="input_phone" tools:ignore="ExtraTranslation,ResourceName">请输入手机号</string>
+    <string name="input_password" tools:ignore="ExtraTranslation,ResourceName">请输入密码</string>
+    <string name="remember_password" tools:ignore="ExtraTranslation,ResourceName">记住密码</string>
+    <string name="forgot_password" tools:ignore="ExtraTranslation,ResourceName">忘记密码？</string>
+    <string name="account_already_exists" tools:ignore="ExtraTranslation,ResourceName">已经有一个账户了吗？</string>
 </resources>

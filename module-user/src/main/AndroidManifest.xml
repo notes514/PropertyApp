@@ -4,7 +4,10 @@
 
     <application>
         <activity
-            android:name=".LoginActivity"
+            android:name=".regist.RegistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".AttentionActivity" />
     </application>
