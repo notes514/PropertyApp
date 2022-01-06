@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/app/src/main/res/drawable-v24/app_ic_launcher_foreground.xml" value="0.2972222222222222" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/app/src/main/res/drawable/app_ic_launcher_background.xml" value="0.2972222222222222" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/app/src/main/res/mipmap-anydpi-v26/app_ic_launcher.xml" value="0.2972222222222222" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/app/src/main/res/mipmap-anydpi-v26/app_ic_launcher_round.xml" value="0.2972222222222222" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-community/src/main/res/layout/community_fragment_attention.xml" value="0.33" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-home/src/main/res/layout/home_fragment_daily.xml" value="0.5" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-user/src/main/res/drawable/user_shape_login_bg.xml" value="0.3175925925925926" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-user/src/main/res/layout/user_activity_attention.xml" value="0.33" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-user/src/main/res/layout/user_activity_login.xml" value="0.25" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-user/src/main/res/layout/user_fragment_layout.xml" value="0.33" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-user/src/main/res/layout/user_item_footer_view.xml" value="0.5" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/Android-MvvmComponent-App/module-user/src/main/res/layout/user_item_view_layout.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-base/src/main/res/layout/base_layout_empty.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-base/src/main/res/layout/base_layout_error.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-base/src/main/res/layout/base_layout_loading.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-base/src/main/res/layout/base_layout_placeholder.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-base/src/main/res/layout/base_layout_timeout.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/layout/include_toolbar.xml" value="0.25" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-video/src/main/res/layout/video_layout_cover.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/drawable/home_shape_border_btn_bg.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/drawable/home_shape_video_time_bg.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_fragment_find_more.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_guide.xml" value="0.25" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_main.xml" value="0.3605128205128205" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_splash.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_baseline_phone_android_24.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_input.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_password.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_password_visibility.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_password_visity.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/ic_user_login_username.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/shape_button_bg.xml" value="0.36770833333333336" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/shape_input.xml" value="0.38229166666666664" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_login_bg.xml" value="0.36770833333333336" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_login_bg2.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/custom_toolbar_layout.xml" value="0.24166666666666667" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/include_toolbar.xml" value="0.33" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_attention.xml" value="0.25" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_login.xml" value="0.25" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_login1.xml" value="0.25" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_regist.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_register.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_footer_view.xml" value="0.11666666666666667" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_view_layout.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
