@@ -12,6 +12,7 @@ import com.guet.more.message.MessageFragment;
 import com.guet.more.themes.ThemesFragment;
 import com.guet.more.topic.TopicFragment;
 import com.google.android.material.tabs.TabLayout;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 
@@ -25,15 +26,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
  * @since 2020-02-22
  */
 @Route(path = RouterFragmentPath.More.PAGER_MORE)
-public class MoreFragment
-    extends MvvmLazyFragment<MoreFragmentMoreBinding, IMvvmBaseViewModel>
-{
-    
+public class MoreFragment extends MvvmLazyFragment<MoreFragmentMoreBinding, IMvvmBaseViewModel> {
+
     private MoreFragmentPageAdapter adapter;
-    
+
     @Override
-    public int getLayoutId()
-    {
+    public int getLayoutId() {
         return R.layout.more_fragment_more;
     }
 
@@ -44,42 +42,33 @@ public class MoreFragment
         initData();
     }
 
-    private void initView()
-    {
-        viewDataBinding.tabLayout
-            .setupWithViewPager(viewDataBinding.vpHomeContent);
+    private void initView() {
+        viewDataBinding.tabLayout.setupWithViewPager(viewDataBinding.vpHomeContent);
         viewDataBinding.vpHomeContent.addOnPageChangeListener(
-            new TabLayout.TabLayoutOnPageChangeListener(
-                viewDataBinding.tabLayout));
-        viewDataBinding.tabLayout
-            .addOnTabSelectedListener(new TabLayout.OnTabSelectedListener()
-            {
-                @Override
-                public void onTabSelected(TabLayout.Tab tab)
-                {
-                    viewDataBinding.vpHomeContent
+                new TabLayout.TabLayoutOnPageChangeListener(viewDataBinding.tabLayout));
+        viewDataBinding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewDataBinding.vpHomeContent
                         .setCurrentItem(tab.getPosition());
-                }
-                
-                @Override
-                public void onTabUnselected(TabLayout.Tab tab)
-                {
-                    
-                }
-                
-                @Override
-                public void onTabReselected(TabLayout.Tab tab)
-                {
-                    
-                }
-            });
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
         adapter = new MoreFragmentPageAdapter(getChildFragmentManager(),
-            FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT);
+                FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT);
         viewDataBinding.vpHomeContent.setAdapter(adapter);
     }
-    
-    private void initData()
-    {
+
+    private void initData() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(ThemesFragment.newInstance());
         fragments.add(MessageFragment.newInstance());
@@ -87,23 +76,20 @@ public class MoreFragment
         adapter.setData(fragments);
         viewDataBinding.vpHomeContent.setCurrentItem(1);
     }
-    
+
     @Override
-    public int getBindingVariable()
-    {
+    public int getBindingVariable() {
         return 0;
     }
-    
+
     @Override
-    protected IMvvmBaseViewModel getViewModel()
-    {
+    protected IMvvmBaseViewModel getViewModel() {
         return null;
     }
-    
+
     @Override
-    protected void onRetryBtnClick()
-    {
-        
+    protected void onRetryBtnClick() {
+
     }
-    
+
 }

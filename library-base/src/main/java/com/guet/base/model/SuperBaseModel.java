@@ -124,8 +124,7 @@ public abstract class SuperBaseModel<T> {
     public void getCacheDataAndLoad() {
         // 如果有apk内置数据,加载内置数据
         if (null != getApkCache()) {
-            notifyCacheData(
-                    (T) GsonUtils.fromLocalJson(getApkCache(), getTclass()));
+            notifyCacheData((T) GsonUtils.fromLocalJson(getApkCache(), getTclass()));
             if (isNeedToUpData()) {
                 load();
             }

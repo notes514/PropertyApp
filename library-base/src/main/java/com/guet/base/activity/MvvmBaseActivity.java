@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.guet.base.R;
+import com.gyf.immersionbar.ImmersionBar;
 import com.kingja.loadsir.callback.Callback;
 import com.kingja.loadsir.core.LoadService;
 import com.kingja.loadsir.core.LoadSir;
@@ -39,6 +41,12 @@ public abstract class MvvmBaseActivity<V extends ViewDataBinding, VM extends IMv
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.base_color_bar)
+                .navigationBarColor(R.color.base_color_bar)
+                .fitsSystemWindows(true)
+                .autoDarkModeEnable(true)
+                .init();
         initViewModel();
         performDataBinding();
     }

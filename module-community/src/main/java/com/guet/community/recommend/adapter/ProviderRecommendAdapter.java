@@ -3,6 +3,7 @@ package com.guet.community.recommend.adapter;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
+
 import com.chad.library.adapter.base.BaseProviderMultiAdapter;
 import com.guet.common.contract.BaseCustomViewModel;
 import com.guet.community.recommend.adapter.provider.CommunityCardProvider;
@@ -20,30 +21,21 @@ import com.guet.community.recommend.bean.viewmodel.CloumnsCardViewModel;
  * @author darryrzhoong
  * @since 2020-02-17
  */
-public class ProviderRecommendAdapter
-    extends BaseProviderMultiAdapter<BaseCustomViewModel>
-{
+public class ProviderRecommendAdapter extends BaseProviderMultiAdapter<BaseCustomViewModel> {
 
-    public ProviderRecommendAdapter()
-    {
+    public ProviderRecommendAdapter() {
         super();
         addItemProvider(new SquareCardProvider());
         addItemProvider(new CommunityCardProvider());
-
-        
     }
-    
+
     @Override
     protected int getItemType(@NotNull List<? extends BaseCustomViewModel> data,
-        int position)
-    {
-        if (data.get(position) instanceof HorizontalScrollCard)
-        {
+                              int position) {
+        if (data.get(position) instanceof HorizontalScrollCard) {
 
             return IRecommendItemType.SQUARE_CARD_VIEW;
-        }
-        else if (data.get(position) instanceof CloumnsCardViewModel)
-        {
+        } else if (data.get(position) instanceof CloumnsCardViewModel) {
 
             return IRecommendItemType.COMMUNITY_CARD_VIEW;
         }

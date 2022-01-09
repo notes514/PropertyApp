@@ -19,20 +19,21 @@ import androidx.fragment.app.FragmentPagerAdapter;
  * @since 2020-02-16
  */
 public class MoreFragmentPageAdapter extends FragmentPagerAdapter {
-    private String[] tables = {"主题","推送","互动"};
+    private final String[] tables = {"主题", "推送", "互动"};
     private List<Fragment> fragments;
 
     public MoreFragmentPageAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 
-    public void setData(List<Fragment> data){
-       if (fragments == null){
-           fragments = new ArrayList<>();
-       }
-       fragments.addAll(data);
-       notifyDataSetChanged();
+    public void setData(List<Fragment> data) {
+        if (fragments == null) {
+            fragments = new ArrayList<>();
+        }
+        fragments.addAll(data);
+        notifyDataSetChanged();
     }
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
@@ -41,7 +42,7 @@ public class MoreFragmentPageAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        if (fragments != null && fragments.size() >0){
+        if (fragments != null && fragments.size() > 0) {
             return fragments.size();
         }
         return 0;

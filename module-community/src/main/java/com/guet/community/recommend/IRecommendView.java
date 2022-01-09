@@ -21,6 +21,5 @@ public interface IRecommendView extends IBasePagingView {
      *
      * @param viewModels data
      */
-    void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels,
-                          boolean isFirstPage);
+    void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels, boolean isFirstPage);
 }

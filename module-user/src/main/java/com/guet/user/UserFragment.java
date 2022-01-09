@@ -15,8 +15,15 @@ import com.bumptech.glide.request.RequestOptions;
 import com.guet.base.fragment.MvvmBaseFragment;
 import com.guet.base.viewmodel.IMvvmBaseViewModel;
 import com.guet.common.router.RouterFragmentPath;
+import com.guet.user.about.AboutActivity;
+import com.guet.user.complaint.ComplaintActivity;
 import com.guet.user.databinding.UserFragmentLayoutBinding;
+import com.guet.user.feedback.FeedbackActivity;
 import com.guet.user.login.LoginActivity;
+import com.guet.user.msg.MsgActivity;
+import com.guet.user.property.PropertyActivity;
+import com.guet.user.repair.RepairActivity;
+import com.guet.user.trade.TradeActivity;
 import com.guet.user.view.DLAnimView;
 
 /**
@@ -63,27 +70,34 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
         });
         viewDataBinding.clTrade.setOnClickListener(v -> {
             ToastUtils.showShort("点击了我的交易");
+            TradeActivity.startAction(getActivity());
         });
         viewDataBinding.clRepair.setOnClickListener(v -> {
             ToastUtils.showShort("点击了我的报修");
+            RepairActivity.startAction(getActivity());
         });
         viewDataBinding.llProperty.setOnClickListener(v -> {
             ToastUtils.showShort("点击了物业");
+            PropertyActivity.startAction(getActivity());
         });
         viewDataBinding.llBill.setOnClickListener(v -> {
             ToastUtils.showShort("点击账单");
         });
         viewDataBinding.llMsgManager.setOnClickListener(v -> {
             ToastUtils.showShort("点击了消息管理");
+            MsgActivity.startAction(getActivity());
         });
         viewDataBinding.llComplaint.setOnClickListener(v -> {
             ToastUtils.showShort("点击了公告管理");
+            ComplaintActivity.startAction(getActivity());
         });
         viewDataBinding.llFeedBack.setOnClickListener(v -> {
             ToastUtils.showShort("点击了意见反馈");
+            FeedbackActivity.startAction(getActivity());
         });
         viewDataBinding.llAbout.setOnClickListener(v -> {
             ToastUtils.showShort("点击了关于");
+            AboutActivity.startAction(getActivity());
         });
         viewDataBinding.llSetting.setOnClickListener(v -> {
             ToastUtils.showShort("点击了设置");

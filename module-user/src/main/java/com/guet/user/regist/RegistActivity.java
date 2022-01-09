@@ -11,18 +11,14 @@ import androidx.lifecycle.ViewModelProviders;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.guet.base.activity.MvvmBaseActivity;
 import com.guet.base.storage.MmkvHelper;
 import com.guet.base.utils.ToastUtil;
 import com.guet.common.router.RouterActivityPath;
-import com.guet.user.login.LoginActivity;
+import com.guet.common.utils.TitleBarUtils;
 import com.guet.user.view.DLAnimView;
 import com.guet.user.R;
 import com.guet.user.databinding.UserActivityRegistBinding;
-import com.gyf.immersionbar.ImmersionBar;
-import com.hjq.bar.OnTitleBarListener;
-import com.hjq.bar.TitleBar;
 
 /**
  * 注册 Activity
@@ -30,19 +26,12 @@ import com.hjq.bar.TitleBar;
  * @author dhxstart
  * @date 2022/1/3 21:43
  */
-@Route(path = RouterActivityPath.User.PAGER_LOGIN)
+@Route(path = RouterActivityPath.User.PAGER_REGIST)
 public class RegistActivity extends MvvmBaseActivity<UserActivityRegistBinding, RegistViewModel> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 设置状态栏和导航栏颜色
-        ImmersionBar.with(this)
-                .statusBarColor(R.color.white)
-                .navigationBarColor(R.color.white)
-                .fitsSystemWindows(true)
-                .autoDarkModeEnable(true)
-                .init();
         ARouter.getInstance().inject(this);
         initView();
         initData();
@@ -61,13 +50,7 @@ public class RegistActivity extends MvvmBaseActivity<UserActivityRegistBinding, 
                         ConstraintLayout.LayoutParams.MATCH_PARENT);
         viewDataBinding.registBgLayout.addView(dlAnimView, layoutParams);
 
-        viewDataBinding.titleBar.setOnTitleBarListener(new OnTitleBarListener() {
-
-            @Override
-            public void onLeftClick(TitleBar titleBar) {
-                finish();
-            }
-        });
+        TitleBarUtils.clickLeftBack(viewDataBinding.titleBar, this);
 
         viewDataBinding.btnRegist.setOnClickListener(v -> {
             if (TextUtils.isEmpty(viewDataBinding.editUsername.getText().toString())) {

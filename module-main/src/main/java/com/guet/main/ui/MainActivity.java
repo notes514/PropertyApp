@@ -57,12 +57,12 @@ public class MainActivity extends MvvmBaseActivity<MainActivityMainBinding, IMvv
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         ScreenAutoAdapter.match(this, 375.0f);
         super.onCreate(savedInstanceState);
-        ImmersionBar.with(this)
-                .statusBarColor(R.color.main_color_bar)
-                .navigationBarColor(R.color.main_color_bar)
-                .fitsSystemWindows(true)
-                .autoDarkModeEnable(true)
-                .init();
+//        ImmersionBar.with(this)
+//                .statusBarColor(R.color.main_color_bar)
+//                .navigationBarColor(R.color.main_color_bar)
+//                .fitsSystemWindows(true)
+//                .autoDarkModeEnable(true)
+//                .init();
         initView();
         initFragment();
     }

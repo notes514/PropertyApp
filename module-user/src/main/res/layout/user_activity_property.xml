@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/common_color_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftIcon="@drawable/ic_baseline_arrow_back_24"
+            app:title="@string/user_property_message"
+            app:titleColor="@color/common_color_black_light"
+            app:titleGravity="left"
+            app:titleSize="16sp"
+            app:titleStyle="bold" />
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh_property"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/user_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_bar"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/common_color_white"
+                android:orientation="vertical"
+                app:divider="@drawable/user_split_line"
+                app:showDividers="middle|end">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/property_house_info"
+                    android:textColor="@color/common_color_black_light"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="房屋编号"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/edit_house_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="end"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="房屋名称"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/edit_house_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="end"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="房屋面积"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/edit_house_area"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="end"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="所属楼栋"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/edit_house_area12"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="end"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/property_owner_info"
+                    android:textColor="@color/common_color_black_light"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="业主姓名"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <EditText
+                        android:id="@+id/edit_house_code1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
+                        android:gravity="end"
+                        android:hint="请输入姓名"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="房产编号"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <EditText
+                        android:id="@+id/edit_house_name2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
+                        android:gravity="end"
+                        android:hint="请输入房产编号"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="身份证号"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <EditText
+                        android:id="@+id/edit_house_area3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
+                        android:gravity="end"
+                        android:hint="请输入身份证号码"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="工作单位"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <EditText
+                        android:id="@+id/edit_house_area5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
+                        android:gravity="end"
+                        android:hint="请输入工作单位"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/tv_tag"
+                        android:text="手机号码"
+                        android:textColor="@color/common_color_black_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <EditText
+                        android:id="@+id/edit_house_area4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
+                        android:gravity="end"
+                        android:hint="请输入手机号码"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <Button
+            android:id="@+id/user_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/shape_button_bg"
+            android:text="提交"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:textColor="@color/common_color_white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -94,7 +94,7 @@ public class RecommendModel<T> extends BasePagingModel<T> {
 
     private void parseJson(String s) {
         List<BaseCustomViewModel> viewModels = new ArrayList<>();
-        JSONObject jsonObject = null;
+        JSONObject jsonObject;
         try {
             jsonObject = new JSONObject(s);
             nextPageUrl = jsonObject.optString("nextPageUrl", "");

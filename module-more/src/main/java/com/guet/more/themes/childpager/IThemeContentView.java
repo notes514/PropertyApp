@@ -15,6 +15,7 @@ import com.guet.common.contract.BaseCustomViewModel;
  * @since 2020-02-23
  */
 public interface IThemeContentView extends IBasePagingView {
+
     /**
      * 数据加载完成
      * @param viewModels data

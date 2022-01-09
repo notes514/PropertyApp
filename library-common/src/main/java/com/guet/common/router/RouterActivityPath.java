@@ -39,7 +39,52 @@ public class RouterActivityPath {
         /**
          * 登录界面
          */
-        public static final String PAGER_LOGIN = USER + "/Login";
+        public static final String PAGER_LOGIN = USER + "/login";
+
+        /**
+         * 注册页面
+         */
+        public static final String PAGER_REGIST = USER + "/regist";
+
+        /**
+         * 交易页面
+         */
+        public static final String PAGER_TRADE = USER + "/trade";
+
+        /**
+         * 报修页面
+         */
+        public static final String PAGER_REPAIR = USER + "/repair";
+
+        /**
+         * 物业信息页面
+         */
+        public static final String PAGER_PROPERTY = USER + "/property";
+
+        /**
+         * 账单页面
+         */
+        public static final String PAGER_BILL = USER + "/bill";
+
+        /**
+         * 消息管理页面
+         */
+        public static final String PAGER_MSG = USER + "/msg";
+
+        /**
+         * 意见反馈页面
+         */
+        public static final String PAGER_FEEDBACK = USER + "/feedback";
+
+        /**
+         * 关于页面
+         */
+        public static final String PAGER_ABOUT = USER + "/about";
+
+        /**
+         * 设置页面
+         */
+        public static final String PAGER_SETTING = USER + "/setting";
 
         /**
          * 关注页面

@@ -1,5 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" tools:ignore="ResourceName">Module-user</string>
+    <string name="title" tools:ignore="ExtraTranslation,ResourceName">标题</string>
     <string name="login" tools:ignore="ExtraTranslation,ResourceName">登录</string>
     <string name="not_login" tools:ignore="ExtraTranslation,ResourceName">未登录</string>
     <string name="click_to_login" tools:ignore="ExtraTranslation,ResourceName">点击登录</string>
@@ -10,11 +11,17 @@
     <string name="remember_password" tools:ignore="ExtraTranslation,ResourceName">记住密码</string>
     <string name="forgot_password" tools:ignore="ExtraTranslation,ResourceName">忘记密码？</string>
     <string name="account_already_exists" tools:ignore="ExtraTranslation,ResourceName">已经有一个账户了吗？</string>
+
     <string name="user_trade" tools:ignore="ExtraTranslation,ResourceName">我的交易</string>
     <string name="user_trade_info" tools:ignore="ExtraTranslation,ResourceName">个人交易市场</string>
     <string name="user_repair" tools:ignore="ExtraTranslation,ResourceName">我的报修</string>
+    <string name="user_complaint" tools:ignore="ExtraTranslation,ResourceName">我的投诉</string>
     <string name="user_repair_info" tools:ignore="ExtraTranslation,ResourceName">故障报修申请</string>
     <string name="user_property_message" tools:ignore="ExtraTranslation,ResourceName">物业信息</string>
+    <string name="property_house_info" tools:ignore="ExtraTranslation,ResourceName">房屋信息</string>
+    <string name="property_owner_info" tools:ignore="ExtraTranslation,ResourceName">业主信息</string>
+
+
     <string name="user_bill" tools:ignore="ExtraTranslation,ResourceName">我的账单</string>
     <string name="user_message_manager" tools:ignore="ExtraTranslation,ResourceName">消息管理</string>
     <string name="user_announcement_manager" tools:ignore="ExtraTranslation,ResourceName">公告管理</string>

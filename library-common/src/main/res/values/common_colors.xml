@@ -2,9 +2,10 @@
 <resources>
     <color name="common_color_small_text">#9d9f9f</color>
     <color name="common_color_bar">#fafafa</color>
-    <color name="common_small_text1">#888888</color>
+    <color name="common_small_text">#888888</color>
     <color name="common_color_blue">#5790da</color>
     <color name="common_color_text_gray">#656565</color>
     <color name="common_color_white">#FFFFFF</color>
     <color name="common_color_black_light">#363636</color>
+    <color name="common_color_transparent">#00000000</color>
 </resources>

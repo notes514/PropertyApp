@@ -4,6 +4,27 @@
 
     <application>
         <activity
+            android:name=".about.AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feedback.FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".msg.MsgActivity"
+            android:exported="false" />
+        <activity
+            android:name=".property.PropertyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".complaint.ComplaintActivity"
+            android:exported="false" />
+        <activity
+            android:name=".repair.RepairActivity"
+            android:exported="false" />
+        <activity
+            android:name=".trade.TradeActivity"
+            android:exported="false" />
+        <activity
             android:name=".regist.RegistActivity"
             android:exported="false" />
         <activity

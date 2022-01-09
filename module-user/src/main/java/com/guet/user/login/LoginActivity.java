@@ -43,13 +43,6 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImmersionBar.with(this)
-                .statusBarColor(R.color.white)
-                .navigationBarColor(R.color.white)
-                .fitsSystemWindows(true)
-                .autoDarkModeEnable(true)
-                .init();
-
         ARouter.getInstance().inject(this);
         initView();
         initData();

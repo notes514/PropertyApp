@@ -92,7 +92,7 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="8dp"
                             android:text="@string/user_trade"
-                            android:textColor="@color/white"
+                            android:textColor="@color/common_color_white"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@+id/iv_trade"
@@ -144,7 +144,7 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="8dp"
                             android:text="@string/user_repair"
-                            android:textColor="@color/white"
+                            android:textColor="@color/common_color_white"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@+id/iv__repair"
@@ -185,7 +185,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="-16dp"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="@color/common_color_white"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp">
 
