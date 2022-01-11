@@ -62,7 +62,7 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
                         ConstraintLayout.LayoutParams.MATCH_PARENT);
         viewDataBinding.loginBgLayout.addView(dlAnimView, layoutParams);
 
-        viewDataBinding.titleBar.setOnTitleBarListener(new OnTitleBarListener() {
+        viewDataBinding.included.titleBar.setOnTitleBarListener(new OnTitleBarListener() {
 
             @Override
             public void onLeftClick(TitleBar titleBar) {

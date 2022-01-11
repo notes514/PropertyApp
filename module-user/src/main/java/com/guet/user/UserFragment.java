@@ -16,6 +16,7 @@ import com.guet.base.fragment.MvvmBaseFragment;
 import com.guet.base.viewmodel.IMvvmBaseViewModel;
 import com.guet.common.router.RouterFragmentPath;
 import com.guet.user.about.AboutActivity;
+import com.guet.user.bill.BillActivity;
 import com.guet.user.complaint.ComplaintActivity;
 import com.guet.user.databinding.UserFragmentLayoutBinding;
 import com.guet.user.feedback.FeedbackActivity;
@@ -82,6 +83,7 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
         });
         viewDataBinding.llBill.setOnClickListener(v -> {
             ToastUtils.showShort("点击账单");
+            BillActivity.startAction(getActivity());
         });
         viewDataBinding.llMsgManager.setOnClickListener(v -> {
             ToastUtils.showShort("点击了消息管理");

@@ -1,4 +1,4 @@
-package com.guet.user.complaint;
+package com.guet.user.bill;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,7 +20,7 @@ import com.guet.common.router.RouterActivityPath;
 import com.guet.common.utils.TitleBarUtils;
 import com.guet.user.R;
 import com.guet.user.adapter.UserFragmentPageAdapter;
-import com.guet.user.complaint.fragment.ComplaintFragment;
+import com.guet.user.bill.fragment.BillFragment;
 import com.guet.user.databinding.UserActivityViewBinding;
 
 import java.util.ArrayList;
@@ -33,15 +33,15 @@ import java.util.List;
  * @date 2022/1/8 14:52
  */
 @Route(path = RouterActivityPath.User.PAGER_TRADE)
-public class ComplaintActivity extends MvvmBaseActivity<UserActivityViewBinding, ComplaintViewModel> {
-    private final String[] tabs = new String[]{"全部", "待受理", "受理中", "已受理"};
+public class BillActivity extends MvvmBaseActivity<UserActivityViewBinding, BillViewModel> {
+    private final String[] tabs = new String[]{"全部", "未缴费", "已缴费"};
     private UserFragmentPageAdapter mAdapter;
     private final int activeColor = Color.parseColor("#ff678f");
     private final int normalColor = Color.parseColor("#666666");
     private final int normalSize = 16;
 
     @Override
-    protected ComplaintViewModel getViewModel() {
+    protected BillViewModel getViewModel() {
         return null;
     }
 
@@ -83,7 +83,7 @@ public class ComplaintActivity extends MvvmBaseActivity<UserActivityViewBinding,
         });
         viewDataBinding.viewPager.setAdapter(mAdapter);
         viewDataBinding.fabAdd.setOnClickListener(v -> ToastUtils.showShort("点击了悬浮按钮！！！"));
-        viewDataBinding.included.titleBar.setTitle(R.string.user_complaint);
+
         TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
     }
 
@@ -93,13 +93,13 @@ public class ComplaintActivity extends MvvmBaseActivity<UserActivityViewBinding,
     private void initData() {
         List<Fragment> fragments = new ArrayList<>();
         for (int i = 0; i < tabs.length; i++) {
-            fragments.add(ComplaintFragment.newInstance(i));
+            fragments.add(BillFragment.newInstance(i));
         }
         mAdapter.setData(fragments);
 
         new TabLayoutMediator(viewDataBinding.tabLayout, viewDataBinding.viewPager,
                 (tab, position) -> {
-                    TextView tabView = new TextView(ComplaintActivity.this);
+                    TextView tabView = new TextView(BillActivity.this);
                     int[][] states = new int[2][];
                     states[0] = new int[]{android.R.attr.state_selected};
                     states[1] = new int[]{};
@@ -120,7 +120,7 @@ public class ComplaintActivity extends MvvmBaseActivity<UserActivityViewBinding,
      * @param context 上下文
      */
     public static void startAction(Context context) {
-        context.startActivity(new Intent(context, ComplaintActivity.class));
+        context.startActivity(new Intent(context, BillActivity.class));
     }
 
     @Override

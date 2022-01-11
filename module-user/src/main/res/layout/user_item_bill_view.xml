@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.guet.user.complaint.bean.ComplaintCustomViewModel" />
+            type="com.guet.user.bill.bean.BillCustomViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -33,13 +33,13 @@
                 android:layout_marginTop="8dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/user_complaint_tag_red"
+                android:src="@drawable/user_bill_tag_blue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/user_repair_type"
+                android:id="@+id/user_bill_charge_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -48,7 +48,7 @@
                 android:gravity="center_vertical"
                 android:lines="1"
                 android:maxLength="16"
-                android:text="@{viewModel.complaintType}"
+                android:text="@{viewModel.chargeName}"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/item_todo_tag"
@@ -58,80 +58,79 @@
 
 
             <TextView
-                android:id="@+id/user_reapir_status"
+                android:id="@+id/user_bill_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="8dp"
-                android:text="@string/user_complaint_accepted"
+                android:text="@string/user_bill_status_paid"
                 android:textColor="@color/light_sea_green"
                 android:textSize="@dimen/sp_14"
-                app:layout_constraintBaseline_toBaselineOf="@+id/user_repair_type"
+                app:layout_constraintBaseline_toBaselineOf="@+id/user_bill_charge_name"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/user_repair_content"
+                android:id="@+id/user_bill_money"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:lineSpacingMultiplier="1.2"
-                android:text="@{viewModel.complaintType}"
-                android:textColor="@color/common_color_small_text"
+                android:text="@{viewModel.chargeStandard}"
+                android:textColor="@color/common_color_red"
                 android:textSize="@dimen/sp_14"
                 android:textStyle="bold"
-                android:minLines="3"
-                app:layout_constraintEnd_toStartOf="@+id/user_reapir_status"
-                app:layout_constraintStart_toStartOf="@+id/user_repair_type"
-                app:layout_constraintTop_toBottomOf="@+id/user_complaint_line"
+                app:layout_constraintEnd_toStartOf="@+id/user_bill_status"
+                app:layout_constraintStart_toStartOf="@+id/user_bill_charge_name"
+                app:layout_constraintTop_toBottomOf="@+id/user_bill_line"
                 tools:text="来一起打王者啊？" />
 
             <Button
-                android:id="@+id/btn_update"
+                android:id="@+id/user_bill_pay"
                 android:layout_width="72dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/shape_light_sea_green_button_bg"
-                android:text="@string/button_update"
+                android:text="@string/user_bill_pay"
                 android:textColor="@color/common_color_white"
                 android:textSize="12sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/btn_delete"
+                app:layout_constraintBaseline_toBaselineOf="@+id/btn_bill_details"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <Button
-                android:id="@+id/btn_delete"
+                android:id="@+id/btn_bill_details"
                 android:layout_width="72dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/shape_blue_button_bg"
-                android:text="@string/button_delete"
+                android:text="@string/user_bill_change_details"
                 android:textColor="@color/common_color_white"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_update"
-                app:layout_constraintTop_toBottomOf="@+id/user_repair_content" />
+                app:layout_constraintEnd_toStartOf="@+id/user_bill_pay"
+                app:layout_constraintTop_toBottomOf="@+id/user_bill_money" />
 
             <TextView
-                android:id="@+id/user_complaint_line"
+                android:id="@+id/user_bill_line"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/windowBackground"
-                app:layout_constraintEnd_toEndOf="@+id/user_reapir_status"
+                app:layout_constraintEnd_toEndOf="@+id/user_bill_status"
                 app:layout_constraintStart_toStartOf="@+id/item_todo_tag"
-                app:layout_constraintTop_toBottomOf="@+id/user_repair_type" />
+                app:layout_constraintTop_toBottomOf="@+id/user_bill_charge_name" />
 
             <TextView
-                android:id="@+id/user_repair_create"
+                android:id="@+id/user_bill_create"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@{viewModel.gmtModified}"
+                android:text="@{viewModel.gmtCreate}"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/btn_delete"
-                app:layout_constraintStart_toStartOf="@+id/user_repair_content"
-                app:layout_constraintTop_toBottomOf="@+id/user_repair_content" />
+                app:layout_constraintEnd_toStartOf="@+id/btn_bill_details"
+                app:layout_constraintStart_toStartOf="@+id/user_bill_money"
+                app:layout_constraintTop_toBottomOf="@+id/user_bill_money" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

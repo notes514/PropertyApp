@@ -39,7 +39,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:text="@string/not_login"
-                android:textColor="@color/user_color_login_bg0"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -310,7 +310,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/user_announcement_manager"
+                        android:text="@string/user_complaint"
                         android:textColor="@color/line"
                         android:textSize="14sp"
                         android:textStyle="bold" />

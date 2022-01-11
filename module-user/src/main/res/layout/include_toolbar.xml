@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data>
+
+    </data>
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/common_color_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:leftIcon="@drawable/ic_baseline_arrow_back_24"
+        app:titleColor="@color/common_color_black_light"
+        app:titleGravity="left"
+        app:titleSize="16sp"
+        app:titleStyle="bold" />
+</layout>

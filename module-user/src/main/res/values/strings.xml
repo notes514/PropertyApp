@@ -12,19 +12,45 @@
     <string name="forgot_password" tools:ignore="ExtraTranslation,ResourceName">忘记密码？</string>
     <string name="account_already_exists" tools:ignore="ExtraTranslation,ResourceName">已经有一个账户了吗？</string>
 
+    <string name="button_update" tools:ignore="ExtraTranslation,ResourceName">修改</string>
+    <string name="button_delete" tools:ignore="ExtraTranslation,ResourceName">删除</string>
+
     <string name="user_trade" tools:ignore="ExtraTranslation,ResourceName">我的交易</string>
     <string name="user_trade_info" tools:ignore="ExtraTranslation,ResourceName">个人交易市场</string>
     <string name="user_repair" tools:ignore="ExtraTranslation,ResourceName">我的报修</string>
-    <string name="user_complaint" tools:ignore="ExtraTranslation,ResourceName">我的投诉</string>
     <string name="user_repair_info" tools:ignore="ExtraTranslation,ResourceName">故障报修申请</string>
+    <string name="user_complaint" tools:ignore="ExtraTranslation,ResourceName">我的投诉</string>
+    <string name="user_complaint_pending" tools:ignore="ExtraTranslation,ResourceName">待受理</string>
+    <string name="user_complaint_accepting" tools:ignore="ExtraTranslation,ResourceName">受理中</string>
+    <string name="user_complaint_accepted" tools:ignore="ExtraTranslation,ResourceName">已受理</string>
+
+    <!-- 物业信息模块 -->
     <string name="user_property_message" tools:ignore="ExtraTranslation,ResourceName">物业信息</string>
     <string name="property_house_info" tools:ignore="ExtraTranslation,ResourceName">房屋信息</string>
+    <string name="property_house_code" tools:ignore="ExtraTranslation,ResourceName">房屋编号</string>
+    <string name="property_house_name" tools:ignore="ExtraTranslation,ResourceName">房屋名称</string>
+    <string name="property_house_area" tools:ignore="ExtraTranslation,ResourceName">房屋面积</string>
+    <string name="property_house_building" tools:ignore="ExtraTranslation,ResourceName">所属楼栋</string>
     <string name="property_owner_info" tools:ignore="ExtraTranslation,ResourceName">业主信息</string>
-
-
+    <string name="property_owner_name" tools:ignore="ExtraTranslation,ResourceName">业主姓名</string>
+    <string name="property_owner_house_code" tools:ignore="ExtraTranslation,ResourceName">房产编号</string>
+    <string name="id_card" tools:ignore="ExtraTranslation,ResourceName">身份证号</string>
+    <string name="employer" tools:ignore="ExtraTranslation,ResourceName">工作单位</string>
+    <string name="tell_phone" tools:ignore="ExtraTranslation,ResourceName">手机号码</string>
+    <string name="commit" tools:ignore="ExtraTranslation,ResourceName">提交</string>
+    <string name="input_property_name" tools:ignore="ExtraTranslation,ResourceName">请输入姓名</string>
+    <string name="input_property_code" tools:ignore="ExtraTranslation,ResourceName">请输入房产编号</string>
+    <string name="input_property_id_card" tools:ignore="ExtraTranslation,ResourceName">请输入身份证号码</string>
+    <string name="input_property_employer" tools:ignore="ExtraTranslation,ResourceName">请输入工作单位</string>
+    <string name="input_property_tell_phone" tools:ignore="ExtraTranslation,ResourceName">请输入手机号码</string>
+    <!-- 我的账单模块 -->
     <string name="user_bill" tools:ignore="ExtraTranslation,ResourceName">我的账单</string>
+    <string name="user_bill_status_unpaid" tools:ignore="ExtraTranslation,ResourceName">未缴费</string>
+    <string name="user_bill_status_paid" tools:ignore="ExtraTranslation,ResourceName">已缴费</string>
+    <string name="user_bill_pay" tools:ignore="ExtraTranslation,ResourceName">去缴费</string>
+    <string name="user_bill_change_details" tools:ignore="ExtraTranslation,ResourceName">查看明细</string>
+
     <string name="user_message_manager" tools:ignore="ExtraTranslation,ResourceName">消息管理</string>
-    <string name="user_announcement_manager" tools:ignore="ExtraTranslation,ResourceName">公告管理</string>
     <string name="user_feed_back" tools:ignore="ExtraTranslation,ResourceName">意见反馈</string>
     <string name="user_about" tools:ignore="ExtraTranslation,ResourceName">关于</string>
     <string name="user_setting" tools:ignore="ExtraTranslation,ResourceName">设置</string>

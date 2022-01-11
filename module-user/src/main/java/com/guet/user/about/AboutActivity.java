@@ -30,7 +30,7 @@ public class AboutActivity extends MvvmBaseActivity<UserActivityAboutBinding, Ab
 
     /** 初始化view */
     private void initView() {
-        TitleBarUtils.clickLeftBack(viewDataBinding.titleBar, this);
+        TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
     }
 
     /** 初始化数据 */

@@ -16,22 +16,9 @@
             android:layout_height="match_parent"
             tools:context=".login.LoginActivity">
 
-            <com.hjq.bar.TitleBar
-                android:id="@+id/title_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/common_color_bar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:leftIcon="@drawable/ic_baseline_arrow_back_24"
-                app:tabGravity="center"
-                app:title="@string/title"
-                app:titleColor="@color/common_color_black_light"
-                app:titleGravity="left"
-                app:titleSize="16sp"
-                app:titleStyle="bold" />
+            <include
+                android:id="@+id/included"
+                layout="@layout/include_toolbar" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
@@ -40,7 +27,7 @@
                 android:background="@color/common_color_white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_bar"
+                app:layout_constraintTop_toBottomOf="@+id/included"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="2dp" />
 
@@ -51,7 +38,7 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tab_layout"
                 app:layout_constraintVertical_bias="0.0" />

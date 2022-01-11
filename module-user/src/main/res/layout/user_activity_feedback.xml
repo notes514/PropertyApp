@@ -12,20 +12,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.hjq.bar.TitleBar
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/common_color_bar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:leftIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="意见反馈"
-            app:titleColor="@color/common_color_black_light"
-            app:titleGravity="left"
-            app:titleSize="16sp"
-            app:titleStyle="bold" />
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar" />
 
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/refresh_property"
@@ -35,7 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_bar"
+            app:layout_constraintTop_toBottomOf="@+id/included"
             app:layout_constraintVertical_bias="0.0">
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -125,6 +114,7 @@
                         android:background="@color/common_color_transparent"
                         android:padding="16dp"
                         android:gravity="start"
+                        android:minLines="3"
                         android:hint="请描述您遇到的问题及反馈意见"
                         android:textSize="@dimen/sp_14"/>
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -201,9 +191,12 @@
             android:layout_gravity="bottom"
             android:background="@drawable/shape_button_bg"
             android:text="提交"
+            android:textColor="@color/common_color_white"
             android:textSize="@dimen/sp_14"
             android:textStyle="bold"
-            android:textColor="@color/common_color_white"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

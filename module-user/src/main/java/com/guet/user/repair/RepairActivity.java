@@ -34,7 +34,7 @@ import java.util.List;
  */
 @Route(path = RouterActivityPath.User.PAGER_REPAIR)
 public class RepairActivity extends MvvmBaseActivity<UserActivityViewBinding, RepairViewModel> {
-    private final String[] tabs = new String[]{"待受理", "受理中", "已受理"};
+    private final String[] tabs = new String[]{"全部", "待受理", "受理中", "已受理"};
     private UserFragmentPageAdapter mAdapter;
     private final int activeColor = Color.parseColor("#ff678f");
     private final int normalColor = Color.parseColor("#666666");
@@ -82,8 +82,8 @@ public class RepairActivity extends MvvmBaseActivity<UserActivityViewBinding, Re
             }
         });
         viewDataBinding.viewPager.setAdapter(mAdapter);
-        viewDataBinding.titleBar.setTitle(R.string.user_repair);
-        TitleBarUtils.clickLeftBack(viewDataBinding.titleBar, this);
+        viewDataBinding.included.titleBar.setTitle(R.string.user_repair);
+        TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
     }
 
     /**

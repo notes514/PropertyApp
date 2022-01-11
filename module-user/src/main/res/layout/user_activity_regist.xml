@@ -13,20 +13,9 @@
         android:layout_height="match_parent"
         tools:context=".login.LoginActivity">
 
-        <com.hjq.bar.TitleBar
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/common_color_bar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:leftIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="@string/regist"
-            app:titleColor="@color/common_color_black_light"
-            app:titleGravity="left"
-            app:titleSize="16sp"
-            app:titleStyle="bold" />
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_username_layout"
@@ -39,7 +28,7 @@
             android:textSize="12sp"
             app:hintTextAppearance="@style/inputStyle"
             app:hintTextColor="@color/user_color_login_bg"
-            app:layout_constraintTop_toBottomOf="@+id/title_bar"
+            app:layout_constraintTop_toBottomOf="@+id/included"
             tools:ignore="MissingConstraints,RtlHardcoded">
 
             <com.google.android.material.textfield.TextInputEditText

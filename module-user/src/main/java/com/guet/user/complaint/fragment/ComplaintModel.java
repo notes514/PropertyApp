@@ -31,11 +31,11 @@ public class ComplaintModel<T> extends BasePagingModel<T> {
             } else if (position == 1) {
                 viewModel.complaintType = "今天晚上一起开黑啊 -> 受理中 " + i;
                 viewModel.complaintContent = "来一起打王者啊 -> 受理中 " + i;
-                viewModel.gmtCreate = "2022年1月9日";
+                viewModel.gmtModified = "2022年1月9日";
             } else {
                 viewModel.complaintType = "今天晚上一起开黑啊 -> 已受理 " + i;
                 viewModel.complaintContent = "来一起打王者啊 -> 已受理 " + i;
-                viewModel.gmtCreate = "2022年1月9日";
+                viewModel.gmtModified = "2022年1月9日";
             }
             viewModels.add(viewModel);
         }

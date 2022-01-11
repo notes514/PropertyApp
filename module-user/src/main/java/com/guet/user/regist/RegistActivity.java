@@ -50,7 +50,7 @@ public class RegistActivity extends MvvmBaseActivity<UserActivityRegistBinding, 
                         ConstraintLayout.LayoutParams.MATCH_PARENT);
         viewDataBinding.registBgLayout.addView(dlAnimView, layoutParams);
 
-        TitleBarUtils.clickLeftBack(viewDataBinding.titleBar, this);
+        TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
 
         viewDataBinding.btnRegist.setOnClickListener(v -> {
             if (TextUtils.isEmpty(viewDataBinding.editUsername.getText().toString())) {

@@ -3,6 +3,7 @@ package com.guet.user.property;
 import com.guet.base.viewmodel.MvvmBaseViewModel;
 import com.guet.user.login.ILoginView;
 import com.guet.user.login.LoginModel;
+import com.guet.user.property.bean.PropertyCustomViewModel;
 
 /**
  * 此类用于管理 property 的View和Model
@@ -10,10 +11,10 @@ import com.guet.user.login.LoginModel;
  * @author dhxstart
  * @date 2022/1/8 11:22
  */
-public class PropertyViewModel extends MvvmBaseViewModel<ILoginView, LoginModel> {
+public class PropertyViewModel
+        extends MvvmBaseViewModel<IPropertyView, PropertyModel<PropertyCustomViewModel>> {
 
     @Override
     protected void initModel() {
-
     }
 }

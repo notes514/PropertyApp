@@ -16,6 +16,9 @@
             android:name=".property.PropertyActivity"
             android:exported="false" />
         <activity
+            android:name=".bill.BillActivity"
+            android:exported="false" />
+        <activity
             android:name=".complaint.ComplaintActivity"
             android:exported="false" />
         <activity

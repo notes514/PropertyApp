@@ -30,62 +30,108 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_tag"
+                android:src="@drawable/user_repair_tag_color"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/item_todo_title"
+                android:id="@+id/user_repair_type"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="-4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:lines="1"
                 android:maxLength="16"
+                android:text="@{viewModel.repairType}"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:text="@{viewModel.repairType}"
+                app:layout_constraintBottom_toBottomOf="@+id/item_todo_tag"
                 app:layout_constraintStart_toEndOf="@+id/item_todo_tag"
-                app:layout_constraintTop_toBottomOf="@+id/item_todo_tag"
+                app:layout_constraintTop_toTopOf="@+id/item_todo_tag"
                 tools:text="今天晚上一起来开黑啊" />
 
 
             <TextView
-                android:id="@+id/item_todo_date"
+                android:id="@+id/user_reapir_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="8dp"
-                android:textColor="@color/common_small_text"
-                android:textSize="12sp"
-                android:text="@{viewModel.gmtCreate}"
-                app:layout_constraintBaseline_toBaselineOf="@+id/item_todo_title"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:text="2019-09-04" />
+                android:text="@string/user_complaint_accepted"
+                android:textColor="@color/light_sea_green"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBaseline_toBaselineOf="@+id/user_repair_type"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/item_todo_content"
+                android:id="@+id/user_repair_content"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16sp"
-                android:layout_marginBottom="8dp"
                 android:lineSpacingMultiplier="1.2"
                 android:minLines="3"
-                android:textColor="@color/common_small_text"
-                android:textSize="@dimen/sp_14"
                 android:text="@{viewModel.repairContent}"
+                android:textColor="@color/common_color_small_text"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/user_reapir_status"
+                app:layout_constraintStart_toStartOf="@+id/user_repair_type"
+                app:layout_constraintTop_toBottomOf="@+id/user_complaint_line"
+                tools:text="来一起打王者啊？" />
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="72dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_light_sea_green_button_bg"
+                android:text="@string/button_update"
+                android:textColor="@color/common_color_white"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/btn_delete"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="72dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_blue_button_bg"
+                android:text="@string/button_delete"
+                android:textColor="@color/common_color_white"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/item_todo_title"
-                app:layout_constraintTop_toBottomOf="@+id/item_todo_title"
-                tools:text="来一起打王者啊？我关羽6双鞋，跑的贼鸡儿快" />
+                app:layout_constraintEnd_toStartOf="@+id/btn_update"
+                app:layout_constraintTop_toBottomOf="@+id/user_repair_content" />
+
+            <TextView
+                android:id="@+id/user_complaint_line"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/windowBackground"
+                app:layout_constraintEnd_toEndOf="@+id/user_reapir_status"
+                app:layout_constraintStart_toStartOf="@+id/item_todo_tag"
+                app:layout_constraintTop_toBottomOf="@+id/user_repair_type" />
+
+            <TextView
+                android:id="@+id/user_repair_create"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{viewModel.gmtModified}"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_delete"
+                app:layout_constraintStart_toStartOf="@+id/user_repair_content"
+                app:layout_constraintTop_toBottomOf="@+id/user_repair_content" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

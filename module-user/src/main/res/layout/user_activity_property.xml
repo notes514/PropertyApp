@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.guet.user.property.bean.PropertyCustomViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,31 +15,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.hjq.bar.TitleBar
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/common_color_bar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:leftIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="@string/user_property_message"
-            app:titleColor="@color/common_color_black_light"
-            app:titleGravity="left"
-            app:titleSize="16sp"
-            app:titleStyle="bold" />
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar" />
 
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/refresh_property"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/user_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_bar"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/included">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -63,9 +52,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="房屋编号"
+                        android:text="@string/property_house_code"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <TextView
                         android:id="@+id/edit_house_code"
@@ -73,6 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="end"
+                        android:text="@{viewModel.code}"
                         android:textSize="@dimen/sp_14" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -85,9 +76,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="房屋名称"
+                        android:text="@string/property_house_name"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <TextView
                         android:id="@+id/edit_house_name"
@@ -95,6 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="end"
+                        android:text="@{viewModel.name}"
                         android:textSize="@dimen/sp_14" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -107,9 +100,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="房屋面积"
+                        android:text="@string/property_house_area"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <TextView
                         android:id="@+id/edit_house_area"
@@ -117,6 +111,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="end"
+                        android:text="@{String.valueOf(viewModel.area)}"
                         android:textSize="@dimen/sp_14" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -129,9 +124,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="所属楼栋"
+                        android:text="@string/property_house_building"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <TextView
                         android:id="@+id/edit_house_area12"
@@ -139,6 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="end"
+                        android:text="@{viewModel.buildingName}"
                         android:textSize="@dimen/sp_14" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -160,9 +157,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="业主姓名"
+                        android:text="@string/property_owner_name"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <EditText
                         android:id="@+id/edit_house_code1"
@@ -171,8 +169,11 @@
                         android:layout_weight="3"
                         android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:hint="请输入姓名"
-                        android:textSize="@dimen/sp_14" />
+                        android:hint="@string/input_property_name"
+                        android:singleLine="true"
+                        android:text="@{viewModel.ownerName}"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="Autofill" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -184,9 +185,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="房产编号"
+                        android:text="@string/property_owner_house_code"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <EditText
                         android:id="@+id/edit_house_name2"
@@ -195,8 +197,11 @@
                         android:layout_weight="3"
                         android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:hint="请输入房产编号"
-                        android:textSize="@dimen/sp_14" />
+                        android:hint="@string/input_property_code"
+                        android:singleLine="true"
+                        android:text="@{viewModel.code}"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="Autofill" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -208,7 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="身份证号"
+                        android:text="@string/id_card"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14" />
 
@@ -219,7 +224,8 @@
                         android:layout_weight="3"
                         android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:hint="请输入身份证号码"
+                        android:hint="@string/input_property_tell_phone"
+                        android:text="@{viewModel.code}"
                         android:textSize="@dimen/sp_14" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -232,9 +238,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="工作单位"
+                        android:singleLine="true"
+                        android:text="@string/employer"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <EditText
                         android:id="@+id/edit_house_area5"
@@ -243,8 +251,10 @@
                         android:layout_weight="3"
                         android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:hint="请输入工作单位"
-                        android:textSize="@dimen/sp_14" />
+                        android:hint="@string/input_property_employer"
+                        android:text="@{viewModel.code}"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="Autofill" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -256,9 +266,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/tv_tag"
-                        android:text="手机号码"
+                        android:text="@string/tell_phone"
                         android:textColor="@color/common_color_black_light"
-                        android:textSize="@dimen/sp_14" />
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
 
                     <EditText
                         android:id="@+id/edit_house_area4"
@@ -267,8 +278,11 @@
                         android:layout_weight="3"
                         android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:hint="请输入手机号码"
-                        android:textSize="@dimen/sp_14" />
+                        android:hint="@string/input_property_tell_phone"
+                        android:singleLine="true"
+                        android:text="@{viewModel.code}"
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="Autofill" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -277,14 +291,15 @@
 
         <Button
             android:id="@+id/user_button"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_gravity="bottom"
             android:background="@drawable/shape_button_bg"
-            android:text="提交"
+            android:text="@string/commit"
+            android:textColor="@color/common_color_white"
             android:textSize="@dimen/sp_14"
             android:textStyle="bold"
-            android:textColor="@color/common_color_white"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

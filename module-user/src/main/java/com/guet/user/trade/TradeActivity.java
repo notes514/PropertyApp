@@ -85,7 +85,7 @@ public class TradeActivity extends MvvmBaseActivity<UserActivityViewBinding, Tra
         viewDataBinding.viewPager.setAdapter(mAdapter);
         viewDataBinding.fabAdd.setOnClickListener(v -> ToastUtils.showShort("点击了悬浮按钮！！！"));
 
-        TitleBarUtils.clickLeftBack(viewDataBinding.titleBar, this);
+        TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
     }
 
     /**
