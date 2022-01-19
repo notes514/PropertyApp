@@ -1,35 +1,6 @@
 package com.guet.player;
 
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-
-import com.alibaba.android.arouter.facade.annotation.Autowired;
-import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.guet.base.activity.MvvmBaseActivity;
-import com.guet.base.livedatabus.LiveDatabus;
-import com.guet.common.adapter.ScreenAutoAdapter;
-import com.guet.common.contract.BaseCustomViewModel;
-import com.guet.common.router.RouterActivityPath;
-import com.guet.player.adapter.ProviderVideoPagerAdapter;
-import com.guet.common.contract.VideoHeaderBean;
-import com.guet.player.databinding.PlayerActivityVideoPlayerBinding;
-import com.guet.player.databinding.PlayerItemVideoHeaderViewBinding;
-import com.guet.video.helper.VideoPlayerHelper;
-import com.gyf.immersionbar.ImmersionBar;
-import com.kingja.loadsir.core.LoadSir;
-import com.orhanobut.logger.Logger;
-import com.scwang.smart.refresh.header.ClassicsHeader;
-import com.shuyu.gsyvideoplayer.GSYVideoManager;
-import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack;
-import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.hardware.SensorEventListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.OrientationEventListener;
@@ -39,6 +10,29 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.alibaba.android.arouter.facade.annotation.Autowired;
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.guet.base.activity.MvvmBaseActivity;
+import com.guet.base.livedatabus.LiveDatabus;
+import com.guet.common.adapter.ScreenAutoAdapter;
+import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.common.contract.VideoHeaderBean;
+import com.guet.common.router.RouterActivityPath;
+import com.guet.player.adapter.ProviderVideoPagerAdapter;
+import com.guet.player.databinding.PlayerActivityVideoPlayerBinding;
+import com.guet.player.databinding.PlayerItemVideoHeaderViewBinding;
+import com.guet.video.helper.VideoPlayerHelper;
+import com.gyf.immersionbar.ImmersionBar;
+import com.orhanobut.logger.Logger;
+import com.scwang.smart.refresh.header.ClassicsHeader;
+import com.shuyu.gsyvideoplayer.GSYVideoManager;
+import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack;
+import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 /**
  * 应用模块: video

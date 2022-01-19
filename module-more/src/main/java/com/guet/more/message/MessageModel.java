@@ -27,63 +27,53 @@ import io.reactivex.disposables.Disposable;
  * @author darryrzhoong
  * @since 2020-02-23
  */
-public class MessageModel<T> extends BasePagingModel<T>
-{
-    
+public class MessageModel<T> extends BasePagingModel<T> {
+
     private Disposable disposable;
-    
+
     private Disposable disposable1;
-    
+
     @Override
-    protected void load()
-    {
+    protected void load() {
         disposable = EasyHttp.get("/api/v3/messages")
-            .params("vc", "591")
-            .params("deviceModel", "Che1-CL20")
-            .cacheKey(getClass().getSimpleName())
-            .execute(new SimpleCallBack<String>()
-            {
-                @Override
-                public void onError(ApiException e)
-                {
-                    loadFail(e.getMessage(), isRefresh);
-                }
-                
-                @Override
-                public void onSuccess(String s)
-                {
-                    parseData(s);
-                }
-            });
+                .params("vc", "591")
+                .params("deviceModel", "Che1-CL20")
+                .cacheKey(getClass().getSimpleName())
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        loadFail(e.getMessage(), isRefresh);
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        parseData(s);
+                    }
+                });
     }
-    
-    private void loadMore(String nextPageUrl)
-    {
+
+    private void loadMore(String nextPageUrl) {
         disposable1 = EasyHttp.get(nextPageUrl)
-            .cacheMode(CacheMode.NO_CACHE)
-            .execute(new SimpleCallBack<String>()
-            {
-                @Override
-                public void onError(ApiException e)
-                {
-                    loadFail(e.getMessage(), isRefresh);
-                }
-                
-                @Override
-                public void onSuccess(String s)
-                {
-                    parseData(s);
-                }
-            });
+                .cacheMode(CacheMode.NO_CACHE)
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        loadFail(e.getMessage(), isRefresh);
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        parseData(s);
+                    }
+                });
     }
-    
-    private void parseData(String s)
-    {
+
+    private void parseData(String s) {
         List<BaseCustomViewModel> viewModels = new ArrayList<>();
-        Message message = GsonUtils.fromLocalJson(s,Message.class);
-        if (message != null){
+        Message message = GsonUtils.fromLocalJson(s, Message.class);
+        if (message != null) {
             nextPageUrl = message.getNextPageUrl();
-            for (Message.MessageListBean itemBean : message.getMessageList()){
+            for (Message.MessageListBean itemBean : message.getMessageList()) {
                 MessageViewModel viewModel = new MessageViewModel();
                 viewModel.coverUrl = itemBean.getIcon();
                 viewModel.title = itemBean.getTitle();
@@ -92,31 +82,25 @@ public class MessageModel<T> extends BasePagingModel<T>
                 viewModels.add(viewModel);
             }
         }
-        loadSuccess((T) viewModels,viewModels.size() == 0,isRefresh);
+        loadSuccess((T) viewModels, viewModels.size() == 0, isRefresh);
     }
-    
-    public void refresh()
-    {
+
+    public void refresh() {
         isRefresh = true;
         load();
     }
-    
-    public void loadMore()
-    {
+
+    public void loadMore() {
         isRefresh = false;
-        if (!TextUtils.isEmpty(nextPageUrl))
-        {
+        if (!TextUtils.isEmpty(nextPageUrl)) {
             loadMore(nextPageUrl);
-        }
-        else
-        {
+        } else {
             loadSuccess(null, true, isRefresh);
         }
     }
-    
+
     @Override
-    public void cancel()
-    {
+    public void cancel() {
         super.cancel();
         EasyHttp.cancelSubscription(disposable);
         EasyHttp.cancelSubscription(disposable1);
@@ -124,9 +108,9 @@ public class MessageModel<T> extends BasePagingModel<T>
 
     /**
      * 根据时间戳转换成对应格式的时间
-     * */
-    private String formatDate(long date){
-       return DateTimeUtils.getDate(String.valueOf(date),"HH");
+     */
+    private String formatDate(long date) {
+        return DateTimeUtils.getDate(String.valueOf(date), "HH");
 
     }
 }

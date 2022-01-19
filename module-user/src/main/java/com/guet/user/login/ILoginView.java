@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public interface ILoginView extends IBaseView {
 
     /**
-     * 数据加载完成
-     *
-     * @param viewModels data
-     * @param isEmpty 是否为空
+     * 登录成功
      */
-    void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels, boolean isEmpty);
+    void onLoginSuccess();
+
+    /**
+     * 登录失败
+     */
+    void onLoginFail();
 }

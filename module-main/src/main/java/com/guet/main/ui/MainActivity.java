@@ -108,6 +108,16 @@ public class MainActivity extends MvvmBaseActivity<MainActivityMainBinding, IMvv
         adapter.setData(fragments);
     }
 
+    /**
+     * 启动登录activity
+     *
+     * @param context 上下文
+     */
+    public static void startAction(Context context) {
+        MmkvHelper.getInstance().getMmkv().encode("first", false);
+        context.startActivity(new Intent(context, MainActivity.class));
+    }
+
     @Override
     protected int getBindingVariable() {
         return 0;

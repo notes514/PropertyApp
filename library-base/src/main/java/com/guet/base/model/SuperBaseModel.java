@@ -94,7 +94,6 @@ public abstract class SuperBaseModel<T> {
         }
     }
 
-
     /**
      * 需要缓存的数据类型
      */

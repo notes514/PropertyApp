@@ -44,5 +44,4 @@ public class CommonModuleInit implements IModuleInit {
     public boolean onInitLow(BaseApplication application) {
         return false;
     }
-
 }

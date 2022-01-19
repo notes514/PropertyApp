@@ -48,8 +48,7 @@ public class HomeFragment extends MvvmLazyFragment<HomeFragmentHomeBinding, IMvv
     }
 
 
-    private void initView()
-    {
+    private void initView() {
         pageAdapter = new HomeFragmentPageAdapter(getChildFragmentManager(),
                 FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT);
         viewDataBinding.vpHomeContent.setAdapter(pageAdapter);
@@ -59,24 +58,20 @@ public class HomeFragment extends MvvmLazyFragment<HomeFragmentHomeBinding, IMvv
                 new TabLayout.TabLayoutOnPageChangeListener(
                         viewDataBinding.tabLayout));
         viewDataBinding.tabLayout
-                .addOnTabSelectedListener(new TabLayout.OnTabSelectedListener()
-                {
+                .addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
                     @Override
-                    public void onTabSelected(TabLayout.Tab tab)
-                    {
+                    public void onTabSelected(TabLayout.Tab tab) {
                         viewDataBinding.vpHomeContent
                                 .setCurrentItem(tab.getPosition());
                     }
 
                     @Override
-                    public void onTabUnselected(TabLayout.Tab tab)
-                    {
+                    public void onTabUnselected(TabLayout.Tab tab) {
 
                     }
 
                     @Override
-                    public void onTabReselected(TabLayout.Tab tab)
-                    {
+                    public void onTabReselected(TabLayout.Tab tab) {
 
                     }
                 });
@@ -91,26 +86,22 @@ public class HomeFragment extends MvvmLazyFragment<HomeFragmentHomeBinding, IMvv
     }
 
     @Override
-    public int getLayoutId()
-    {
+    public int getLayoutId() {
         return R.layout.home_fragment_home;
     }
 
     @Override
-    public int getBindingVariable()
-    {
+    public int getBindingVariable() {
         return 0;
     }
 
     @Override
-    protected IMvvmBaseViewModel getViewModel()
-    {
+    protected IMvvmBaseViewModel getViewModel() {
         return null;
     }
 
     @Override
-    protected void onRetryBtnClick()
-    {
+    protected void onRetryBtnClick() {
 
     }
 

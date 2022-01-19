@@ -3,7 +3,9 @@ package com.guet.user.login;
 import com.guet.base.model.BaseModel;
 import com.guet.base.model.IModelListener;
 import com.guet.base.viewmodel.MvvmBaseViewModel;
+import com.guet.common.api.ResultCode;
 import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.common.contract.UserInfo;
 import com.guet.user.login.bean.UserBean;
 
 import java.util.ArrayList;
@@ -14,8 +16,8 @@ import java.util.ArrayList;
  * @author dhxstart
  * @date 2022/1/3 20:29
  */
-public class LoginViewModel extends MvvmBaseViewModel<ILoginView, LoginModel<UserBean>>
-        implements IModelListener<ArrayList<BaseCustomViewModel>> {
+public class LoginViewModel extends MvvmBaseViewModel<ILoginView, LoginModel<UserInfo>>
+        implements IModelListener<Integer> {
 
     @Override
     protected void initModel() {
@@ -25,15 +27,25 @@ public class LoginViewModel extends MvvmBaseViewModel<ILoginView, LoginModel<Use
         model.load();
     }
 
+    /**
+     * 用户登录
+     *
+     * @param username 用户名
+     * @param password 密码
+     */
+    protected void login(String username, String password) {
+        model.login(username, password);
+    }
+
     @Override
-    public void onLoadFinish(BaseModel model, ArrayList<BaseCustomViewModel> data) {
-        if (getPageView() != null) {
-            if (data != null && data.size() > 0) {
-                getPageView().onDataLoadFinish(data, false);
-            } else {
-                getPageView().showEmpty();
-            }
+    public void onLoadFinish(BaseModel model, Integer data) {
+        if (getPageView() == null) {
+            return;
         }
+        if (data != ResultCode.SUCCESS) {
+            getPageView().onLoginFail();
+        }
+        getPageView().onLoginSuccess();
     }
 
     @Override

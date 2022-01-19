@@ -29,8 +29,7 @@ public abstract class BaseModel<T> extends SuperBaseModel<T> {
                         }
                     }
                 }
-//                if (null != getCachekey())
-//                {
+//                if (null != getCachekey()) {
 //                    saveDataToLocal(data);
 //                }
             }, 0);

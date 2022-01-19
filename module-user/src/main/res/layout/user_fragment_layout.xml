@@ -209,9 +209,9 @@
 
                     <ImageView
                         android:layout_width="24dp"
-                        android:layout_height="20dp"
+                        android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_property2" />
+                        android:src="@drawable/ic_user_property" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -242,7 +242,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_bill" />
+                        android:src="@drawable/ic_user_order" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -270,10 +270,10 @@
                     android:paddingRight="16dp">
 
                     <ImageView
-                        android:layout_width="24dp"
+                        android:layout_width="22dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_msg_manager" />
+                        android:src="@drawable/ic_user_message" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -304,7 +304,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_complaint" />
+                        android:src="@drawable/ic_user_complaint" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -341,7 +341,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_feed_back" />
+                        android:src="@drawable/ic_user_feedback" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -372,7 +372,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_about" />
+                        android:src="@drawable/ic_about" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -403,7 +403,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/user_setting" />
+                        android:src="@drawable/ic_user_setting" />
 
                     <TextView
                         android:layout_width="0dp"

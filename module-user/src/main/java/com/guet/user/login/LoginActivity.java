@@ -6,26 +6,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.blankj.utilcode.util.ToastUtils;
 import com.guet.base.activity.MvvmBaseActivity;
 import com.guet.base.storage.MmkvHelper;
 import com.guet.base.utils.ToastUtil;
 import com.guet.common.router.RouterActivityPath;
 import com.guet.common.services.ILoginService;
 import com.guet.common.services.config.ServicesConfig;
+import com.guet.common.utils.TitleBarUtils;
 import com.guet.user.view.DLAnimView;
 import com.guet.user.R;
 import com.guet.user.databinding.UserActivityLoginBinding;
 import com.guet.user.regist.RegistActivity;
-import com.gyf.immersionbar.ImmersionBar;
-import com.hjq.bar.OnTitleBarListener;
-import com.hjq.bar.TitleBar;
+
+import java.util.Objects;
 
 /**
  * 登录 Activity
@@ -34,10 +34,17 @@ import com.hjq.bar.TitleBar;
  * @date 2022/1/3 21:43
  */
 @Route(path = RouterActivityPath.User.PAGER_LOGIN)
-public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, LoginViewModel> {
+public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, LoginViewModel>
+        implements ILoginView {
 
     @Autowired(name = ServicesConfig.User.LONGING_SERVICE)
     ILoginService iLoginService;
+    private AlertDialog alertDialog;
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.user_activity_login;
+    }
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -62,26 +69,29 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
                         ConstraintLayout.LayoutParams.MATCH_PARENT);
         viewDataBinding.loginBgLayout.addView(dlAnimView, layoutParams);
 
-        viewDataBinding.included.titleBar.setOnTitleBarListener(new OnTitleBarListener() {
+        TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
 
-            @Override
-            public void onLeftClick(TitleBar titleBar) {
-                finish();
-            }
-        });
-
-        viewDataBinding.btnRegist.setOnClickListener(v -> {
-            if (TextUtils.isEmpty(viewDataBinding.editUsername.getText().toString())) {
+        viewDataBinding.btnLogin.setOnClickListener(v -> {
+            String username = Objects.requireNonNull(viewDataBinding.editUsername.getText()).toString();
+            String password = Objects.requireNonNull(viewDataBinding.editPassword.getText()).toString();
+            if (TextUtils.isEmpty(username)) {
                 ToastUtil.show(this, "用户名不能为空！");
-            } else if (TextUtils.isEmpty(viewDataBinding.editPassword.getText().toString())) {
-                ToastUtil.show(this, "密码不能为空！");
-            } else {
-                ToastUtil.show(this, "点击了登录！！！");
+                return ;
             }
+            if (TextUtils.isEmpty(password)) {
+                ToastUtil.show(this, "密码不能为空！");
+                return ;
+            }
+            alertDialog = new AlertDialog.Builder(this)
+                    .setView(R.layout.user_layout_loading_trips)
+                    .show();
+            viewModel.login(username, password);
         });
+
         viewDataBinding.tvForgotPassword.setOnClickListener(v -> {
             ToastUtil.show(this, "忘记密码！！！");
         });
+
         viewDataBinding.tvRegist.setOnClickListener(v -> {
             ToastUtil.show(this, "注册！！！");
             RegistActivity.startAction(this);
@@ -93,6 +103,9 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
         //模拟登录
         iLoginService.saveStatus(false);
         viewModel.initModel();
+        viewDataBinding.included.titleBar.setTitle(R.string.login);
+        viewDataBinding.editUsername.setText("admin");
+        viewDataBinding.editPassword.setText("123456");
     }
 
     /**
@@ -111,11 +124,6 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
     }
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.user_activity_login;
-    }
-
-    @Override
     protected void onRetryBtnClick() {
 
     }
@@ -123,5 +131,21 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override
+    public void onLoginSuccess() {
+        alertDialog.dismiss();
+        finish();
+    }
+
+    @Override
+    public void onLoginFail() {
+        alertDialog.dismiss();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
