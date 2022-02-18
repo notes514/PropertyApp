@@ -1,9 +1,6 @@
 package com.guet.user.login;
 
 import com.guet.base.activity.IBaseView;
-import com.guet.common.contract.BaseCustomViewModel;
-
-import java.util.ArrayList;
 
 /**
  * @author dhxstart
@@ -13,11 +10,15 @@ public interface ILoginView extends IBaseView {
 
     /**
      * 登录成功
+     *
+     * @param token token
      */
-    void onLoginSuccess();
+    void onLoginSuccess(String token);
 
     /**
      * 登录失败
+     *
+     * @param message
      */
-    void onLoginFail();
+    void onLoginFail(String message);
 }

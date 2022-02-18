@@ -134,14 +134,20 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
     }
 
     @Override
-    public void onLoginSuccess() {
+    public void onLoginSuccess(String token) {
+        iLoginService.saveStatus(true);
         alertDialog.dismiss();
+        Intent intent = new Intent();
+        intent.putExtra("token", token);
+        intent.putExtra("user", "login_success");
+        setResult(RESULT_OK, intent);
         finish();
     }
 
     @Override
-    public void onLoginFail() {
+    public void onLoginFail(String message) {
         alertDialog.dismiss();
+        ToastUtil.show(this, message);
     }
 
     @Override

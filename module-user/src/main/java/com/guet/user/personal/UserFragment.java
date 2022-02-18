@@ -1,20 +1,26 @@
-package com.guet.user;
+package com.guet.user.personal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.guet.base.fragment.MvvmBaseFragment;
-import com.guet.base.viewmodel.IMvvmBaseViewModel;
+import com.guet.common.contract.UserInfo;
 import com.guet.common.router.RouterFragmentPath;
+import com.guet.user.R;
 import com.guet.user.about.AboutActivity;
 import com.guet.user.bill.BillActivity;
 import com.guet.user.complaint.ComplaintActivity;
@@ -22,6 +28,7 @@ import com.guet.user.databinding.UserFragmentLayoutBinding;
 import com.guet.user.feedback.FeedbackActivity;
 import com.guet.user.login.LoginActivity;
 import com.guet.user.msg.MsgActivity;
+import com.guet.user.personal.bean.UserBean;
 import com.guet.user.property.PropertyActivity;
 import com.guet.user.repair.RepairActivity;
 import com.guet.user.trade.TradeActivity;
@@ -34,7 +41,9 @@ import com.guet.user.view.DLAnimView;
  * @date 2022/1/8 10:49
  */
 @Route(path = RouterFragmentPath.User.PAGER_USER)
-public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IMvvmBaseViewModel> {
+public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, UserViewModel>
+        implements IUserView {
+    private ActivityResultLauncher<Intent> resultLauncher;
 
     @Override
     public int getLayoutId() {
@@ -42,13 +51,27 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView();
         initData();
+        initView();
     }
 
     private void initData() {
+        viewModel.initModel();
+        resultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(), result -> {
+                    Intent intent = result.getData();
+                    if (intent == null) {
+                        return;
+                    }
+                    viewModel.getUserInfo(intent.getStringExtra("token"));
+                });
     }
 
     private void initView() {
@@ -66,8 +89,7 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
                 .into(viewDataBinding.ivAvatar);
 
         viewDataBinding.ivAvatar.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了头像");
-            LoginActivity.startAction(getActivity());
+            resultLauncher.launch(new Intent(getActivity(), LoginActivity.class));
         });
         viewDataBinding.clTrade.setOnClickListener(v -> {
             ToastUtils.showShort("点击了我的交易");
@@ -112,12 +134,20 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, IM
     }
 
     @Override
-    protected IMvvmBaseViewModel getViewModel() {
-        return null;
+    protected UserViewModel getViewModel() {
+        return ViewModelProviders.of(this).get(UserViewModel.class);
     }
 
     @Override
     protected void onRetryBtnClick() {
 
+    }
+
+    @Override
+    public void showUserInfo(UserBean userBean) {
+        if (userBean == null) {
+            return;
+        }
+        viewDataBinding.tvUsername.setText(userBean.getUsername());
     }
 }

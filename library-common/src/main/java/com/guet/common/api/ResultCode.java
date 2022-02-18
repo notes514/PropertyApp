@@ -66,4 +66,19 @@ public class ResultCode {
      * 不允许的http方法
      */
     public static final int BAD_METHOD = 405;
+
+    /**
+     * 请求码
+     */
+    public static final String RESULT_CODE = "code";
+
+    /**
+     * 请求结果描述
+     */
+    public static final String RESULT_MSG = "msg";
+
+    /**
+     * 请求结果数据
+     */
+    public static final String RESULT_DATA = "data";
 }

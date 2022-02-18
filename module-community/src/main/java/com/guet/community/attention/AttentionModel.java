@@ -2,6 +2,7 @@ package com.guet.community.attention;
 
 import java.util.ArrayList;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.guet.base.model.BasePagingModel;
 import com.guet.base.utils.GsonUtils;
 import com.guet.common.contract.BaseCustomViewModel;
@@ -66,6 +67,7 @@ public class AttentionModel<T> extends BasePagingModel<T> {
     }
 
     private void parseData(String data) {
+        LogUtils.dTag("laodai", "data: " + data);
         AttentionCardBean attentionCardBean = GsonUtils.fromLocalJson(data, AttentionCardBean.class);
         ArrayList<BaseCustomViewModel> viewModels = new ArrayList<>();
         nextPageUrl = attentionCardBean.getNextPageUrl();
