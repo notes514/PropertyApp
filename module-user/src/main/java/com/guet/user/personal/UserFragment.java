@@ -12,13 +12,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.guet.base.fragment.MvvmBaseFragment;
-import com.guet.common.contract.UserInfo;
 import com.guet.common.router.RouterFragmentPath;
 import com.guet.user.R;
 import com.guet.user.about.AboutActivity;

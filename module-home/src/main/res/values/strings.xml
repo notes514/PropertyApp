@@ -1,3 +1,4 @@
-<resources>
-    <string name="app_name">module-home</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="ResourceName">module-home</string>
+    <string name="home_news_title">最新资讯公告</string>
 </resources>

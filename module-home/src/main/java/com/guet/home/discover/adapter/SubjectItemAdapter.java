@@ -19,34 +19,27 @@ import androidx.databinding.DataBindingUtil;
  * @author darryrzhoong
  * @since 2020-02-15
  */
-public class SubjectItemAdapter
-    extends BaseQuickAdapter<SquareCard, BaseViewHolder>
-{
-    
-    public SubjectItemAdapter(int layoutResId)
-    {
+public class SubjectItemAdapter extends BaseQuickAdapter<SquareCard, BaseViewHolder> {
+
+    public SubjectItemAdapter(int layoutResId) {
         super(layoutResId);
     }
-    
+
     @Override
     protected void onItemViewHolderCreated(@NotNull BaseViewHolder viewHolder,
-        int viewType)
-    {
+                                           int viewType) {
         DataBindingUtil.bind(viewHolder.itemView);
     }
-    
+
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder,
-        @Nullable SquareCard squareCard)
-    {
-        if (squareCard == null)
-        {
+                           @Nullable SquareCard squareCard) {
+        if (squareCard == null) {
             return;
         }
         HomeItemCategoryItemSubjectCardViewBinding binding =
-            baseViewHolder.getBinding();
-        if (binding != null)
-        {
+                baseViewHolder.getBinding();
+        if (binding != null) {
             binding.setViewModel(squareCard);
             binding.executePendingBindings();
         }

@@ -40,6 +40,4 @@ public class VideoCardViewModel extends BaseCustomViewModel {
 
     // 分享
     public int shareCount;
-
-
 }

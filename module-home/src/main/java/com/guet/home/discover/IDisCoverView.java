@@ -15,14 +15,12 @@ import java.util.ArrayList;
  * @author darryrzhoong
  * @since 2020-02-15
  */
-public interface IDisCoverView extends IBaseView
-{
-    
+public interface IDisCoverView extends IBaseView {
+
     /**
      * 数据加载完成
      *
      * @param viewModels data
      */
     void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels, boolean isEmpty);
-    
 }

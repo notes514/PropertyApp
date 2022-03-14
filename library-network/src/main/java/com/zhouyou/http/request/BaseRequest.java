@@ -71,7 +71,7 @@ import static com.zhouyou.http.EasyHttp.getRxCache;
 @SuppressWarnings(value = {"unchecked", "deprecation"})
 public abstract class BaseRequest<R extends BaseRequest> {
     protected Cache cache = null;
-    protected CacheMode cacheMode = CacheMode.NO_CACHE;                    //默认无缓存
+    protected CacheMode cacheMode;                    //默认无缓存
     protected long cacheTime = -1;                                         //缓存时间
     protected String cacheKey;                                             //缓存Key
     protected IDiskConverter diskConverter;                                //设置Rxcache磁盘转换器

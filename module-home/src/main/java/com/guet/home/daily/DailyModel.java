@@ -38,12 +38,12 @@ public class DailyModel<T> extends BasePagingModel<T> {
 
     @Override
     protected void load() {
-        disposable = EasyHttp.get("/api/v5/index/tab/feed")
+        disposable = EasyHttp.get("http://baobab.kaiyanapp.com/api/v5/index/tab/allRec")
                 .cacheKey(getClass().getSimpleName())
                 .execute(new SimpleCallBack<String>() {
                     @Override
                     public void onError(ApiException e) {
-                        loadFail(e.getMessage(), isRefresh);
+                        loadFail(e.getMessage());
                     }
 
                     @Override
@@ -65,7 +65,7 @@ public class DailyModel<T> extends BasePagingModel<T> {
                 .execute(new SimpleCallBack<String>() {
                     @Override
                     public void onError(ApiException e) {
-                        loadFail(e.getMessage(), isRefresh);
+                        loadFail(e.getMessage());
                     }
 
                     @Override
@@ -97,7 +97,7 @@ public class DailyModel<T> extends BasePagingModel<T> {
      */
     private void parseJson(String s) {
         List<BaseCustomViewModel> viewModels = new ArrayList<>();
-        JSONObject jsonObject = null;
+        JSONObject jsonObject;
         try {
             jsonObject = new JSONObject(s);
             nextPageUrl = jsonObject.optString("nextPageUrl", "");

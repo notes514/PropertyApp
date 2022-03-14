@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.guet.user.repair.bean.RepairCustomViewModel" />
@@ -39,10 +38,22 @@
                 tools:ignore="ContentDescription" />
 
             <TextView
+                android:id="@+id/user_textview4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="报修项目："
+                android:textColor="@color/common_color_small_text"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/item_todo_tag"
+                app:layout_constraintStart_toEndOf="@+id/item_todo_tag"
+                app:layout_constraintTop_toTopOf="@+id/item_todo_tag" />
+
+
+            <TextView
                 android:id="@+id/user_repair_type"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
@@ -50,12 +61,11 @@
                 android:maxLength="16"
                 android:text="@{viewModel.repairType}"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/item_todo_tag"
-                app:layout_constraintStart_toEndOf="@+id/item_todo_tag"
-                app:layout_constraintTop_toTopOf="@+id/item_todo_tag"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/user_textview4"
+                app:layout_constraintStart_toEndOf="@+id/user_textview4"
                 tools:text="今天晚上一起来开黑啊" />
-
 
             <TextView
                 android:id="@+id/user_reapir_status"
@@ -81,7 +91,7 @@
                 android:textSize="@dimen/sp_14"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/user_reapir_status"
-                app:layout_constraintStart_toStartOf="@+id/user_repair_type"
+                app:layout_constraintStart_toEndOf="@+id/item_todo_tag"
                 app:layout_constraintTop_toBottomOf="@+id/user_complaint_line"
                 tools:text="来一起打王者啊？" />
 
@@ -127,8 +137,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@{viewModel.gmtModified}"
+                android:layout_marginEnd="16dp"
+                android:text="@{viewModel.gmtCreate}"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_delete"
                 app:layout_constraintEnd_toStartOf="@+id/btn_delete"
                 app:layout_constraintStart_toStartOf="@+id/user_repair_content"
                 app:layout_constraintTop_toBottomOf="@+id/user_repair_content" />

@@ -1,11 +1,12 @@
 package com.guet.home.nominate;
 
-import java.util.ArrayList;
-
+import com.blankj.utilcode.util.LogUtils;
 import com.guet.base.model.BasePagingModel;
 import com.guet.base.model.IPagingModelListener;
 import com.guet.base.viewmodel.MvvmBaseViewModel;
 import com.guet.common.contract.BaseCustomViewModel;
+
+import java.util.ArrayList;
 
 /**
  * 应用模块: 首页
@@ -16,71 +17,51 @@ import com.guet.common.contract.BaseCustomViewModel;
  * @author darryrzhoong
  * @since 2020-02-10
  */
-public class NominateViewModel
-    extends MvvmBaseViewModel<INominateView, NominateModel>
-    implements IPagingModelListener<ArrayList<BaseCustomViewModel>>
-{
+public class NominateViewModel extends MvvmBaseViewModel<INominateView, NominateModel>
+        implements IPagingModelListener<ArrayList<BaseCustomViewModel>> {
 
     @Override
-    public void onLoadFinish(BasePagingModel model,
-                             ArrayList<BaseCustomViewModel> data, boolean isEmpty,
-                             boolean isFirstPage)
-    {
-        if (getPageView() != null)
-        {
+    public void onLoadFinish(BasePagingModel model, ArrayList<BaseCustomViewModel> data,
+                             boolean isEmpty, boolean isFirstPage) {
+        if (getPageView() == null) {
+            return;
+        }
+        if (!isEmpty){
+            getPageView().onDataLoadFinish(data, isFirstPage);
+            return;
+        }
+        // 是否是上拉刷新
+        if (isFirstPage) {
+            // 显示空页面
+            getPageView().showEmpty();
+            return;
+        }
+        // 没有更多了
+        getPageView().onLoadMoreEmpty();
+    }
 
-            // 如果数据为空
-            if (isEmpty)
-            {
-                // 是否是上拉刷新
-                if (isFirstPage)
-                {
-                    // 显示空页面
-                    getPageView().showEmpty();
-                }
-                else
-                {
-                    // 没有更多了
-                    getPageView().onLoadMoreEmpty();
-                }
-            }
-            else
-            {
-                getPageView().onDataLoadFinish(data,isFirstPage);
-            }
-        }
-        
-    }
-    
     @Override
-    public void onLoadFail(BasePagingModel model, String prompt,
-        boolean isFirstPage)
-    {
-        if (getPageView() != null)
-        {
-            if (isFirstPage)
-            {
-                // 刷新失败
-                getPageView().showFailure(prompt);
-            }
-            else
-            {
-                // 加载更多失败
-                getPageView().onLoadMoreFailure(prompt);
-                
-            }
+    public void onLoadFail(BasePagingModel model, String prompt, boolean isFirstPage) {
+        if (getPageView() == null) {
+            return;
+        }
+        if (isFirstPage) {
+            // 刷新失败
+            getPageView().showFailure(prompt);
+        } else {
+            // 加载更多失败
+            getPageView().onLoadMoreFailure(prompt);
         }
     }
-    
+
     @Override
-    protected void loadData()
-    {
-        
+    protected void loadData() {
+        model.loadMore();
     }
 
     @Override
     protected void initModel() {
-        model = new NominateModel();
+        model = new NominateModel<>();
         model.register(this);
         model.getCacheDataAndLoad();
     }
@@ -93,14 +74,7 @@ public class NominateViewModel
         }
     }
 
-    public void tryToRefresh()
-    {
+    public void tryToRefresh() {
         model.refresh();
     }
-    
-    public void loadMore()
-    {
-        model.loadMore();
-    }
-    
 }

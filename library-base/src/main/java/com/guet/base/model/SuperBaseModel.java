@@ -55,7 +55,7 @@ public abstract class SuperBaseModel<T> {
         }
         synchronized (this) {
             // 每次注册的时候清理已经被系统回收的对象
-            Reference<? extends IBaseModelListener> releaseListener = null;
+            Reference<? extends IBaseModelListener> releaseListener;
             while ((releaseListener = mReferenceQueue.poll()) != null) {
                 mWeakReferenceDeque.remove(releaseListener);
             }

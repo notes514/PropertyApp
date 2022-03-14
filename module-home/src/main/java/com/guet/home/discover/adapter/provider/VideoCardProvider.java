@@ -24,56 +24,46 @@ import androidx.databinding.DataBindingUtil;
  * @author darryrzhoong
  * @since 2020-02-15
  */
-public class VideoCardProvider extends BaseItemProvider<BaseCustomViewModel>
-{
+public class VideoCardProvider extends BaseItemProvider<BaseCustomViewModel> {
     @Override
-    public int getItemViewType()
-    {
+    public int getItemViewType() {
         return IDisCoverItemType.VIDEO_CARD_VIEW;
     }
-    
+
     @Override
-    public int getLayoutId()
-    {
+    public int getLayoutId() {
         return R.layout.home_item_video_card_view;
     }
-    
+
     @Override
-    public void onViewHolderCreated(@NotNull BaseViewHolder viewHolder,
-        int viewType)
-    {
+    public void onViewHolderCreated(@NotNull BaseViewHolder viewHolder, int viewType) {
         DataBindingUtil.bind(viewHolder.itemView);
     }
-    
+
     @Override
     public void convert(@NotNull BaseViewHolder baseViewHolder,
-        @Nullable BaseCustomViewModel baseCustomViewModel)
-    {
-        if (baseCustomViewModel == null)
-        {
+                        @Nullable BaseCustomViewModel baseCustomViewModel) {
+        HomeItemVideoCardViewBinding binding =
+                baseCustomViewModel != null ? baseViewHolder.getBinding() : null;
+        if (binding == null) {
             return;
         }
-        HomeItemVideoCardViewBinding binding = baseViewHolder.getBinding();
-        if (binding != null)
-        {
-            VideoCardViewModel cardViewModel =
-                (VideoCardViewModel)baseCustomViewModel;
-            binding.ivVideoCover.setOnClickListener(v -> {
-                
-                VideoHeaderBean headerBean = new VideoHeaderBean(
+        VideoCardViewModel cardViewModel =
+                (VideoCardViewModel) baseCustomViewModel;
+        binding.ivVideoCover.setOnClickListener(v -> {
+            VideoHeaderBean headerBean = new VideoHeaderBean(
                     cardViewModel.title, cardViewModel.description,
                     cardViewModel.video_description,
                     cardViewModel.collectionCount, cardViewModel.shareCount,
                     cardViewModel.authorUrl, cardViewModel.nickName,
                     cardViewModel.userDescription, cardViewModel.playerUrl,
                     cardViewModel.blurredUrl, cardViewModel.videoId);
-                ARouter.getInstance()
+            ARouter.getInstance()
                     .build(RouterActivityPath.Video.PAGER_VIDEO)
                     .withParcelable("videoInfo", headerBean)
                     .navigation();
-            });
-            binding.setViewModel(cardViewModel);
-            binding.executePendingBindings();
-        }
+        });
+        binding.setViewModel(cardViewModel);
+        binding.executePendingBindings();
     }
 }

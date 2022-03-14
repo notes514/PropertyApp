@@ -24,7 +24,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="@drawable/common_tools_iv_bg" />
+            tools:background="@drawable/common_tools_iv_bg"
+            tools:ignore="ContentDescription" />
         
     </androidx.constraintlayout.widget.ConstraintLayout>
     

@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.guet.base.model.BaseModel;
 import com.guet.base.utils.GsonUtils;
 import com.guet.common.contract.BaseCustomViewModel;
@@ -38,8 +39,7 @@ import io.reactivex.disposables.Disposable;
  * @since 2020-02-15
  */
 public class DisCoverModel<T> extends BaseModel<T> {
-    public static final String DEFAULT_URL =
-            "http://baobab.kaiyanapp.com/api/v7/index/tab/discovery?udid=fa53872206ed42e3857755c2756ab683fc22d64a&vc=591&vn=6.2.1&size=720X1280&deviceModel=Che1-CL20&first_channel=eyepetizer_zhihuiyun_market&last_channel=eyepetizer_zhihuiyun_market&system_version_code=19";
+    public static final String DEFAULT_URL = "http://baobab.kaiyanapp.com/api/v7/index/tab/discovery";
     private Disposable disposable;
 
     @Override
@@ -126,10 +126,8 @@ public class DisCoverModel<T> extends BaseModel<T> {
     private void paresVideoCard(List<BaseCustomViewModel> viewModels,
                                 VideoSmallCardBean videoSmallCardBean) {
         VideoCardViewModel videoCardViewModel = new VideoCardViewModel();
-        videoCardViewModel.coverUrl =
-                videoSmallCardBean.getData().getCover().getDetail();
-        videoCardViewModel.videoTime =
-                videoSmallCardBean.getData().getDuration();
+        videoCardViewModel.coverUrl = videoSmallCardBean.getData().getCover().getDetail();
+        videoCardViewModel.videoTime = videoSmallCardBean.getData().getDuration();
         videoCardViewModel.title = videoSmallCardBean.getData().getTitle();
         videoCardViewModel.description =
                 videoSmallCardBean.getData().getAuthor().getName() + " / # "

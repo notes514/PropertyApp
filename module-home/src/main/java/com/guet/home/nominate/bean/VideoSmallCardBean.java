@@ -13,16 +13,6 @@ import java.util.List;
  * @since 2020-02-11
  */
 public class VideoSmallCardBean implements Serializable {
-
-
-    /**
-     * type : videoSmallCard
-     * data : {"dataType":"VideoBeanForClient","id":14436,"title":"特条丨萌吐奶！从蛋壳里出来的喵星人","description":"泰国 Me-O 猫粮脑洞大开的让小奶猫从蛋壳里出来，以表现小猫的脆弱，需要特别的照顾，所以推出了波斯猫和各种小喵的专用猫粮~From meothailand","library":"DAILY","tags":[{"id":775,"name":"亚洲广告","actionUrl":"eyepetizer://tag/775/?title=%E4%BA%9A%E6%B4%B2%E5%B9%BF%E5%91%8A","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/93b9a985fa1c4bac0c032580365975c9.png?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/93b9a985fa1c4bac0c032580365975c9.png?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":751,"name":"超萌动物在哪里","actionUrl":"eyepetizer://tag/751/?title=%E8%B6%85%E8%90%8C%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/9b3846ea47ba8916b19e4cf2b9c17e78.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/9b3846ea47ba8916b19e4cf2b9c17e78.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":498,"name":"萌","actionUrl":"eyepetizer://tag/498/?title=%E8%90%8C","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/d716039f4a93c75bb975a9aeed071342.jpeg?imageMogr2/quality/100","headerImage":"http://img.kaiyanapp.com/efb2d3f26118e06bb88be3976cfb5831.jpeg?imageMogr2/quality/100","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":386,"name":"泰国广告","actionUrl":"eyepetizer://tag/386/?title=%E6%B3%B0%E5%9B%BD%E5%B9%BF%E5%91%8A","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/a767e2452b92da96f3d8615336f52aa7.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/8a3c7bbd3a39a108bc9e52d8aae4844b.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":538,"name":"喵星人","actionUrl":"eyepetizer://tag/538/?title=%E5%96%B5%E6%98%9F%E4%BA%BA","adTrack":null,"desc":"","bgPicture":"http://img.kaiyanapp.com/e2b82549f60051d85ffb552d2efe8c07.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/e2b82549f60051d85ffb552d2efe8c07.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":32,"name":"萌宠","actionUrl":"eyepetizer://tag/32/?title=%E8%90%8C%E5%AE%A0","adTrack":null,"desc":"来自汪星、喵星、蠢萌星的你","bgPicture":"http://img.kaiyanapp.com/bd689302a738a5d2156243a2b74f15d1.png?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/1ea685a0d2757701741a4a9be0f7e269.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":16,"name":"广告","actionUrl":"eyepetizer://tag/16/?title=%E5%B9%BF%E5%91%8A","adTrack":null,"desc":"为广告人的精彩创意点赞","bgPicture":"http://img.kaiyanapp.com/e41e74fe73882b552de00d95d56748d2.jpeg?imageMogr2/quality/60","headerImage":"http://img.kaiyanapp.com/3054658dbd559ac42c4c282e9cab7a32.jpeg?imageMogr2/quality/100","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0}],"consumption":{"collectionCount":5271,"shareCount":12788,"replyCount":89,"realCollectionCount":8},"resourceType":"video","slogan":null,"provider":{"name":"YouTube","alias":"youtube","icon":"http://img.kaiyanapp.com/fa20228bc5b921e837156923a58713f6.png"},"category":"萌宠","author":{"id":2169,"icon":"http://img.kaiyanapp.com/ac6971c1b9fc942c7547d25fc6c60ad2.jpeg","name":"开眼萌宠精选","description":"来自汪星、喵星、蠢萌星的你","link":"","latestReleaseTime":1578618016000,"videoNum":155,"adTrack":null,"follow":{"itemType":"author","itemId":2169,"followed":false},"shield":{"itemType":"author","itemId":2169,"shielded":false},"approvedNotReadyVideoCount":0,"ifPgc":true,"recSort":0,"expert":false},"cover":{"feed":"http://img.kaiyanapp.com/82c2122f6773c0d298eeb0112948cae2.jpeg?imageMogr2/quality/60/format/jpg","detail":"http://img.kaiyanapp.com/82c2122f6773c0d298eeb0112948cae2.jpeg?imageMogr2/quality/60/format/jpg","blurred":"http://img.kaiyanapp.com/d33fb8daa3f35dbdf267031a2f78ed0f.jpeg?imageMogr2/quality/60/format/jpg","sharing":null,"homepage":null},"playUrl":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss","thumbPlayUrl":null,"duration":46,"webUrl":{"raw":"http://www.eyepetizer.net/detail.html?vid=14436","forWeibo":"http://wandou.im/3m22ft"},"releaseTime":1487384339000,"playInfo":[{"height":480,"width":854,"urlList":[{"name":"aliyun","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=normal&source=aliyun&playUrlType=url_oss","size":2466415},{"name":"ucloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=normal&source=ucloud&playUrlType=url_oss","size":2466415}],"name":"标清","type":"normal","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=normal&source=aliyun&playUrlType=url_oss"},{"height":720,"width":1280,"urlList":[{"name":"aliyun","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=high&source=aliyun&playUrlType=url_oss","size":2921549},{"name":"ucloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=high&source=ucloud&playUrlType=url_oss","size":2921549}],"name":"高清","type":"high","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=high&source=aliyun&playUrlType=url_oss"}],"campaign":null,"waterMarks":null,"ad":false,"adTrack":[],"type":"NORMAL","titlePgc":null,"descriptionPgc":null,"remark":null,"ifLimitVideo":false,"searchWeight":0,"brandWebsiteInfo":null,"idx":0,"shareAdTrack":null,"favoriteAdTrack":null,"webAdTrack":null,"date":1487384339000,"promotion":null,"label":null,"labelList":[],"descriptionEditor":"泰国 Me-O 猫粮脑洞大开的让小奶猫从蛋壳里出来，以表现小猫的脆弱，需要特别的照顾，所以推出了波斯猫和各种小喵的专用猫粮~From meothailand","collected":false,"reallyCollected":false,"played":false,"subtitles":[],"lastViewTime":null,"playlists":null,"src":7}
-     * tag : null
-     * id : 0
-     * adIndex : -1
-     */
-
     private String type;
     private DataBean data;
     private Object tag;
@@ -70,55 +60,6 @@ public class VideoSmallCardBean implements Serializable {
     }
 
     public static class DataBean {
-        /**
-         * dataType : VideoBeanForClient
-         * id : 14436
-         * title : 特条丨萌吐奶！从蛋壳里出来的喵星人
-         * description : 泰国 Me-O 猫粮脑洞大开的让小奶猫从蛋壳里出来，以表现小猫的脆弱，需要特别的照顾，所以推出了波斯猫和各种小喵的专用猫粮~From meothailand
-         * library : DAILY
-         * tags : [{"id":775,"name":"亚洲广告","actionUrl":"eyepetizer://tag/775/?title=%E4%BA%9A%E6%B4%B2%E5%B9%BF%E5%91%8A","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/93b9a985fa1c4bac0c032580365975c9.png?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/93b9a985fa1c4bac0c032580365975c9.png?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":751,"name":"超萌动物在哪里","actionUrl":"eyepetizer://tag/751/?title=%E8%B6%85%E8%90%8C%E5%8A%A8%E7%89%A9%E5%9C%A8%E5%93%AA%E9%87%8C","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/9b3846ea47ba8916b19e4cf2b9c17e78.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/9b3846ea47ba8916b19e4cf2b9c17e78.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":498,"name":"萌","actionUrl":"eyepetizer://tag/498/?title=%E8%90%8C","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/d716039f4a93c75bb975a9aeed071342.jpeg?imageMogr2/quality/100","headerImage":"http://img.kaiyanapp.com/efb2d3f26118e06bb88be3976cfb5831.jpeg?imageMogr2/quality/100","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":386,"name":"泰国广告","actionUrl":"eyepetizer://tag/386/?title=%E6%B3%B0%E5%9B%BD%E5%B9%BF%E5%91%8A","adTrack":null,"desc":null,"bgPicture":"http://img.kaiyanapp.com/a767e2452b92da96f3d8615336f52aa7.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/8a3c7bbd3a39a108bc9e52d8aae4844b.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":538,"name":"喵星人","actionUrl":"eyepetizer://tag/538/?title=%E5%96%B5%E6%98%9F%E4%BA%BA","adTrack":null,"desc":"","bgPicture":"http://img.kaiyanapp.com/e2b82549f60051d85ffb552d2efe8c07.jpeg?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/e2b82549f60051d85ffb552d2efe8c07.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":32,"name":"萌宠","actionUrl":"eyepetizer://tag/32/?title=%E8%90%8C%E5%AE%A0","adTrack":null,"desc":"来自汪星、喵星、蠢萌星的你","bgPicture":"http://img.kaiyanapp.com/bd689302a738a5d2156243a2b74f15d1.png?imageMogr2/quality/60/format/jpg","headerImage":"http://img.kaiyanapp.com/1ea685a0d2757701741a4a9be0f7e269.jpeg?imageMogr2/quality/60/format/jpg","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0},{"id":16,"name":"广告","actionUrl":"eyepetizer://tag/16/?title=%E5%B9%BF%E5%91%8A","adTrack":null,"desc":"为广告人的精彩创意点赞","bgPicture":"http://img.kaiyanapp.com/e41e74fe73882b552de00d95d56748d2.jpeg?imageMogr2/quality/60","headerImage":"http://img.kaiyanapp.com/3054658dbd559ac42c4c282e9cab7a32.jpeg?imageMogr2/quality/100","tagRecType":"NORMAL","childTagList":null,"childTagIdList":null,"haveReward":false,"ifNewest":false,"newestEndTime":null,"communityIndex":0}]
-         * consumption : {"collectionCount":5271,"shareCount":12788,"replyCount":89,"realCollectionCount":8}
-         * resourceType : video
-         * slogan : null
-         * provider : {"name":"YouTube","alias":"youtube","icon":"http://img.kaiyanapp.com/fa20228bc5b921e837156923a58713f6.png"}
-         * category : 萌宠
-         * author : {"id":2169,"icon":"http://img.kaiyanapp.com/ac6971c1b9fc942c7547d25fc6c60ad2.jpeg","name":"开眼萌宠精选","description":"来自汪星、喵星、蠢萌星的你","link":"","latestReleaseTime":1578618016000,"videoNum":155,"adTrack":null,"follow":{"itemType":"author","itemId":2169,"followed":false},"shield":{"itemType":"author","itemId":2169,"shielded":false},"approvedNotReadyVideoCount":0,"ifPgc":true,"recSort":0,"expert":false}
-         * cover : {"feed":"http://img.kaiyanapp.com/82c2122f6773c0d298eeb0112948cae2.jpeg?imageMogr2/quality/60/format/jpg","detail":"http://img.kaiyanapp.com/82c2122f6773c0d298eeb0112948cae2.jpeg?imageMogr2/quality/60/format/jpg","blurred":"http://img.kaiyanapp.com/d33fb8daa3f35dbdf267031a2f78ed0f.jpeg?imageMogr2/quality/60/format/jpg","sharing":null,"homepage":null}
-         * playUrl : http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss
-         * thumbPlayUrl : null
-         * duration : 46
-         * webUrl : {"raw":"http://www.eyepetizer.net/detail.html?vid=14436","forWeibo":"http://wandou.im/3m22ft"}
-         * releaseTime : 1487384339000
-         * playInfo : [{"height":480,"width":854,"urlList":[{"name":"aliyun","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=normal&source=aliyun&playUrlType=url_oss","size":2466415},{"name":"ucloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=normal&source=ucloud&playUrlType=url_oss","size":2466415}],"name":"标清","type":"normal","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=normal&source=aliyun&playUrlType=url_oss"},{"height":720,"width":1280,"urlList":[{"name":"aliyun","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=high&source=aliyun&playUrlType=url_oss","size":2921549},{"name":"ucloud","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=high&source=ucloud&playUrlType=url_oss","size":2921549}],"name":"高清","type":"high","url":"http://baobab.kaiyanapp.com/api/v1/playUrl?vid=14436&resourceType=video&editionType=high&source=aliyun&playUrlType=url_oss"}]
-         * campaign : null
-         * waterMarks : null
-         * ad : false
-         * adTrack : []
-         * type : NORMAL
-         * titlePgc : null
-         * descriptionPgc : null
-         * remark : null
-         * ifLimitVideo : false
-         * searchWeight : 0
-         * brandWebsiteInfo : null
-         * idx : 0
-         * shareAdTrack : null
-         * favoriteAdTrack : null
-         * webAdTrack : null
-         * date : 1487384339000
-         * promotion : null
-         * label : null
-         * labelList : []
-         * descriptionEditor : 泰国 Me-O 猫粮脑洞大开的让小奶猫从蛋壳里出来，以表现小猫的脆弱，需要特别的照顾，所以推出了波斯猫和各种小喵的专用猫粮~From meothailand
-         * collected : false
-         * reallyCollected : false
-         * played : false
-         * subtitles : []
-         * lastViewTime : null
-         * playlists : null
-         * src : 7
-         */
-
         private String dataType;
         private int id;
         private String title;

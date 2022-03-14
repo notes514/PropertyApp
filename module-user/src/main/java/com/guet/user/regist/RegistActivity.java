@@ -39,6 +39,7 @@ public class RegistActivity extends MvvmBaseActivity<UserActivityRegistBinding, 
 
     /** 初始化数据 */
     private void initData() {
+        viewDataBinding.included.titleBar.setTitle(R.string.regist);
     }
 
     /** 初始化view */

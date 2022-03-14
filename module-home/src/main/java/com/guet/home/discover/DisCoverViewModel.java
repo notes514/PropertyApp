@@ -54,6 +54,5 @@ public class DisCoverViewModel extends MvvmBaseViewModel<IDisCoverView, DisCover
         if (model != null) {
             model.unRegister(this);
         }
-
     }
 }

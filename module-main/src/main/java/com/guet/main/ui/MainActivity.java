@@ -86,7 +86,7 @@ public class MainActivity extends MvvmBaseActivity<MainActivityMainBinding, IMvv
                 .enableAnimateLayoutChanges()
                 .build();
         mNavigationController.setHasMessage(2, true);
-        mNavigationController.setMessageNumber(3, 6);
+//        mNavigationController.setMessageNumber(3, 6);
         adapter = new MainPageAdapter(getSupportFragmentManager(),
                 FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT);
         viewDataBinding.cvContentView.setOffscreenPageLimit(1);

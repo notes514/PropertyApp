@@ -22,7 +22,6 @@ import com.guet.home.discover.bean.viewmodel.TopBannerViewModel;
 import com.guet.home.nominate.bean.viewmodel.TitleViewModel;
 import com.guet.home.nominate.bean.viewmodel.VideoCardViewModel;
 
-
 /**
  * 应用模块:
  * <p>
@@ -48,8 +47,7 @@ public class ProviderDisCoverAdapter extends BaseProviderMultiAdapter<BaseCustom
     }
 
     @Override
-    protected int getItemType(@NotNull List<? extends BaseCustomViewModel> data,
-                              int position) {
+    protected int getItemType(@NotNull List<? extends BaseCustomViewModel> data, int position) {
         if (data.get(position) instanceof TopBannerViewModel) {
             return IDisCoverItemType.TOP_BANNER_VIEW;
         } else if (data.get(position) instanceof CategoryCardBean) {
@@ -67,5 +65,4 @@ public class ProviderDisCoverAdapter extends BaseProviderMultiAdapter<BaseCustom
         }
         return -1;
     }
-
 }

@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="128dp"
-            android:hint="@string/input_username"
+            android:hint="@string/input_register_username"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
             android:textSize="12sp"

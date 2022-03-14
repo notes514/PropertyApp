@@ -27,21 +27,22 @@
 
        <com.guet.common.views.CommonCustomTextView
            android:id="@+id/tv_label"
-           android:textSize="13sp"
            android:layout_width="0dp"
            android:layout_height="0dp"
-           android:maxLines="2"
-           android:gravity="center"
-           android:ellipsize="end"
            android:background="@android:color/transparent"
+           android:ellipsize="end"
+           android:gravity="center"
+           android:maxLines="2"
+           android:text="@{viewModel.title}"
            android:textColor="@android:color/white"
+           android:textSize="13sp"
            app:layout_constraintBottom_toBottomOf="@id/iv_category_bg"
            app:layout_constraintEnd_toEndOf="@+id/iv_category_bg"
+           app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="@id/iv_category_bg"
            app:layout_constraintTop_toTopOf="@+id/iv_category_bg"
-           tools:text="异地恋也可以很甜"
-           android:text="@{viewModel.title}"
-           />
+           app:layout_constraintVertical_bias="0.0"
+           tools:text="异地恋也可以很甜" />
 
    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -29,6 +29,7 @@ import com.bumptech.glide.request.transition.Transition;
  * @since 2020-01-28
  */
 public class CommonBindingAdapters {
+
     @BindingAdapter("imageUrl")
     public static void loadImage(ImageView imageView, String url) {
         if (!TextUtils.isEmpty(url)) {

@@ -12,29 +12,15 @@ import java.io.Serializable;
  * @since 2020-02-15
  */
 public class SquareCard implements Serializable {
+    private String title;
+    private String image;
+    private String actionUrl;
 
     public SquareCard(String title, String image, String actionUrl) {
         this.title = title;
         this.image = image;
         this.actionUrl = actionUrl;
     }
-
-    /**
-     * dataType : SquareCard
-     * id : 14
-     * title : #广告
-     * image : http://img.kaiyanapp.com/57472e13fd2b6c9655c8a600597daf4d.png?imageMogr2/quality/60/format/jpg
-     * actionUrl : eyepetizer://tag/16/?title=%E5%B9%BF%E5%91%8A
-     * shade : true
-     * adTrack : null
-     * description : null
-     */
-
-
-
-    private String title;
-    private String image;
-    private String actionUrl;
 
     public String getTitle() {
         return title;

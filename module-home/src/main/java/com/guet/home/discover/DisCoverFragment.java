@@ -16,23 +16,15 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
- * 应用模块:
- * <p>
- * 类描述: 发现
- * <p>
- *
- * @author darryrzhoong
- * @since 2020-02-09
+ * 发现页
  */
-public class DisCoverFragment
-        extends MvvmLazyFragment<HomeFragmentFindMoreBinding, DisCoverViewModel>
+public class DisCoverFragment extends MvvmLazyFragment<HomeFragmentFindMoreBinding, DisCoverViewModel>
         implements IDisCoverView {
 
     private ProviderDisCoverAdapter adapter;
 
     public static DisCoverFragment newInstance() {
-        DisCoverFragment fragment = new DisCoverFragment();
-        return fragment;
+        return new DisCoverFragment();
     }
 
     @Override
@@ -58,10 +50,8 @@ public class DisCoverFragment
     }
 
     private View getFooterView() {
-        return LayoutInflater.from(getContext())
-                .inflate(R.layout.home_item_foote_view,
-                        viewDataBinding.rvDiscoverView,
-                        false);
+        return LayoutInflater.from(getContext()).inflate(R.layout.home_item_foote_view,
+                viewDataBinding.rvDiscoverView, false);
     }
 
     @Override
@@ -86,11 +76,7 @@ public class DisCoverFragment
 
     @Override
     public void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels, boolean isEmpty) {
-        if (isEmpty) {
-            viewDataBinding.refreshLayout.finishRefresh(false);
-        } else {
-            viewDataBinding.refreshLayout.finishRefresh(true);
-        }
+        viewDataBinding.refreshLayout.finishRefresh(!isEmpty);
         adapter.setNewData(viewModels);
         showContent();
     }

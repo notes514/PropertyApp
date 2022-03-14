@@ -23,22 +23,29 @@ public class RepairModel<T> extends BasePagingModel<T> {
     protected void load() {
         ArrayList<BaseCustomViewModel> viewModels = new ArrayList<>();
         RepairCustomViewModel repairBean = new RepairCustomViewModel();
-        for (int i = 0; i < 10; i++) {
-            if (position == 0) {
-                repairBean.repairType = "今天晚上一起开黑啊 -> 待受理 " + i;
-                repairBean.repairContent = "来一起打王者啊 -> 待受理" + i;
-                repairBean.gmtCreate = "2022年1月9日";
-            } else if (position == 1) {
-                repairBean.repairType = "今天晚上一起开黑啊 -> 受理中 " + i;
-                repairBean.repairContent = "来一起打王者啊 -> 受理中 " + i;
-                repairBean.gmtCreate = "2022年1月9日";
-            } else {
-                repairBean.repairType = "今天晚上一起开黑啊 -> 已受理 " + i;
-                repairBean.repairContent = "来一起打王者啊 -> 已受理 " + i;
-                repairBean.gmtCreate = "2022年1月9日";
-            }
-            viewModels.add(repairBean);
-        }
+        repairBean.repairType = "公共区域";
+        repairBean.repairContent = "小区9栋3楼楼道漏水";
+        repairBean.gmtCreate = "2021-12-30 21:39:03";
+
+        RepairCustomViewModel repairBean1 = new RepairCustomViewModel();
+        repairBean1.repairType = "公共区域";
+        repairBean1.repairContent = "小区东侧公路有挖坑";
+        repairBean1.gmtCreate = "2021-12-30 21:41:56";
+
+        RepairCustomViewModel repairBean2 = new RepairCustomViewModel();
+        repairBean2.repairType = "卫生间";
+        repairBean2.repairContent = "小区6-202房为卫生间洗衣机损坏";
+        repairBean2.gmtCreate = "2021-12-30 21:45:36";
+
+        RepairCustomViewModel repairBean3 = new RepairCustomViewModel();
+        repairBean3.repairType = "公共区域";
+        repairBean3.repairContent = "小区9栋3楼楼道漏水";
+        repairBean3.gmtCreate = "2021-12-30 21:39:03";
+
+        viewModels.add(repairBean);
+        viewModels.add(repairBean1);
+        viewModels.add(repairBean2);
+        viewModels.add(repairBean3);
         loadSuccess((T) viewModels, viewModels.size() == 0, isRefresh);
     }
 

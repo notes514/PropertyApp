@@ -310,9 +310,6 @@ public abstract class MvvmLazyFragment<V extends ViewDataBinding, VM extends IMv
         Log.d(mFragmentTag, "onFragmentFirstVisible  第一次可见");
     }
 
-    ;
-
-
     private boolean isShowedContent = false;
 
     @Override

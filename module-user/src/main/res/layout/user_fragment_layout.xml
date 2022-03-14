@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="点击登录"
+                android:text="嘻嘻"
                 android:textColor="@color/user_color_login_bg"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
                 app:layout_constraintStart_toEndOf="@+id/iv_avatar" />

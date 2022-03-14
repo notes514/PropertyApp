@@ -14,15 +14,12 @@ import com.guet.common.contract.BaseCustomViewModel;
  * @author darryrzhoong
  * @since 2020-02-11
  */
-public interface INominateView extends IBasePagingView
-{
-    
+public interface INominateView extends IBasePagingView {
+
     /**
      * 数据加载完成
-     * 
+     *
      * @param viewModels data
      */
-    void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels,
-                          boolean isFirstPage);
-    
+    void onDataLoadFinish(ArrayList<BaseCustomViewModel> viewModels, boolean isFirstPage);
 }

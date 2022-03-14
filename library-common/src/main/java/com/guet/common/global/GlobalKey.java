@@ -14,4 +14,12 @@ public class GlobalKey {
      * 用户信息
      */
     public static final String USER_INFO = "user_info";
+    /**
+     * 页码
+     */
+    public static final String PAGE_NUM = "pageNum";
+    /**
+     * 每页显示数量
+     */
+    public static final String PAGE_ROW = "pageRow";
 }

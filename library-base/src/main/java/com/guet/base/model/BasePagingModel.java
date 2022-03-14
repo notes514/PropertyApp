@@ -39,17 +39,13 @@ public abstract class BasePagingModel<T> extends SuperBaseModel<T> {
             mUiHandler.postDelayed(() -> {
                 for (WeakReference<IBaseModelListener> weakListener : mWeakReferenceDeque) {
                     if (weakListener.get() instanceof IPagingModelListener) {
-                        IPagingModelListener listenerItem =
-                                (IPagingModelListener) weakListener.get();
+                        IPagingModelListener listenerItem = (IPagingModelListener) weakListener.get();
                         if (null != listenerItem) {
-                            listenerItem.onLoadFinish(BasePagingModel.this,
-                                    data,
-                                    isEmpty, isFirstPage);
+                            listenerItem.onLoadFinish(BasePagingModel.this, data, isEmpty, isFirstPage);
                         }
                     }
                 }
-//                if (null != getCachekey() && isFirstPage)
-//                {
+//                if (null != getCachekey() && isFirstPage) {
 //                    saveDataToLocal(data);
 //                }
             }, 0);
@@ -57,20 +53,18 @@ public abstract class BasePagingModel<T> extends SuperBaseModel<T> {
     }
 
     /**
-     * @param prompt      msg
-     * @param isFirstPage 是否是第一页
+     * 加载失败
+     *
+     * @param prompt msg
      */
-    public void loadFail(String prompt, boolean isFirstPage) {
+    public void loadFail(String prompt) {
         synchronized (this) {
             mUiHandler.postDelayed(() -> {
                 for (WeakReference<IBaseModelListener> weakListener : mWeakReferenceDeque) {
                     if (weakListener.get() instanceof IPagingModelListener) {
-                        IPagingModelListener listenerItem =
-                                (IPagingModelListener) weakListener.get();
+                        IPagingModelListener listenerItem = (IPagingModelListener) weakListener.get();
                         if (null != listenerItem) {
-                            listenerItem.onLoadFail(BasePagingModel.this,
-                                    prompt,
-                                    isRefresh);
+                            listenerItem.onLoadFail(BasePagingModel.this, prompt, isRefresh);
                         }
                     }
                 }

@@ -38,7 +38,7 @@ public class AttentionModel<T> extends BasePagingModel<T> {
                 .execute(new SimpleCallBack<String>() {
                     @Override
                     public void onError(ApiException e) {
-                        loadFail(e.getMessage(), isRefresh);
+                        loadFail(e.getMessage());
                     }
 
                     @Override
@@ -55,7 +55,7 @@ public class AttentionModel<T> extends BasePagingModel<T> {
                 .execute(new SimpleCallBack<String>() {
                     @Override
                     public void onError(ApiException e) {
-                        loadFail(e.getMessage(), isRefresh);
+                        loadFail(e.getMessage());
                     }
 
                     @Override

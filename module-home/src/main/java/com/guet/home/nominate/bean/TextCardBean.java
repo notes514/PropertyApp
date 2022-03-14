@@ -13,16 +13,6 @@ import java.io.Serializable;
  * @since 2020-02-11
  */
 public class TextCardBean implements Serializable {
-
-
-    /**
-     * type : textCard
-     * data : {"dataType":"TextCard","id":0,"type":"header5","text":"本周排行","subTitle":null,"actionUrl":"eyepetizer://ranklist/","adTrack":null,"follow":null}
-     * tag : null
-     * id : 0
-     * adIndex : -1
-     */
-
     private String type;
     private DataBean data;
     private Object tag;

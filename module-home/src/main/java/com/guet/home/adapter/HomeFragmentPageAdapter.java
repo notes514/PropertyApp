@@ -18,48 +18,42 @@ import androidx.fragment.app.FragmentPagerAdapter;
  * @author darryrzhoong
  * @since 2020-02-09
  */
-public class HomeFragmentPageAdapter extends FragmentPagerAdapter
-{
-    
-    private String[] tables = {"发现", "推荐", "日报"};
-    private List<Fragment> fragments ;
+public class HomeFragmentPageAdapter extends FragmentPagerAdapter {
+    private final String[] tables = {"发现", "推荐", "日报"};
+    private List<Fragment> fragments;
 
     public HomeFragmentPageAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 
-
-
-    public void setData(List<Fragment> fragment){
-        if (fragments == null){
+    public void setData(List<Fragment> fragment) {
+        if (fragments == null) {
             fragments = new ArrayList<>();
         }
         fragments.addAll(fragment);
         notifyDataSetChanged();
     }
+
     @NonNull
     @Override
-    public Fragment getItem(int position)
-    {
-        if (fragments != null && fragments.size() >0){
-            return fragments.get(position);
+    public Fragment getItem(int position) {
+        if (fragments == null || fragments.size() == 0) {
+            return null;
         }
-        return null;
+        return fragments.get(position);
     }
-    
+
     @Override
-    public int getCount()
-    {
-       if (fragments != null && fragments.size() >0){
-           return fragments.size();
-       }
-       return 0;
+    public int getCount() {
+        if (fragments != null && fragments.size() > 0) {
+            return fragments.size();
+        }
+        return 0;
     }
-    
+
     @Nullable
     @Override
-    public CharSequence getPageTitle(int position)
-    {
+    public CharSequence getPageTitle(int position) {
         return tables[position];
     }
 }

@@ -1,6 +1,5 @@
 package com.guet.community.attention.bean;
 
-
 import com.guet.common.contract.BaseCustomViewModel;
 
 /**

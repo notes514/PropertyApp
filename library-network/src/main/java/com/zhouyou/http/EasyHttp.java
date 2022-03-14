@@ -16,6 +16,7 @@
 
 package com.zhouyou.http;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.text.TextUtils;
@@ -96,9 +97,9 @@ public final class EasyHttp {
     private int mRetryIncreaseDelay = DEFAULT_RETRY_INCREASEDELAY;    //叠加延迟
     private HttpHeaders mCommonHeaders;                               //全局公共请求头
     private HttpParams mCommonParams;                                 //全局公共请求参数
-    private OkHttpClient.Builder okHttpClientBuilder;                 //okhttp请求的客户端
-    private Retrofit.Builder retrofitBuilder;                         //Retrofit请求Builder
-    private RxCache.Builder rxCacheBuilder;                           //RxCache请求的Builder
+    private final OkHttpClient.Builder okHttpClientBuilder;                 //okhttp请求的客户端
+    private final Retrofit.Builder retrofitBuilder;                         //Retrofit请求Builder
+    private final RxCache.Builder rxCacheBuilder;                           //RxCache请求的Builder
     private CookieManger cookieJar;                                   //Cookie管理
     private volatile static EasyHttp singleton = null;
 
@@ -193,8 +194,8 @@ public final class EasyHttp {
      * 并不是框架错误,如果不想每次打印,这里可以关闭异常显示
      */
     public EasyHttp debug(String tag, boolean isPrintException) {
-        String tempTag = TextUtils.isEmpty(tag)?"RxEasyHttp_":tag;
-        if(isPrintException){
+        String tempTag = TextUtils.isEmpty(tag) ? "RxEasyHttp_" : tag;
+        if (isPrintException) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(tempTag, isPrintException);
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             okHttpClientBuilder.addInterceptor(loggingInterceptor);
@@ -213,6 +214,7 @@ public final class EasyHttp {
      * 当验证 URL 主机名使用的默认规则失败时使用这些回调。如果主机名是可接受的，则返回 true
      */
     public class DefaultHostnameVerifier implements HostnameVerifier {
+        @SuppressLint("BadHostnameVerifier")
         @Override
         public boolean verify(String hostname, SSLSession session) {
             return true;
@@ -625,7 +627,7 @@ public final class EasyHttp {
         }, new Consumer<Throwable>() {
             @Override
             public void accept(@NonNull Throwable throwable) throws Exception {
-                    HttpLog.i("removeCache err!!!");
+                HttpLog.i("removeCache err!!!");
             }
         });
     }

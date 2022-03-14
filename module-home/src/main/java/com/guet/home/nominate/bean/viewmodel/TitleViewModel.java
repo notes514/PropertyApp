@@ -12,9 +12,8 @@ import com.guet.common.contract.BaseCustomViewModel;
  * @author darryrzhoong
  * @since 2020-02-12
  */
-public class TitleViewModel extends BaseCustomViewModel
-{
+public class TitleViewModel extends BaseCustomViewModel {
     public String title;
-    
+
     public String actionTitle;
 }

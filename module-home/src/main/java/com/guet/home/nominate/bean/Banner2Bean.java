@@ -13,15 +13,6 @@ import java.util.List;
  * @since 2020-02-11
  */
 public class Banner2Bean implements Serializable {
-
-    /**
-     * type : banner2
-     * data : {"dataType":"Banner","id":1691,"title":"","description":"","image":"http://img.kaiyanapp.com/1eaf8827688ea3b910b7b6b6cb192a5f.png?imageMogr2/quality/60/format/jpg","actionUrl":"eyepetizer://webview/?title=%E5%BC%80%E7%9C%BC%E4%B8%80%E5%8F%B7%E6%94%BE%E6%98%A0%E5%8E%85&url=https%3A%2F%2Fwww.kaiyanapp.com%2Fnew_article.html%3Fnid%3D1516%26shareable%3Dtrue%26type%3DarticleTopic%26cid%3D1691","adTrack":[],"shade":false,"label":{"text":"","card":"","detail":null},"labelList":[],"header":{"id":0,"title":null,"font":null,"subTitle":null,"subTitleFont":null,"textAlign":"left","cover":null,"label":null,"actionUrl":null,"labelList":null,"rightText":null,"icon":null,"description":null},"autoPlay":false}
-     * tag : null
-     * id : 0
-     * adIndex : -1
-     */
-
     private String type;
     private DataBean data;
     private Object tag;

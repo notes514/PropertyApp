@@ -10,8 +10,9 @@ import com.guet.common.router.RouterFragmentPath;
 import com.guet.community.adapter.CommunityFragmentPageAdapter;
 import com.guet.community.attention.AttentionFragment;
 import com.guet.community.databinding.CommunityFragmentCommunityBinding;
-import com.guet.community.recommend.RecommendFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.guet.community.trade.TradeFragment;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 
@@ -67,12 +68,10 @@ public class CommunityFragment extends MvvmLazyFragment<CommunityFragmentCommuni
 
     private void initData() {
         List<Fragment> data = new ArrayList<>();
-        data.add(RecommendFragment.newInstance());
         data.add(AttentionFragment.newInstance());
+        data.add(TradeFragment.newInstance());
         adapter.setData(data);
     }
-
-
 
     @Override
     public int getBindingVariable() {
