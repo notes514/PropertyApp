@@ -49,7 +49,7 @@
                 android:lines="1"
                 android:maxLength="16"
                 android:text="@{viewModel.chargeName}"
-                android:textColor="@color/black"
+                android:textColor="@color/common_color_black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/item_todo_tag"
                 app:layout_constraintStart_toEndOf="@+id/item_todo_tag"

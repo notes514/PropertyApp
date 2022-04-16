@@ -1,6 +1,11 @@
 package com.guet.home.nominate.bean.viewmodel;
 
+import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.home.nominate.bean.NoticeBean;
 
 import java.time.LocalDateTime;
 
@@ -10,7 +15,8 @@ import java.time.LocalDateTime;
  * @author dhxstart
  * @date 2022/4/5 14:42
  */
-public class NoticeViewModel extends BaseCustomViewModel {
+@SuppressLint("ParcelCreator")
+public class NoticeViewModel extends BaseCustomViewModel implements Parcelable {
     /**
      * 通知ID
      */
@@ -41,23 +47,42 @@ public class NoticeViewModel extends BaseCustomViewModel {
      */
     public String imageUrl;
 
-    /**
-     * 逻辑删除:0-未删除（默认），1-已删除
-     */
-    public String deleted;
+    public NoticeViewModel() {
+    }
 
-    /**
-     * 乐观锁
-     */
-    public Integer version;
+    protected NoticeViewModel(Parcel parcel) {
+        this.id = parcel.readInt();
+        this.title = parcel.readString();
+        this.content = parcel.readString();
+        this.status = parcel.readString();
+        this.releaseTime = parcel.readString();
+        this.imageUrl = parcel.readString();
+    }
 
-    /**
-     * 创建时间
-     */
-    public String gmtCreate;
+    public static final Creator<NoticeViewModel> CREATOR = new Creator<NoticeViewModel>() {
+        @Override
+        public NoticeViewModel createFromParcel(Parcel source) {
+            return new NoticeViewModel(source);
+        }
 
-    /**
-     * 更新时间
-     */
-    public String gmtModified;
+        @Override
+        public NoticeViewModel[] newArray(int size) {
+            return new NoticeViewModel[0];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.title);
+        dest.writeString(this.content);
+        dest.writeString(this.status);
+        dest.writeString(this.releaseTime);
+        dest.writeString(this.imageUrl);
+    }
 }

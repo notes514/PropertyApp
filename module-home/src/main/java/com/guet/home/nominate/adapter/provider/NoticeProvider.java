@@ -1,18 +1,23 @@
 package com.guet.home.nominate.adapter.provider;
 
+import android.os.Parcelable;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.LogUtils;
 import com.chad.library.adapter.base.provider.BaseItemProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.guet.base.utils.ToastUtil;
 import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.common.router.RouterActivityPath;
 import com.guet.home.R;
 import com.guet.home.databinding.HomeItemNoticeViewBinding;
 import com.guet.home.databinding.HomeItemTitleLeftRightViewBinding;
+import com.guet.home.nominate.bean.NoticeBean;
 import com.guet.home.nominate.bean.viewmodel.NoticeViewModel;
 import com.guet.home.nominate.bean.viewmodel.TitleViewModel;
 
@@ -59,6 +64,20 @@ public class NoticeProvider extends BaseItemProvider<BaseCustomViewModel> {
     @Override
     public void onClick(@NonNull BaseViewHolder helper, @NonNull View view,
                         BaseCustomViewModel data, int position) {
-        ToastUtil.show(getContext(), "点击了第 " + (position + 1) + "条");
+        if (data == null) {
+            return;
+        }
+        NoticeViewModel noticeViewModel = (NoticeViewModel) data;
+//        NoticeBean noticeBean = new NoticeBean();
+//        noticeBean.setId(model.id);
+//        noticeBean.setTitle(model.title);
+//        noticeBean.setContent(model.content);
+//        noticeBean.setReleaseTime(model.releaseTime);
+//        noticeBean.setImageUrl(model.imageUrl);
+
+        ARouter.getInstance()
+                .build(RouterActivityPath.Home.PAGE_NOTICE)
+                .withParcelable("noticeViewModel", noticeViewModel)
+                .navigation();
     }
 }

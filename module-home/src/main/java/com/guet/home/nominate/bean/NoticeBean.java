@@ -1,10 +1,17 @@
 package com.guet.home.nominate.bean;
 
+import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.guet.common.contract.VideoHeaderBean;
+
 /**
  * @author dhxstart
  * @date 2022/4/5 16:01
  */
-public class NoticeBean {
+@SuppressLint("ParcelCreator")
+public class NoticeBean implements Parcelable {
     /**
      * 通知ID
      */
@@ -35,25 +42,39 @@ public class NoticeBean {
      */
     public String imageUrl;
 
-    /**
-     * 逻辑删除:0-未删除（默认），1-已删除
-     */
-    private String deleted;
+    public NoticeBean() {
+    }
 
-    /**
-     * 乐观锁
-     */
-    private Integer version;
+    protected NoticeBean(Parcel parcel) {
+        this.id = parcel.readInt();
+        this.title = parcel.readString();
+        this.content = parcel.readString();
+        this.status = parcel.readString();
+        this.releaseTime = parcel.readString();
+        this.imageUrl = parcel.readString();
+    }
 
-    /**
-     * 创建时间
-     */
-    private String gmtCreate;
+    public static final Creator<NoticeBean> CREATOR = new Creator<NoticeBean>() {
+        @Override
+        public NoticeBean createFromParcel(Parcel source) {
+            return new NoticeBean(source);
+        }
 
-    /**
-     * 更新时间
-     */
-    private String gmtModified;
+        @Override
+        public NoticeBean[] newArray(int size) {
+            return new NoticeBean[0];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 
     public Integer getId() {
         return id;
@@ -95,35 +116,23 @@ public class NoticeBean {
         this.releaseTime = releaseTime;
     }
 
-    public String getDeleted() {
-        return deleted;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setDeleted(String deleted) {
-        this.deleted = deleted;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    public String getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(String gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public String getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(String gmtModified) {
-        this.gmtModified = gmtModified;
+    @Override
+    public String toString() {
+        return "NoticeBean{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", status='" + status + '\'' +
+                ", releaseTime='" + releaseTime + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }

@@ -23,6 +23,18 @@ public class RouterActivityPath {
     }
 
     /**
+     * home 组件
+     */
+    public static class Home {
+        private static final String HOME = "/home";
+
+        /**
+         * 通知页面
+         */
+        public static final String PAGE_NOTICE = HOME + "/notice";
+    }
+
+    /**
      * 视频播放(video)组件
      */
     public static class Video {
