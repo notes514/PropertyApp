@@ -19,7 +19,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
  * @since 2020-02-16
  */
 public class CommunityFragmentPageAdapter extends FragmentPagerAdapter {
-    private final String[] tables = {"推荐","关注"};
+    private final String[] tables = {"推荐","发现"};
     private List<Fragment> fragments;
 
     public CommunityFragmentPageAdapter(@NonNull FragmentManager fm, int behavior) {

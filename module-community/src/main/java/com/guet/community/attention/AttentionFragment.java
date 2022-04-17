@@ -61,8 +61,7 @@ public class AttentionFragment
         viewDataBinding.rvAttentionView.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getContext());
         viewDataBinding.rvAttentionView.setLayoutManager(linearLayoutManager);
-        adapter =
-                new AttentionRecyclerAdapter(R.layout.community_item_attention_card_view);
+        adapter = new AttentionRecyclerAdapter(R.layout.community_item_attention_card_view);
         int decoration = DensityUtils.dp2px(getContext(), 10);
         viewDataBinding.rvAttentionView.addItemDecoration(
                 new RecyclerItemDecoration(decoration, 0, decoration, decoration));

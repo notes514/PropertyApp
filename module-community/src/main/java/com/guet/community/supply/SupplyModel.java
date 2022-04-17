@@ -1,19 +1,13 @@
-package com.guet.home.nominate;
+package com.guet.community.supply;
 
-import android.text.TextUtils;
-import android.util.Log;
-
-import com.blankj.utilcode.util.LogUtils;
 import com.guet.base.model.BasePagingModel;
 import com.guet.base.utils.GsonUtils;
 import com.guet.common.api.ApiInterface;
-import com.guet.common.api.CommonResult;
-import com.guet.common.api.ResultCode;
 import com.guet.common.contract.BaseCustomViewModel;
 import com.guet.common.global.GlobalConstant;
 import com.guet.common.global.GlobalKey;
-import com.guet.home.nominate.bean.NoticeBean;
-import com.guet.home.nominate.bean.viewmodel.NoticeViewModel;
+import com.guet.community.supply.bean.SupplyBean;
+import com.guet.community.supply.bean.SupplyCustomViewModel;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.cache.model.CacheMode;
 import com.zhouyou.http.callback.SimpleCallBack;
@@ -29,22 +23,21 @@ import java.util.List;
 import io.reactivex.disposables.Disposable;
 
 /**
- * 应用模块: 首页
+ * 应用模块:
  * <p>
- * 类描述: 首页 业务逻辑 处理中心
+ * 类描述:
  * <p>
  *
  * @author darryrzhoong
- * @since 2020-02-10
+ * @since 2020-02-19
  */
-public class NominateModel<T> extends BasePagingModel<T> {
-    private static final String TAG = "NominateModel";
+public class SupplyModel<T> extends BasePagingModel<T> {
     private Disposable disposable;
     private int pageNum = 1;
 
     @Override
     protected void load() {
-        disposable = EasyHttp.get(ApiInterface.URL_NOTICE_INFO)
+        disposable = EasyHttp.get(ApiInterface.URL_SUPPLY_INFO)
                 .params(GlobalKey.PAGE_NUM, String.valueOf(pageNum))
                 .params(GlobalKey.PAGE_ROW, String.valueOf(GlobalConstant.PAGE_NUM))
                 .cacheMode(CacheMode.NO_CACHE)
@@ -72,31 +65,27 @@ public class NominateModel<T> extends BasePagingModel<T> {
                 return;
             }
             hasNextPage = true;
-            List<BaseCustomViewModel> viewModels = new ArrayList<>();
+            List<BaseCustomViewModel> viewModelList = new ArrayList<>();
             for (int i = 0; i < list.length(); i++) {
                 JSONObject currentObject = list.getJSONObject(i);
-                NoticeBean bean = GsonUtils.fromLocalJson(currentObject.toString(), NoticeBean.class);
+                SupplyBean bean = GsonUtils.fromLocalJson(currentObject.toString(), SupplyBean.class);
                 if (bean != null) {
-                    NoticeViewModel noticeViewModel = new NoticeViewModel();
-                    noticeViewModel.id = bean.getId();
-                    noticeViewModel.title = bean.getTitle();
-                    noticeViewModel.content = bean.getContent();
-                    noticeViewModel.status = bean.getStatus();
-                    noticeViewModel.releaseTime = bean.getReleaseTime();
-                    noticeViewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F9d82d158ccbf6c81800ad31e7b76a63533fa838beaa6&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652064495&t=640e60969df5187a720cae6d0c102d8d";
-                    viewModels.add(noticeViewModel);
+                    SupplyCustomViewModel viewModel = new SupplyCustomViewModel();
+                    viewModel.id = bean.getId();
+                    viewModel.ownerName = bean.getOwnerName();
+                    viewModel.avatarUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2F4d%2F63%2Fbd%2F4d63bd0b3bf8cc9aa0dc3e1111646b1c.jpeg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1649831803&t=9195c463a04d7e724b3f79c75c74a801";
+                    viewModel.title = bean.getTitle();
+                    viewModel.content = bean.getContent();
+                    viewModel.status = bean.getStatus();
+                    viewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F9d82d158ccbf6c81800ad31e7b76a63533fa838beaa6&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652064495&t=640e60969df5187a720cae6d0c102d8d";
+                    viewModel.startTime = bean.getStartTime();
+                    viewModelList.add(viewModel);
                 }
             }
-            loadSuccess((T) viewModels, viewModels.isEmpty(), isRefresh);
+            loadSuccess((T) viewModelList, viewModelList.isEmpty(), isRefresh);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void cancel() {
-        super.cancel();
-        EasyHttp.cancelSubscription(disposable);
     }
 
     public void refresh() {
@@ -114,4 +103,11 @@ public class NominateModel<T> extends BasePagingModel<T> {
         pageNum++;
         load();
     }
+
+    @Override
+    public void cancel() {
+        super.cancel();
+        EasyHttp.cancelSubscription(disposable);
+    }
 }
+

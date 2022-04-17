@@ -1,4 +1,4 @@
-package com.guet.community.trade.bean;
+package com.guet.community.supply.bean;
 
 
 import com.guet.common.contract.BaseCustomViewModel;
@@ -9,7 +9,7 @@ import com.guet.common.contract.BaseCustomViewModel;
  * @author dhxstart
  * @date 2022/1/9 19:54
  */
-public class TradeCustomViewModel extends BaseCustomViewModel {
+public class SupplyCustomViewModel extends BaseCustomViewModel {
     /**
      * 供求ID
      */
@@ -26,9 +26,9 @@ public class TradeCustomViewModel extends BaseCustomViewModel {
     public String ownerName;
 
     /**
-     * 供求人员（业主）名称
+     * 用户头像Url
      */
-    public String avatar;
+    public String avatarUrl;
 
     /**
      * 供求标题

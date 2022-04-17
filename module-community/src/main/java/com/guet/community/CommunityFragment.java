@@ -1,20 +1,20 @@
 package com.guet.community;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.google.android.material.tabs.TabLayout;
 import com.guet.base.fragment.MvvmLazyFragment;
 import com.guet.base.viewmodel.IMvvmBaseViewModel;
 import com.guet.common.router.RouterFragmentPath;
 import com.guet.community.adapter.CommunityFragmentPageAdapter;
 import com.guet.community.attention.AttentionFragment;
 import com.guet.community.databinding.CommunityFragmentCommunityBinding;
-import com.google.android.material.tabs.TabLayout;
-import com.guet.community.trade.TradeFragment;
+import com.guet.community.supply.SupplyFragment;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 应用模块:
@@ -69,7 +69,7 @@ public class CommunityFragment extends MvvmLazyFragment<CommunityFragmentCommuni
     private void initData() {
         List<Fragment> data = new ArrayList<>();
         data.add(AttentionFragment.newInstance());
-        data.add(TradeFragment.newInstance());
+        data.add(SupplyFragment.newInstance());
         adapter.setData(data);
     }
 
