@@ -15,6 +15,7 @@
         <ImageView
             android:layout_margin="10dp"
             imageUrl="@{viewModel.bannerUrl}"
+            roundingRadius="@{40}"
             android:scaleType="fitXY"
             tools:background="@drawable/common_tools_iv_bg"
             android:id="@+id/iv_top_banner"

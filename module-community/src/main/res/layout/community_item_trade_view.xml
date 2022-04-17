@@ -119,6 +119,7 @@
                 <ImageView
                     android:id="@+id/item_project_imageview"
                     imageUrl="@{viewModel.imageUrl}"
+                    roundingRadius="@{8}"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_alignParentStart="true"

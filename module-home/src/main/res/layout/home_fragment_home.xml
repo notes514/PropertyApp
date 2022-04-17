@@ -27,7 +27,8 @@
                 android:background="@drawable/home_candle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"

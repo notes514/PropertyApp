@@ -17,6 +17,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             imageUrl="@{viewModel.data.bgPicture}"
+            roundingRadius="@{40}"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             tools:background="@drawable/common_tools_iv_bg"

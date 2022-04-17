@@ -17,6 +17,7 @@
         <ImageView
             android:id="@+id/iv_video_cover"
             imageUrl="@{viewModel.coverUrl}"
+            roundingRadius="@{40}"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_marginStart="10dp"

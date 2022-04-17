@@ -25,7 +25,7 @@ public class NetBannerProvider implements ViewHolder<String> {
     @Override
     public void onBind(View itemView, String data, int position, int size) {
         ImageView imageView = itemView.findViewById(R.id.banner_bg);
-        CommonBindingAdapters.loadImage(imageView, data);
+        CommonBindingAdapters.loadImage(imageView, data, 40);
     }
 
 }

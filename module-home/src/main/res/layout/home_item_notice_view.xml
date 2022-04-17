@@ -20,6 +20,7 @@
         <ImageView
             android:id="@+id/iv_notice"
             imageUrl="@{viewModel.imageUrl}"
+            roundingRadius="@{8}"
             android:layout_width="100dp"
             android:layout_height="72dp"
             android:layout_marginStart="8dp"

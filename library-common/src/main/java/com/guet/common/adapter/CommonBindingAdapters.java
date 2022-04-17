@@ -30,12 +30,12 @@ import com.bumptech.glide.request.transition.Transition;
  */
 public class CommonBindingAdapters {
 
-    @BindingAdapter("imageUrl")
-    public static void loadImage(ImageView imageView, String url) {
+    @BindingAdapter(value = {"imageUrl", "roundingRadius"})
+    public static void loadImage(ImageView imageView, String url, int roundingRadius) {
         if (!TextUtils.isEmpty(url)) {
             Glide.with(imageView.getContext())
                     .load(url)
-                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(40)))
+                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(roundingRadius)))
                     .into(imageView);
         }
 

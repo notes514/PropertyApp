@@ -33,7 +33,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_community.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_recommend.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_item_attention_card_view.xml" value="0.32685185185185184" />
-        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_item_community_view.xml" value="0.32685185185185184" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_item_community_view.xml" value="0.22" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_item_square_item_card_view.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_item_trade_view.xml" value="0.33" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/user_item_trade_view.xml" value="0.30183839247541683" />
@@ -86,6 +86,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-player/src/main/res/layout/player_item_footer_white_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-player/src/main/res/layout/player_item_reply_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-player/src/main/res/layout/player_item_title_white_view.xml" value="0.32685185185185184" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-player/src/main/res/layout/player_item_video_card_white_view.xml" value="0.15775972637879435" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-player/src/main/res/layout/player_item_video_header_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/floatbutton.xml" value="0.3365296803652968" />
