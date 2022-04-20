@@ -78,6 +78,8 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_guide.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_main.xml" value="0.3605128205128205" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_splash.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_activity_event_details.xml" value="0.2980160405234276" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_activity_notice_details.xml" value="0.17657118426678067" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_fragment_message.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_fragment_more.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_fragment_themes.xml" value="0.32685185185185184" />
@@ -85,6 +87,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_fragment_topic.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_item_foote_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_item_message_view.xml" value="0.32685185185185184" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_item_notice_view.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_item_supply_view.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_item_themes_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/moren_activity_event_details.xml" value="0.24027362120564344" />

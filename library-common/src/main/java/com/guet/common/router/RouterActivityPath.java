@@ -53,9 +53,14 @@ public class RouterActivityPath {
         private static final String MORE = "/more";
 
         /**
-         * 通知页面
+         * 活动详情页
          */
         public static final String PAGE_EVENT_DETAILS = MORE + "/event_details";
+
+        /**
+         * 公告详情页
+         */
+        public static final String PAGE_NOTICE_DETAILS = MORE + "/notice_details";
     }
 
     /**

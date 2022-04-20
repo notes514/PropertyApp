@@ -10,6 +10,7 @@ import com.guet.more.adapter.MoreFragmentPageAdapter;
 import com.guet.more.databinding.MoreFragmentMoreBinding;
 import com.guet.more.event.EventFragment;
 import com.guet.more.message.MessageFragment;
+import com.guet.more.notice.NoticeFragment;
 import com.guet.more.themes.ThemesFragment;
 import com.guet.more.topic.TopicFragment;
 import com.google.android.material.tabs.TabLayout;
@@ -71,7 +72,7 @@ public class MoreFragment extends MvvmLazyFragment<MoreFragmentMoreBinding, IMvv
 
     private void initData() {
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(ThemesFragment.newInstance());
+        fragments.add(NoticeFragment.newInstance());
         fragments.add(EventFragment.newInstance());
 //        fragments.add(TopicFragment.newInstance());
         adapter.setData(fragments);
