@@ -35,6 +35,18 @@ public class RouterActivityPath {
     }
 
     /**
+     * community 组件
+     */
+    public static class Community {
+        private static final String COMMUNITY = "/community";
+
+        /**
+         * 通知页面
+         */
+        public static final String PAGE_ADD_SUPPLY = COMMUNITY + "/add_supply";
+    }
+
+    /**
      * 视频播放(video)组件
      */
     public static class Video {

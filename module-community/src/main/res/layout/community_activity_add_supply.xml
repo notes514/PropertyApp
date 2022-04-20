@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/common_color_white"
         android:orientation="vertical">
 
         <include
@@ -20,7 +21,6 @@
             android:id="@+id/refresh_property"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/user_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,6 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/common_color_white"
                 android:orientation="vertical"
                 app:divider="@drawable/user_split_line"
                 app:showDividers="middle|end">
@@ -44,17 +43,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_common_tag"
-                        android:text="反馈类型"
+                        android:text="商品标题"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14" />
 
-                    <TextView
-                        android:id="@+id/edit_house_code"
+                    <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:textSize="@dimen/sp_14" />
+                        android:hint="请输入标题"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="Autofill" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -66,17 +69,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_common_tag"
-                        android:text="项目名称"
+                        android:text="供求地点"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14" />
 
-                    <TextView
-                        android:id="@+id/edit_house_name"
+                    <EditText
+                        android:id="@+id/edit_house_name2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:background="@color/common_color_transparent"
                         android:gravity="end"
-                        android:textSize="@dimen/sp_14" />
+                        android:hint="请输入地点"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textSize="@dimen/sp_14"
+                        tools:ignore="Autofill" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -93,26 +101,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawableEnd="@drawable/ic_common_tag"
-                            android:text="意见反馈"
+                            android:text="商品描述"
                             android:textColor="@color/common_color_black_light"
                             android:textSize="@dimen/sp_14" />
 
-                        <TextView
-                            android:id="@+id/edit_house_area"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="3"
-                            android:gravity="end"
-                            android:textSize="@dimen/sp_14" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="128dp"
+                        android:layout_height="100dp"
                         android:inputType="text"
-                        android:maxLines="10"
+                        android:maxLines="5"
                         android:background="@color/common_color_transparent"
-                        android:padding="16dp"
+                        android:padding="8dp"
                         android:gravity="start"
                         android:minLines="3"
                         android:hint="请描述您遇到的问题及反馈意见"
@@ -128,17 +129,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_common_tag"
-                        android:text="联系方式"
+                        android:text="开始时间"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14" />
 
-                    <TextView
-                        android:id="@+id/edit_house_area12"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="end"
-                        android:textSize="@dimen/sp_14" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,50 +147,25 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
                         android:drawableEnd="@drawable/ic_common_tag"
-                        android:text="是否匿名"
+                        android:text="结束时间"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <CheckBox
-                        android:id="@+id/user_checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:text="是"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/user_checkbox2"
-                        app:layout_constraintEnd_toStartOf="@+id/user_checkbox2" />
-
-                    <CheckBox
-                        android:id="@+id/user_checkbox2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:layout_gravity="right"
-                        android:layout_marginEnd="16dp"
-                        android:text="否"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:overScrollMode="never"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
-
-        <Button
-            android:id="@+id/user_button"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/shape_button_bg"
-            android:text="提交"
-            android:textColor="@color/common_color_white"
-            android:textSize="@dimen/sp_14"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

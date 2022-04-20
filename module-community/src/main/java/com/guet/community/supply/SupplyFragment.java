@@ -3,9 +3,12 @@ package com.guet.community.supply;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.ToastUtils;
 import com.guet.base.fragment.MvvmLazyFragment;
 import com.guet.common.contract.BaseCustomViewModel;
 import com.guet.common.recyclerview.RecyclerItemDecoration;
+import com.guet.common.router.RouterActivityPath;
 import com.guet.common.utils.DensityUtils;
 import com.guet.community.R;
 import com.guet.community.databinding.CommunityFragmentAttentionBinding;
@@ -64,6 +67,10 @@ public class SupplyFragment extends MvvmLazyFragment<CommunityFragmentAttentionB
         setLoadSir(viewDataBinding.refreshLayout);
         showLoading();
         viewModel.initModel();
+
+        viewDataBinding.fabAdd.setOnClickListener( v -> {
+            ARouter.getInstance().build(RouterActivityPath.Community.PAGE_ADD_SUPPLY).navigation();
+        });
     }
 
     @Override

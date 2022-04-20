@@ -1,5 +1,8 @@
 package com.guet.community.attention;
 
+import android.annotation.SuppressLint;
+import android.view.View;
+
 import java.util.ArrayList;
 
 import com.guet.base.fragment.MvvmLazyFragment;
@@ -57,7 +60,9 @@ public class AttentionFragment
         initView();
     }
 
+    @SuppressLint("RestrictedApi")
     private void initView() {
+        viewDataBinding.fabAdd.setVisibility(View.GONE);
         viewDataBinding.rvAttentionView.setHasFixedSize(true);
         linearLayoutManager = new LinearLayoutManager(getContext());
         viewDataBinding.rvAttentionView.setLayoutManager(linearLayoutManager);

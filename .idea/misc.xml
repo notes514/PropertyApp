@@ -23,12 +23,15 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-base/src/main/res/layout/base_layout_timeout.xml" value="0.36614583333333334" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/drawable/arrows_right_ic.xml" value="0.2175" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.34120370370370373" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/drawable/ic_common_baseline_add_24.xml" value="0.2315" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/drawable/user_split_line.xml" value="0.2315" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/layout/common_fragment_list.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/layout/include_toolbar.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-common/src/main/res/layout/item_slide_model_data_binding.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-video/src/main/res/layout/video_layout_cover.xml" value="0.36614583333333334" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/drawable/title_label_shape_green.xml" value="0.236" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_activity_add_supply.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_attention.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_community.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_recommend.xml" value="0.32685185185185184" />

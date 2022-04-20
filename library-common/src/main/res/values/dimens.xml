@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="common_fab_margin" tools:ignore="ResourceName">16dp</dimen>
+    <dimen name="common_finger_transparent_radius_default" tools:ignore="ResourceName">400dp</dimen>
+</resources>

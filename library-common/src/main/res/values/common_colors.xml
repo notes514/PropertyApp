@@ -12,4 +12,5 @@
     <color name="common_color_black_light">#363636</color>
     <color name="common_color_transparent">#00000000</color>
     <color name="common_color_translucent">#80000000</color>
+    <color name="common_color_window_background">#F5F5F5</color>
 </resources>

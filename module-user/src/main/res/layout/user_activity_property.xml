@@ -51,7 +51,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/property_house_code"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
@@ -75,7 +75,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/property_house_name"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
@@ -99,7 +99,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/property_house_area"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
@@ -123,7 +123,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/property_house_building"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
@@ -156,7 +156,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/property_owner_name"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
@@ -184,7 +184,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/property_owner_house_code"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
@@ -212,7 +212,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/id_card"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14" />
@@ -237,7 +237,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:singleLine="true"
                         android:text="@string/employer"
                         android:textColor="@color/common_color_black_light"
@@ -265,7 +265,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/tv_tag"
+                        android:drawableEnd="@drawable/ic_common_tag"
                         android:text="@string/tell_phone"
                         android:textColor="@color/common_color_black_light"
                         android:textSize="@dimen/sp_14"
