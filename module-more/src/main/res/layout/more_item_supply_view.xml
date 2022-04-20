@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.guet.more.event.bean.EventCustomViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/item_project_top_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/item_project_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="置顶"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/item_project_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="新"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/item_project_top_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="活动"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/item_project_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.gmtCreate}"
+                android:textColor="@color/common_small_text"
+                android:textSize="13sp"
+                tools:text="1小时前" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/item_project_title"
+            android:layout_width="409dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/common_color_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/item_project_top_linear"
+            app:layout_constraintStart_toStartOf="@+id/item_project_top_linear"
+            app:layout_constraintTop_toBottomOf="@+id/item_project_top_linear"
+            tools:text="这是一个菜的扣jio的人写的项目" />
+
+        <ImageView
+            android:id="@+id/more_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            imageUrl="@{viewModel.imageUrl}"
+            roundingRadius="@{8}"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/item_project_title"
+            tools:ignore="MissingConstraints" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/more_imageview"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/item_project_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="@{viewModel.title}"
+                android:textColor="@color/common_small_text"
+                android:textSize="13sp"
+                tools:text="分类·项目" />
+
+            <TextView
+                android:id="@+id/tv_addres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:text="地点" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

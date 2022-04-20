@@ -15,4 +15,6 @@ public class ApiInterface {
     public static final String URL_NOTICE_INFO = "/notice/listNotice";
     /** 获取供求信息 */
     public static final String URL_SUPPLY_INFO = "/supply/listSupply";
+    /** 获取活动信息 */
+    public static final String URL_EVENT_INFO = "/activity/listActivity";
 }

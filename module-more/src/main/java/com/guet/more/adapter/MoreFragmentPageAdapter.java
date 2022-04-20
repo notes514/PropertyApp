@@ -19,7 +19,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
  * @since 2020-02-16
  */
 public class MoreFragmentPageAdapter extends FragmentPagerAdapter {
-    private final String[] tables = {"主题", "推送", "互动"};
+    private final String[] tables = {"公告", "活动"};
     private List<Fragment> fragments;
 
     public MoreFragmentPageAdapter(@NonNull FragmentManager fm, int behavior) {

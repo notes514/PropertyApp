@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.guet.more.event.bean.EventCustomViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login.LoginActivity">
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar" />
+
+        <ImageView
+            android:id="@+id/iv_notice_url"
+            imageUrl="@{viewModel.imageUrl}"
+            roundingRadius="@{8}"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="@dimen/dp_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/included"
+            tools:ignore="MissingConstraints"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/home_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/common_color_black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_notice_url" />
+
+        <ImageView
+            android:id="@+id/iv_notice_time"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_common_time"
+            app:layout_constraintStart_toStartOf="@+id/home_textview"
+            app:layout_constraintTop_toBottomOf="@+id/home_textview" />
+
+        <TextView
+            android:id="@+id/tv_notice_create_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:text="@{viewModel.startTime}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_notice_time"
+            app:layout_constraintEnd_toEndOf="@+id/home_textview"
+            app:layout_constraintStart_toEndOf="@+id/iv_notice_time"
+            app:layout_constraintTop_toTopOf="@+id/iv_notice_time" />
+
+        <View
+            android:id="@+id/home_view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/common_color_split_line"
+            app:layout_constraintEnd_toEndOf="@+id/home_textview"
+            app:layout_constraintStart_toStartOf="@+id/iv_notice_time"
+            app:layout_constraintTop_toBottomOf="@+id/iv_notice_time"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_notice_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:maxLines="16"
+            android:text="@{viewModel.content}"
+            android:textColor="@color/common_color_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_view"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

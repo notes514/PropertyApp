@@ -8,6 +8,7 @@ import com.guet.base.viewmodel.IMvvmBaseViewModel;
 import com.guet.common.router.RouterFragmentPath;
 import com.guet.more.adapter.MoreFragmentPageAdapter;
 import com.guet.more.databinding.MoreFragmentMoreBinding;
+import com.guet.more.event.EventFragment;
 import com.guet.more.message.MessageFragment;
 import com.guet.more.themes.ThemesFragment;
 import com.guet.more.topic.TopicFragment;
@@ -71,8 +72,8 @@ public class MoreFragment extends MvvmLazyFragment<MoreFragmentMoreBinding, IMvv
     private void initData() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(ThemesFragment.newInstance());
-        fragments.add(MessageFragment.newInstance());
-        fragments.add(TopicFragment.newInstance());
+        fragments.add(EventFragment.newInstance());
+//        fragments.add(TopicFragment.newInstance());
         adapter.setData(fragments);
         viewDataBinding.vpHomeContent.setCurrentItem(1);
     }

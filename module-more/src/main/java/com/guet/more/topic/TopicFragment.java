@@ -25,38 +25,34 @@ import androidx.recyclerview.widget.LinearLayoutManager;
  * @author darryrzhoong
  * @since 2020-02-23
  */
-public class TopicFragment
-    extends MvvmLazyFragment<MoreFragmentTopicBinding, TopicFragmentViewModel>
-    implements ITopicView
-{
-    
+public class TopicFragment extends MvvmLazyFragment<MoreFragmentTopicBinding, TopicFragmentViewModel>
+        implements ITopicView {
+
     private TopicAdapter adapter;
 
-    public static TopicFragment newInstance(){
+    public static TopicFragment newInstance() {
         return new TopicFragment();
     }
+
     @Override
-    public int getLayoutId()
-    {
+    public int getLayoutId() {
         return R.layout.more_fragment_topic;
     }
-    
+
     @Override
-    protected void onFragmentFirstVisible()
-    {
+    protected void onFragmentFirstVisible() {
         super.onFragmentFirstVisible();
         initView();
     }
-    
-    private void initView()
-    {
+
+    private void initView() {
         viewDataBinding.rvTopicView.setHasFixedSize(true);
         viewDataBinding.rvTopicView
-            .setLayoutManager(new LinearLayoutManager(getContext()));
+                .setLayoutManager(new LinearLayoutManager(getContext()));
         viewDataBinding.refreshLayout
-            .setRefreshHeader(new ClassicsHeader(getContext()));
+                .setRefreshHeader(new ClassicsHeader(getContext()));
         viewDataBinding.refreshLayout
-            .setRefreshFooter(new ClassicsFooter(getContext()));
+                .setRefreshFooter(new ClassicsFooter(getContext()));
         viewDataBinding.refreshLayout.setOnRefreshListener(refreshLayout -> {
             viewModel.tryRefresh();
         });
@@ -69,66 +65,55 @@ public class TopicFragment
         showLoading();
         viewModel.initModel();
     }
-    
+
     @Override
-    public int getBindingVariable()
-    {
+    public int getBindingVariable() {
         return 0;
     }
-    
+
     @Override
-    protected TopicFragmentViewModel getViewModel()
-    {
+    protected TopicFragmentViewModel getViewModel() {
         return ViewModelProviders.of(this).get(TopicFragmentViewModel.class);
     }
-    
+
     @Override
-    protected void onRetryBtnClick()
-    {
-        
+    protected void onRetryBtnClick() {
+
     }
-    
-    private View getFooterView()
-    {
+
+    private View getFooterView() {
         return LayoutInflater.from(getContext())
-            .inflate(R.layout.more_item_foote_view,
-                viewDataBinding.rvTopicView,
-                false);
+                .inflate(R.layout.more_item_foote_view,
+                        viewDataBinding.rvTopicView,
+                        false);
     }
-    
+
     @Override
     public void onDataLoaded(List<BaseCustomViewModel> data,
-        boolean isFirstPage)
-    {
-        if (data == null)
-        {
+                             boolean isFirstPage) {
+        if (data == null) {
             return;
         }
-        if (isFirstPage)
-        {
+        if (isFirstPage) {
             adapter.setNewData(data);
             showContent();
             viewDataBinding.refreshLayout.finishRefresh(true);
 
-        }
-        else
-        {
+        } else {
             adapter.addData(data);
             showContent();
             viewDataBinding.refreshLayout.finishLoadMore(true);
         }
-        
+
     }
-    
+
     @Override
-    public void onLoadMoreFailure(String message)
-    {
+    public void onLoadMoreFailure(String message) {
         viewDataBinding.refreshLayout.finishLoadMore(false);
     }
-    
+
     @Override
-    public void onLoadMoreEmpty()
-    {
+    public void onLoadMoreEmpty() {
         adapter.addFooterView(getFooterView());
         viewDataBinding.refreshLayout.finishLoadMoreWithNoMoreData();
     }

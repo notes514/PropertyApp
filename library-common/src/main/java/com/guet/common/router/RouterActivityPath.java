@@ -47,6 +47,18 @@ public class RouterActivityPath {
     }
 
     /**
+     * community 组件
+     */
+    public static class More {
+        private static final String MORE = "/more";
+
+        /**
+         * 通知页面
+         */
+        public static final String PAGE_EVENT_DETAILS = MORE + "/event_details";
+    }
+
+    /**
      * 视频播放(video)组件
      */
     public static class Video {

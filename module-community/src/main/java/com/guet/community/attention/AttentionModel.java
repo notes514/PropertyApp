@@ -67,7 +67,6 @@ public class AttentionModel<T> extends BasePagingModel<T> {
     }
 
     private void parseData(String data) {
-        LogUtils.dTag("laodai", "data: " + data);
         AttentionCardBean attentionCardBean = GsonUtils.fromLocalJson(data, AttentionCardBean.class);
         ArrayList<BaseCustomViewModel> viewModels = new ArrayList<>();
         nextPageUrl = attentionCardBean.getNextPageUrl();
