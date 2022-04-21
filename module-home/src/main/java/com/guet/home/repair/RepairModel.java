@@ -83,12 +83,17 @@ public class RepairModel<T> extends BaseModel<T> {
     }
 
     private void insert(RepairCustomViewModel model, String imageUrl) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("ownerName", "李小锋");
+            jsonObject.put("repairType", model.repairType);
+            jsonObject.put("repairContent", model.repairContent);
+            jsonObject.put("imageUrl", imageUrl);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         disposable = EasyHttp.post(ApiInterface.URL_REPAIR_ADD_REPAIR)
-                .params("ownerId", String.valueOf(model.ownerId))
-                .params("ownerName", String.valueOf(model.ownerName))
-                .params("repairType", String.valueOf(model.repairType))
-                .params("repairContent", String.valueOf(model.repairContent))
-                .params("imageUrl", imageUrl)
+                .upJson(jsonObject.toString())
                 .cacheMode(CacheMode.NO_CACHE)
                 .execute(new SimpleCallBack<String>() {
                     @Override

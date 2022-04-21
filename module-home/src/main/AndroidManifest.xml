@@ -9,5 +9,9 @@
         <activity
             android:name=".repair.RepairActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".suggestions.SuggestionsActivity"
+            android:exported="false" />
     </application>
 </manifest>

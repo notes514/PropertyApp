@@ -118,7 +118,7 @@ public class RepairActivity extends MvvmBaseActivity<HomeActivityRepairBinding, 
             repairCustomViewModel.repairType = viewDataBinding.tv4.getText().toString();
         });
         viewDataBinding.btnCommit.setOnClickListener(v -> {
-            repairCustomViewModel.repairContent = viewDataBinding.homeEdittext.getText().toString();
+            repairCustomViewModel.repairContent = viewDataBinding.homeEtContent.getText().toString();
             viewModel.upload(selImageList, repairCustomViewModel, mProgressDialog);
         });
     }

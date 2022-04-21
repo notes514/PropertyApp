@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.guet.home.repair.bean.RepairCustomViewModel" />
+            type="com.guet.home.suggestions.bean.SuggestionsCustomViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,16 +22,16 @@
             layout="@layout/include_toolbar" />
 
         <EditText
-            android:id="@+id/home_et_content"
+            android:id="@+id/home_et_suggest"
             android:layout_width="match_parent"
             android:layout_height="128dp"
             android:layout_margin="@dimen/dp_10"
             android:background="@drawable/home_shape_input_box"
             android:gravity="start|top"
-            android:hint="请输入您遇到的问题"
+            android:hint="请输入您的建议"
             android:inputType="textMultiLine"
             android:maxLines="5"
-            android:text="@{viewModel.repairContent}"
+            android:text="@{viewModel.complaintContent}"
             android:minLines="3"
             android:padding="8dp"
             android:textSize="@dimen/sp_14"
@@ -45,12 +46,12 @@
             android:layout_height="38dp"
             android:layout_marginTop="16dp"
             android:padding="@dimen/dp_10"
-            android:text="弱点设备问题"
+            android:text="设备设施方面"
             android:background="@drawable/common_btn_selector"
             android:textColor="@color/common_small_text"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/home_et_content"
-            app:layout_constraintTop_toBottomOf="@+id/home_et_content" />
+            app:layout_constraintStart_toStartOf="@+id/home_et_suggest"
+            app:layout_constraintTop_toBottomOf="@+id/home_et_suggest" />
 
         <Button
             android:id="@+id/tv_2"
@@ -58,7 +59,7 @@
             android:layout_height="38dp"
             android:background="@drawable/home_shape_dotted_border"
             android:padding="@dimen/dp_10"
-            android:text="下水道堵塞"
+            android:text="设备维修投诉"
             android:textColor="@color/common_small_text"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/tv_3"
@@ -71,10 +72,10 @@
             android:layout_height="38dp"
             android:background="@drawable/home_shape_dotted_border"
             android:padding="@dimen/dp_10"
-            android:text="强电设备问题"
+            android:text="生活扰民投诉"
             android:textColor="@color/common_small_text"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/home_et_content"
+            app:layout_constraintEnd_toEndOf="@+id/home_et_suggest"
             app:layout_constraintTop_toTopOf="@+id/tv_2" />
 
         <Button
@@ -84,40 +85,19 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/home_shape_dotted_border"
             android:padding="@dimen/dp_10"
-            android:text="浴室漏水了，好像是管道破了，你们过来看看呢"
+            android:text="安全投诉"
             android:textColor="@color/common_small_text"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tv_1"
             app:layout_constraintTop_toBottomOf="@+id/tv_1" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_repair"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
-            android:choiceMode="singleChoice"
-            android:divider="@null"
-            android:fadingEdge="none"
-            android:listSelector="@android:color/transparent"
-            android:scrollbarStyle="outsideOverlay"
-            app:layoutManager="GridLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/btn_commit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_4"
-            app:spanCount="4"
-            tools:ignore="MissingConstraints"
-            tools:listitem="@layout/common_list_item_image">
-
-        </androidx.recyclerview.widget.RecyclerView>
 
         <Button
             android:id="@+id/btn_commit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="提交"
+            android:textSize="16sp"
+            android:background="@drawable/common_shape_dotted_border_grey1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

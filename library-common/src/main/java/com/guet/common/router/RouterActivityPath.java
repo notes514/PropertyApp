@@ -37,6 +37,11 @@ public class RouterActivityPath {
          * 设备报修页
          */
         public static final String PAGE_REPAIR = HOME + "/repair";
+
+        /**
+         * 投诉建议
+         */
+        public static final String PAGE_SUGGESTIONS = HOME + "/suggestions";
     }
 
     /**

@@ -21,4 +21,6 @@ public class ApiInterface {
     public static final String URL_IMAGE_UPLOAD = "/image/upload";
     /** 添加报修 */
     public static final String URL_REPAIR_ADD_REPAIR = "/repair/addRepair";
+    /** 添加投诉 */
+    public static final String URL_COMPLAINT_ADD_COMPLAINT = "/complaint/addComplaint";
 }

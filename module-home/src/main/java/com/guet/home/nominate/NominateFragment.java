@@ -102,7 +102,7 @@ public class NominateFragment extends MvvmLazyFragment<HomeFragmentNominateBindi
             ARouter.getInstance().build(RouterActivityPath.Home.PAGE_REPAIR).navigation();
         });
         complaintLayout.setOnClickListener(v -> {
-
+            ARouter.getInstance().build(RouterActivityPath.Home.PAGE_SUGGESTIONS).navigation();
         });
         supplyLayout.setOnClickListener(v -> {
 
