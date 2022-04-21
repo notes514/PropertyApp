@@ -68,7 +68,7 @@ public class CommunityFragment extends MvvmLazyFragment<CommunityFragmentCommuni
 
     private void initData() {
         List<Fragment> data = new ArrayList<>();
-        data.add(AttentionFragment.newInstance());
+//        data.add(AttentionFragment.newInstance());
         data.add(SupplyFragment.newInstance());
         adapter.setData(data);
     }

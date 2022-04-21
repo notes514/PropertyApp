@@ -4,21 +4,15 @@ import android.view.View;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.ToastUtils;
+import com.google.android.material.tabs.TabLayout;
 import com.guet.base.fragment.MvvmLazyFragment;
 import com.guet.base.viewmodel.IMvvmBaseViewModel;
 import com.guet.common.router.RouterFragmentPath;
-import com.guet.home.adapter.BannerViewHolder;
-import com.guet.home.databinding.HomeFragmentHomeBinding;
-import com.google.android.material.tabs.TabLayout;
 import com.guet.home.adapter.HomeFragmentPageAdapter;
-import com.guet.home.daily.DailyFragment;
-import com.guet.home.discover.DisCoverFragment;
+import com.guet.home.databinding.HomeFragmentHomeBinding;
 import com.guet.home.nominate.NominateFragment;
-import com.zhpan.bannerview.BannerViewPager;
-import com.zhpan.bannerview.utils.BannerUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +35,9 @@ public class HomeFragment extends MvvmLazyFragment<HomeFragmentHomeBinding, IMvv
         super.onFragmentFirstVisible();
         initView();
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(DisCoverFragment.newInstance());
+//        fragments.add(DisCoverFragment.newInstance());
         fragments.add(NominateFragment.newInstance());
-        fragments.add(DailyFragment.newInstance());
+//        fragments.add(DailyFragment.newInstance());
         pageAdapter.setData(fragments);
         viewDataBinding.vpHomeContent.setCurrentItem(1);
 

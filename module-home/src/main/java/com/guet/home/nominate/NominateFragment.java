@@ -2,8 +2,10 @@ package com.guet.home.nominate;
 
 import java.util.ArrayList;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.guet.base.fragment.MvvmLazyFragment;
 import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.common.router.RouterActivityPath;
 import com.guet.home.R;
 import com.guet.home.databinding.HomeFragmentNominateBinding;
 import com.guet.home.nominate.adapter.ProviderNominateAdapter;
@@ -12,6 +14,7 @@ import com.scwang.smart.refresh.header.ClassicsHeader;
 
 import android.view.View;
 
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProviders;
@@ -50,6 +53,9 @@ public class NominateFragment extends MvvmLazyFragment<HomeFragmentNominateBindi
         if (getContext() == null) {
             return;
         }
+        if (viewDataBinding == null) {
+            return;
+        }
         // 确定Item的改变不会影响RecyclerView的宽高
         viewDataBinding.rvNominateView.setHasFixedSize(true);
         viewDataBinding.rvNominateView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -85,6 +91,22 @@ public class NominateFragment extends MvvmLazyFragment<HomeFragmentNominateBindi
     private View getHeaderNoticeView() {
         ViewDataBinding binding = DataBindingUtil.inflate(getLayoutInflater(),
                 R.layout.home_fragment_service_card, viewDataBinding.rvNominateView, false);
+        LinearLayoutCompat propertyLayout = binding.getRoot().findViewById(R.id.property_layout);
+        LinearLayoutCompat repairLayout = binding.getRoot().findViewById(R.id.repair_layout);
+        LinearLayoutCompat complaintLayout = binding.getRoot().findViewById(R.id.complaint_layout);
+        LinearLayoutCompat supplyLayout = binding.getRoot().findViewById(R.id.supply_layout);
+        propertyLayout.setOnClickListener(v -> {
+
+        });
+        repairLayout.setOnClickListener(v -> {
+            ARouter.getInstance().build(RouterActivityPath.Home.PAGE_REPAIR).navigation();
+        });
+        complaintLayout.setOnClickListener(v -> {
+
+        });
+        supplyLayout.setOnClickListener(v -> {
+
+        });
         return binding.getRoot();
     }
 

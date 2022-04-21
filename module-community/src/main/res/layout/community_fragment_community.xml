@@ -25,6 +25,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tabGravity="center"
+                android:textSize="20sp"
                 app:tabIndicatorColor="@android:color/darker_gray"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="3dp"

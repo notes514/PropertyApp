@@ -17,4 +17,8 @@ public class ApiInterface {
     public static final String URL_SUPPLY_INFO = "/supply/listSupply";
     /** 获取活动信息 */
     public static final String URL_EVENT_INFO = "/activity/listActivity";
+    /** 图片上传 */
+    public static final String URL_IMAGE_UPLOAD = "/image/upload";
+    /** 添加报修 */
+    public static final String URL_REPAIR_ADD_REPAIR = "/repair/addRepair";
 }

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.guet.home.repair.bean.RepairCustomViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_color_white"
+        tools:context=".login.LoginActivity">
+
+        <include
+            android:id="@+id/included"
+            layout="@layout/include_toolbar" />
+
+        <EditText
+            android:id="@+id/home_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/home_shape_input_box"
+            android:gravity="start|top"
+            android:hint="请输入您遇到的问题"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:text="@{viewModel.repairContent}"
+            android:minLines="3"
+            android:padding="8dp"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/included"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:padding="@dimen/dp_10"
+            android:text="弱点设备问题"
+            android:background="@drawable/common_btn_selector"
+            android:textColor="@color/common_small_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/home_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/home_edittext" />
+
+        <Button
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="@drawable/home_shape_dotted_border"
+            android:padding="@dimen/dp_10"
+            android:text="下水道堵塞"
+            android:textColor="@color/common_small_text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_1"
+            app:layout_constraintTop_toTopOf="@+id/tv_1" />
+
+        <Button
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="@drawable/home_shape_dotted_border"
+            android:padding="@dimen/dp_10"
+            android:text="强电设备问题"
+            android:textColor="@color/common_small_text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/home_edittext"
+            app:layout_constraintTop_toTopOf="@+id/tv_2" />
+
+        <Button
+            android:id="@+id/tv_4"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/home_shape_dotted_border"
+            android:padding="@dimen/dp_10"
+            android:text="浴室漏水了，好像是管道破了，你们过来看看呢"
+            android:textColor="@color/common_small_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_repair"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:scrollbarStyle="outsideOverlay"
+            app:layoutManager="GridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/btn_commit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_4"
+            app:spanCount="4"
+            tools:ignore="MissingConstraints"
+            tools:listitem="@layout/common_list_item_image">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/btn_commit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="提交"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -5,6 +5,7 @@
     <color name="common_color_bar">#fafafa</color>
     <color name="common_small_text">#888888</color>
     <color name="common_color_blue">#5790da</color>
+    <color name="common_color_blue1">#D4E6FF</color>
     <color name="common_color_red">#FF0000</color>
     <color name="common_color_white">#FFFFFF</color>
     <color name="common_color_black">#FF000000</color>

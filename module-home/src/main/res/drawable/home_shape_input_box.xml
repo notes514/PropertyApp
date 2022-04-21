@@ -4,8 +4,8 @@
     android:shape="rectangle"
     tools:ignore="ResourceName">
     <stroke
-        android:width="0.5dp"
-        android:color="@android:color/holo_red_light" />
+        android:width="1dp"
+        android:color="@color/common_color_split_line" />
     <solid android:color="@color/common_color_white"/>
-    <corners android:radius="1dp" />
+    <corners android:radius="4dp" />
 </shape>
