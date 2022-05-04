@@ -45,45 +45,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_phone_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="@string/input_phone"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:textSize="12sp"
-            app:hintTextAppearance="@style/inputStyle"
-            app:hintTextColor="@color/user_color_login_bg"
-            app:layout_constraintTop_toBottomOf="@+id/edit_username_layout"
-            tools:ignore="MissingConstraints">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_phone"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/shape_input"
-                android:drawableStart="@drawable/ic_baseline_phone_android_24"
-                android:inputType="phone"
-                android:maxLines="1"
-                android:padding="@dimen/dp_10"
-                android:textColor="@color/user_color_login_bg"
-                android:textColorHint="@color/user_color_login_bg"
-                android:textSize="14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_password_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:hint="@string/input_password"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
             android:textSize="12sp"
+            android:layout_marginTop="24dp"
             app:hintTextAppearance="@style/inputStyle"
             app:hintTextColor="@color/user_color_login_bg"
-            app:layout_constraintTop_toBottomOf="@+id/edit_phone_layout"
+            app:layout_constraintTop_toBottomOf="@+id/edit_username_layout"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -104,7 +76,7 @@
             android:id="@+id/edit_confirm_password_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:hint="@string/input_confirm_password"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
