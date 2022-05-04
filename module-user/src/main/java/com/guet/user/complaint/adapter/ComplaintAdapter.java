@@ -9,8 +9,6 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.guet.common.contract.BaseCustomViewModel;
 import com.guet.user.complaint.bean.ComplaintCustomViewModel;
 import com.guet.user.databinding.UserItemComplaintViewBinding;
-import com.guet.user.databinding.UserItemTradeViewBinding;
-import com.guet.user.trade.bean.TradeCustomViewModel;
 
 /**
  *

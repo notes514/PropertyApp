@@ -51,6 +51,8 @@ public class RepairCustomViewModel extends BaseCustomViewModel {
      */
     public String status;
 
+    public String imageUrl;
+
     /**
      * 逻辑删除:0-未删除（默认），1-已删除
      */

@@ -1,10 +1,27 @@
 package com.guet.user.repair.fragment;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.guet.base.model.BasePagingModel;
+import com.guet.base.utils.GsonUtils;
+import com.guet.common.api.ApiInterface;
 import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.common.global.GlobalConstant;
+import com.guet.common.global.GlobalKey;
+import com.guet.user.repair.bean.RepairBean;
 import com.guet.user.repair.bean.RepairCustomViewModel;
+import com.zhouyou.http.EasyHttp;
+import com.zhouyou.http.cache.model.CacheMode;
+import com.zhouyou.http.callback.SimpleCallBack;
+import com.zhouyou.http.exception.ApiException;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import io.reactivex.disposables.Disposable;
 
 /**
  * RepairModel
@@ -13,7 +30,9 @@ import java.util.ArrayList;
  * @date 2022/1/9 19:41
  */
 public class RepairModel<T> extends BasePagingModel<T> {
-    private final int position;
+    private Disposable disposable;
+    private int pageNum = 1;
+    private int position;
 
     public RepairModel(int position) {
         this.position = position;
@@ -21,46 +40,115 @@ public class RepairModel<T> extends BasePagingModel<T> {
 
     @Override
     protected void load() {
-        ArrayList<BaseCustomViewModel> viewModels = new ArrayList<>();
-        RepairCustomViewModel repairBean = new RepairCustomViewModel();
-        repairBean.repairType = "公共区域";
-        repairBean.repairContent = "小区9栋3楼楼道漏水";
-        repairBean.gmtCreate = "2021-12-30 21:39:03";
+        LogUtils.d("laodai", "position：" + position);
+        switch (position) {
+            case 0:
+                listChargeDetail();
+                break;
+            case 1:
+                position = 0;
+                likeChargeDetailStatus();
+                break;
+            case 2:
+                position = 1;
+                likeChargeDetailStatus();
+                break;
+            default:
+                position = 2;
+                likeChargeDetailStatus();
+                break;
+        }
 
-        RepairCustomViewModel repairBean1 = new RepairCustomViewModel();
-        repairBean1.repairType = "公共区域";
-        repairBean1.repairContent = "小区东侧公路有挖坑";
-        repairBean1.gmtCreate = "2021-12-30 21:41:56";
-
-        RepairCustomViewModel repairBean2 = new RepairCustomViewModel();
-        repairBean2.repairType = "卫生间";
-        repairBean2.repairContent = "小区6-202房为卫生间洗衣机损坏";
-        repairBean2.gmtCreate = "2021-12-30 21:45:36";
-
-        RepairCustomViewModel repairBean3 = new RepairCustomViewModel();
-        repairBean3.repairType = "公共区域";
-        repairBean3.repairContent = "小区9栋3楼楼道漏水";
-        repairBean3.gmtCreate = "2021-12-30 21:39:03";
-
-        viewModels.add(repairBean);
-        viewModels.add(repairBean1);
-        viewModels.add(repairBean2);
-        viewModels.add(repairBean3);
-        loadSuccess((T) viewModels, viewModels.size() == 0, isRefresh);
     }
 
-    public void loadMore() {
-        isRefresh = false;
-        loadSuccess(null, true, isRefresh);
+    private void listChargeDetail() {
+        disposable = EasyHttp.get(ApiInterface.URL_LIST_REPAIR)
+                .params(GlobalKey.PAGE_NUM, String.valueOf(pageNum))
+                .params(GlobalKey.PAGE_ROW, String.valueOf(GlobalConstant.PAGE_NUM))
+                .cacheMode(CacheMode.NO_CACHE)
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        loadFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        parseJson(s);
+                    }
+                });
     }
 
-    public void refresh() {
-        isRefresh = true;
-        load();
+    protected void likeChargeDetailStatus() {
+        disposable = EasyHttp.get(ApiInterface.URL_LIKE_REPAIR)
+                .params("status", String.valueOf(position))
+                .params(GlobalKey.PAGE_NUM, String.valueOf(pageNum))
+                .params(GlobalKey.PAGE_ROW, String.valueOf(GlobalConstant.PAGE_NUM))
+                .cacheMode(CacheMode.NO_CACHE)
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        loadFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        parseJson(s);
+                    }
+                });
+    }
+
+    private void parseJson(String data) {
+        try {
+            JSONObject jsonObject = new JSONObject(data);
+            String dataObj = jsonObject.getString("data");
+            jsonObject = new JSONObject(dataObj);
+            JSONArray list = jsonObject.optJSONArray("list");
+            if (list == null) {
+                hasNextPage = false;
+                return;
+            }
+            hasNextPage = true;
+            List<BaseCustomViewModel> viewModels = new ArrayList<>();
+            for (int i = 0; i < list.length(); i++) {
+                JSONObject currentObject = list.getJSONObject(i);
+                RepairBean bean = GsonUtils.fromLocalJson(currentObject.toString(), RepairBean.class);
+                if (bean != null) {
+                    RepairCustomViewModel viewModel = new RepairCustomViewModel();
+                    viewModel.id = bean.getId();
+                    viewModel.ownerName = bean.getOwnerName();
+                    viewModel.repairType = bean.getRepairType();
+                    viewModel.repairContent = bean.getRepairContent();
+                    viewModel.status = "0".equals(bean.getStatus()) ? "待受理" : ("1".equals(bean.getStatus()) ? "受理中" : "已受理");
+                    viewModel.gmtCreate = "日期：" + bean.getGmtCreate();
+                    viewModels.add(viewModel);
+                }
+            }
+            loadSuccess((T) viewModels, viewModels.isEmpty(), isRefresh);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void cancel() {
         super.cancel();
+        EasyHttp.cancelSubscription(disposable);
+    }
+
+    public void refresh() {
+        isRefresh = true;
+        pageNum = 1;
+        load();
+    }
+
+    public void loadMore() {
+        isRefresh = false;
+        if (!hasNextPage) {
+            loadSuccess(null, true, false);
+            return;
+        }
+        pageNum++;
+        load();
     }
 }

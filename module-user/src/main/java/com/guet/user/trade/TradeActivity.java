@@ -35,7 +35,7 @@ import java.util.List;
 @Route(path = RouterActivityPath.User.PAGER_TRADE)
 public class TradeActivity extends MvvmBaseActivity<UserActivityViewBinding, TradeViewModel> {
 
-    private final String[] tabs = new String[]{"未开始", "进行中", "已结束"};
+    private final String[] tabs = new String[]{"全部", "未开始", "进行中", "已结束"};
     private UserFragmentPageAdapter mAdapter;
     private final int activeColor = Color.parseColor("#ff678f");
     private final int normalColor = Color.parseColor("#666666");
@@ -85,6 +85,7 @@ public class TradeActivity extends MvvmBaseActivity<UserActivityViewBinding, Tra
         viewDataBinding.viewPager.setAdapter(mAdapter);
         viewDataBinding.fabAdd.setOnClickListener(v -> ToastUtils.showShort("点击了悬浮按钮！！！"));
 
+        viewDataBinding.included.titleBar.setTitle("我的交易信息");
         TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
     }
 

@@ -6,6 +6,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -82,8 +83,9 @@ public class BillActivity extends MvvmBaseActivity<UserActivityViewBinding, Bill
             }
         });
         viewDataBinding.viewPager.setAdapter(mAdapter);
-        viewDataBinding.fabAdd.setOnClickListener(v -> ToastUtils.showShort("点击了悬浮按钮！！！"));
+        viewDataBinding.fabAdd.setVisibility(View.GONE);
 
+        viewDataBinding.included.titleBar.setTitle("我的账单");
         TitleBarUtils.clickLeftBack(viewDataBinding.included.titleBar, this);
     }
 

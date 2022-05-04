@@ -32,7 +32,7 @@ import java.util.List;
  * @author dhxstart
  * @date 2022/1/8 14:52
  */
-@Route(path = RouterActivityPath.User.PAGER_TRADE)
+@Route(path = RouterActivityPath.User.PAGER_COMPLAINT)
 public class ComplaintActivity extends MvvmBaseActivity<UserActivityViewBinding, ComplaintViewModel> {
     private final String[] tabs = new String[]{"全部", "待受理", "受理中", "已受理"};
     private UserFragmentPageAdapter mAdapter;

@@ -13,6 +13,7 @@ import com.guet.common.utils.DensityUtils;
 import com.guet.community.R;
 import com.guet.community.databinding.CommunityFragmentAttentionBinding;
 import com.guet.community.supply.adapter.SupplyRecyclerAdapter;
+import com.guet.community.supply.bean.SupplyCustomViewModel;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;
 
@@ -70,6 +71,13 @@ public class SupplyFragment extends MvvmLazyFragment<CommunityFragmentAttentionB
 
         viewDataBinding.fabAdd.setOnClickListener( v -> {
             ARouter.getInstance().build(RouterActivityPath.Community.PAGE_ADD_SUPPLY).navigation();
+        });
+        adapter.setOnItemClickListener((adapter, view, position) -> {
+            SupplyCustomViewModel model = (SupplyCustomViewModel) adapter.getData().get(position);
+            ARouter.getInstance()
+                    .build(RouterActivityPath.Community.PAGE_SUPPLY_DETAILS)
+                    .withParcelable("supplyCustomViewModel", model)
+                    .navigation();
         });
     }
 

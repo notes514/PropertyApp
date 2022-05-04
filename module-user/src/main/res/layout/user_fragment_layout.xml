@@ -6,6 +6,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.guet.user.bill.bean.BillCustomViewModel" />
     </data>
 
     <LinearLayout
@@ -13,7 +16,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--        android:background="#80DEF3FF"-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/user_constraint"
             android:layout_width="match_parent"
@@ -174,8 +176,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="嘻嘻"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="音符"
                 android:textColor="@color/user_color_login_bg"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
                 app:layout_constraintStart_toEndOf="@+id/iv_avatar" />

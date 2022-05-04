@@ -1,6 +1,9 @@
 package com.guet.community.supply.bean;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.guet.common.contract.BaseCustomViewModel;
 
 /**
@@ -9,7 +12,7 @@ import com.guet.common.contract.BaseCustomViewModel;
  * @author dhxstart
  * @date 2022/1/9 19:54
  */
-public class SupplyCustomViewModel extends BaseCustomViewModel {
+public class SupplyCustomViewModel extends BaseCustomViewModel implements Parcelable {
     /**
      * 供求ID
      */
@@ -84,4 +87,51 @@ public class SupplyCustomViewModel extends BaseCustomViewModel {
      * 更新时间
      */
     public String gmtModified;
+
+    public SupplyCustomViewModel() {
+    }
+
+    protected SupplyCustomViewModel(Parcel parcel) {
+        this.id = parcel.readInt();
+        this.ownerId = parcel.readInt();
+        this.ownerName = parcel.readString();
+        this.avatarUrl = parcel.readString();
+        this.title = parcel.readString();
+        this.content = parcel.readString();
+        this.address = parcel.readString();
+        this.imageUrl = parcel.readString();
+        this.status = parcel.readString();
+        this.startTime = parcel.readString();
+    }
+
+    public static final Creator<SupplyCustomViewModel> CREATOR = new Creator<SupplyCustomViewModel>() {
+        @Override
+        public SupplyCustomViewModel createFromParcel(Parcel source) {
+            return new SupplyCustomViewModel(source);
+        }
+
+        @Override
+        public SupplyCustomViewModel[] newArray(int size) {
+            return new SupplyCustomViewModel[0];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeInt(this.ownerId);
+        dest.writeString(this.ownerName);
+        dest.writeString(this.avatarUrl);
+        dest.writeString(this.title);
+        dest.writeString(this.content);
+        dest.writeString(this.address);
+        dest.writeString(this.imageUrl);
+        dest.writeString(this.status);
+        dest.writeString(this.startTime);
+    }
 }

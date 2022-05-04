@@ -45,7 +45,9 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/library-video/src/main/res/layout/video_layout_cover.xml" value="0.36614583333333334" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/drawable/title_label_shape_green.xml" value="0.236" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/drawable/title_label_shape_red.xml" value="0.216" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_activity_add_supply.xml" value="0.30183839247541683" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_activity_supply_details.xml" value="0.20051303976058144" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_attention.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_community.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-community/src/main/res/layout/community_fragment_recommend.xml" value="0.32685185185185184" />
@@ -63,6 +65,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/drawable/shape_input_box.xml" value="0.2315" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout-v23/home_item_notice_view.xml" value="0.36770833333333336" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_activity_cost.xml" value="0.1628901239846088" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_activity_notice.xml" value="0.33" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_activity_repair.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_activity_suggestions.xml" value="0.25" />
@@ -81,6 +84,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_category_item_card_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_category_item_subject_card_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_content_banner_view.xml" value="0.32685185185185184" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_cost_view.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_follow_card_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_foote_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_new_title_left_right_view.xml" value="0.30183839247541683" />
@@ -93,10 +97,12 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_video_card_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/home_item_video_card_view1.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/item_slide_model_data_binding.xml" value="0.30183839247541683" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/layout/user_activity_bill.xml" value="0.30183839247541683" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-home/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.38229166666666664" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_guide.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_main.xml" value="0.3605128205128205" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-main/src/main/res/layout/main_activity_splash.xml" value="0.36614583333333334" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/drawable/title_label_shape_red.xml" value="0.216" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_activity_event_details.xml" value="0.2980160405234276" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_activity_notice_details.xml" value="0.17657118426678067" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-more/src/main/res/layout/more_fragment_message.xml" value="0.32685185185185184" />
@@ -135,6 +141,7 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/shape_linear_gradient.xml" value="0.3365296803652968" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/title_label_shape_green.xml" value="0.34120370370370373" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/title_label_shape_red.xml" value="0.2315" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/title_label_shape_show.xml" value="0.241" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_bill_bg.xml" value="0.34120370370370373" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_login_bg.xml" value="0.36770833333333336" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/drawable/user_shape_login_bg2.xml" value="0.34120370370370373" />
@@ -164,8 +171,8 @@
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_trade.xml" value="0.25" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_activity_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_fragment.xml" value="0.5" />
-        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_fragment_layout.xml" value="0.25" />
-        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_bill_view.xml" value="0.6446043165467625" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_fragment_layout.xml" value="0.33" />
+        <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_bill_view.xml" value="0.33" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_complaint_view.xml" value="0.32685185185185184" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_footer_view.xml" value="0.33" />
         <entry key="..\:/developer_code/android/AndroidStudioProjects/PropertyApp/module-user/src/main/res/layout/user_item_property_view.xml" value="0.32685185185185184" />

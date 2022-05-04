@@ -1,9 +1,6 @@
 package com.guet.user.bill.bean;
 
-
 import com.guet.common.contract.BaseCustomViewModel;
-
-import java.math.BigDecimal;
 
 /**
  * 供求实体
@@ -45,12 +42,12 @@ public class BillCustomViewModel extends BaseCustomViewModel {
     /**
      * 实收金额(￥)，单位分
      */
-    public BigDecimal payReal;
+    public String payReal;
 
     /**
      * 欠费金额(￥)，单位分
      */
-    public BigDecimal payBalance;
+    public String payBalance;
 
     /**
      * 缴费时间

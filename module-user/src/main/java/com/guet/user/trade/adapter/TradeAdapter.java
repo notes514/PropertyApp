@@ -1,5 +1,7 @@
 package com.guet.user.trade.adapter;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -32,9 +34,13 @@ public class TradeAdapter extends BaseQuickAdapter<BaseCustomViewModel, BaseView
             return;
         }
         UserItemTradeViewBinding binding = baseViewHolder.getBinding();
-        if (binding != null) {
-            binding.setViewModel((TradeCustomViewModel) baseCustomViewModel);
-            binding.executePendingBindings();
+        if (binding == null) {
+            return;
         }
+        binding.setViewModel((TradeCustomViewModel) baseCustomViewModel);
+        binding.executePendingBindings();
+        TradeCustomViewModel customViewModel = (TradeCustomViewModel) baseCustomViewModel;
+//        binding.itemProjectTop.setVisibility(customViewModel.version > 2 ? View.GONE : View.VISIBLE);
+//        binding.itemProjectNew.setVisibility(customViewModel.version > 2 ? View.GONE : View.VISIBLE);
     }
 }

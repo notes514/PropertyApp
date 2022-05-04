@@ -83,7 +83,7 @@ public class NominateModel<T> extends BasePagingModel<T> {
                     noticeViewModel.content = bean.getContent();
                     noticeViewModel.status = bean.getStatus();
                     noticeViewModel.releaseTime = bean.getReleaseTime();
-                    noticeViewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F9d82d158ccbf6c81800ad31e7b76a63533fa838beaa6&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652064495&t=640e60969df5187a720cae6d0c102d8d";
+                    noticeViewModel.imageUrl = bean.getImageUrl();
                     viewModels.add(noticeViewModel);
                 }
             }

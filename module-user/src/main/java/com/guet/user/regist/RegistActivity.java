@@ -60,6 +60,8 @@ public class RegistActivity extends MvvmBaseActivity<UserActivityRegistBinding, 
                 ToastUtil.show(this, "手机号不能为空！");
             } else if (TextUtils.isEmpty(viewDataBinding.editPassword.getText().toString())) {
                 ToastUtil.show(this, "密码不能为空！");
+            } else if (TextUtils.isEmpty(viewDataBinding.editConfirmPassword.getText().toString())) {
+                ToastUtil.show(this, "确认密码不能为空！");
             } else {
                 LogUtils.d("执行了注册操作！");
             }

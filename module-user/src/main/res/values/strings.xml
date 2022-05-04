@@ -9,6 +9,7 @@
     <string name="input_register_username" tools:ignore="ExtraTranslation,ResourceName">请输入用户名</string>
     <string name="input_phone" tools:ignore="ExtraTranslation,ResourceName">请输入手机号</string>
     <string name="input_password" tools:ignore="ExtraTranslation,ResourceName">请输入密码</string>
+    <string name="input_confirm_password" tools:ignore="ExtraTranslation,ResourceName">确认密码</string>
     <string name="remember_password" tools:ignore="ExtraTranslation,ResourceName">记住密码</string>
     <string name="forgot_password" tools:ignore="ExtraTranslation,ResourceName">忘记密码？</string>
     <string name="account_already_exists" tools:ignore="ExtraTranslation,ResourceName">已经有一个账户了吗？</string>

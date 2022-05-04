@@ -1,7 +1,5 @@
 package com.guet.user.repair.bean;
 
-import java.time.LocalDateTime;
-
 /**
  * 报修信息实体
  *
@@ -49,6 +47,8 @@ public class RepairBean {
      */
     private String status;
 
+    private String imageUrl;
+
     /**
      * 逻辑删除:0-未删除（默认），1-已删除
      */
@@ -67,12 +67,12 @@ public class RepairBean {
     /**
      * 创建时间
      */
-    private LocalDateTime gmtCreate;
+    private String gmtCreate;
 
     /**
      * 更新时间
      */
-    private LocalDateTime gmtModified;
+    private String gmtModified;
 
     public Integer getId() {
         return id;
@@ -162,19 +162,19 @@ public class RepairBean {
         this.version = version;
     }
 
-    public LocalDateTime getGmtCreate() {
+    public String getGmtCreate() {
         return gmtCreate;
     }
 
-    public void setGmtCreate(LocalDateTime gmtCreate) {
+    public void setGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
     }
 
-    public LocalDateTime getGmtModified() {
+    public String getGmtModified() {
         return gmtModified;
     }
 
-    public void setGmtModified(LocalDateTime gmtModified) {
+    public void setGmtModified(String gmtModified) {
         this.gmtModified = gmtModified;
     }
 

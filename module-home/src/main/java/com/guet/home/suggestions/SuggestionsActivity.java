@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.guet.base.activity.MvvmBaseActivity;
 import com.guet.common.adapter.ScreenAutoAdapter;
 import com.guet.common.router.RouterActivityPath;
@@ -82,6 +83,6 @@ public class SuggestionsActivity extends MvvmBaseActivity<HomeActivitySuggestion
 
     @Override
     public void onSuccess() {
-        finish();
+        ARouter.getInstance().build(RouterActivityPath.User.PAGER_COMPLAINT).navigation();
     }
 }

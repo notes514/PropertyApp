@@ -90,39 +90,30 @@ public class UserFragment extends MvvmBaseFragment<UserFragmentLayoutBinding, Us
             resultLauncher.launch(new Intent(getActivity(), LoginActivity.class));
         });
         viewDataBinding.clTrade.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了我的交易");
             TradeActivity.startAction(getActivity());
         });
         viewDataBinding.clRepair.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了我的报修");
             RepairActivity.startAction(getActivity());
         });
         viewDataBinding.llProperty.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了物业");
             PropertyActivity.startAction(getActivity());
         });
         viewDataBinding.llBill.setOnClickListener(v -> {
-            ToastUtils.showShort("点击账单");
             BillActivity.startAction(getActivity());
         });
         viewDataBinding.llMsgManager.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了消息管理");
             MsgActivity.startAction(getActivity());
         });
         viewDataBinding.llComplaint.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了公告管理");
             ComplaintActivity.startAction(getActivity());
         });
         viewDataBinding.llFeedBack.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了意见反馈");
             FeedbackActivity.startAction(getActivity());
         });
         viewDataBinding.llAbout.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了关于");
             AboutActivity.startAction(getActivity());
         });
         viewDataBinding.llSetting.setOnClickListener(v -> {
-            ToastUtils.showShort("点击了设置");
         });
     }
 

@@ -1,12 +1,29 @@
 package com.guet.user.trade.fragment;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.guet.base.model.BasePagingModel;
+import com.guet.base.utils.GsonUtils;
+import com.guet.common.api.ApiInterface;
 import com.guet.common.contract.BaseCustomViewModel;
+import com.guet.common.global.GlobalConstant;
+import com.guet.common.global.GlobalKey;
+import com.guet.user.repair.bean.RepairBean;
 import com.guet.user.repair.bean.RepairCustomViewModel;
+import com.guet.user.trade.bean.TradeBean;
 import com.guet.user.trade.bean.TradeCustomViewModel;
+import com.zhouyou.http.EasyHttp;
+import com.zhouyou.http.cache.model.CacheMode;
+import com.zhouyou.http.callback.SimpleCallBack;
+import com.zhouyou.http.exception.ApiException;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.disposables.Disposable;
 
 /**
  * RepairModel
@@ -15,7 +32,9 @@ import java.util.List;
  * @date 2022/1/9 19:41
  */
 public class TradeModel<T> extends BasePagingModel<T> {
-    private final int position;
+    private Disposable disposable;
+    private int pageNum = 1;
+    private int position;
 
     public TradeModel(int position) {
         this.position = position;
@@ -23,45 +42,118 @@ public class TradeModel<T> extends BasePagingModel<T> {
 
     @Override
     protected void load() {
-        List<TradeCustomViewModel> viewModels = new ArrayList<>();
-        TradeCustomViewModel viewModel = new TradeCustomViewModel();
-        for (int i = 0; i < 10; i++) {
-            if (position == 0) {
-                viewModel.ownerName = "代小飞";
-                viewModel.title = "从老家带来精心酿制的白酒 -> " + i;
-                viewModel.address = "西海岸小区东区大门旁边 -> 未开始";
-                viewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-06-19%2F5eec6828e7880.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644322984&t=c22add22c2a7db042fe568f7063f15f1";
-                viewModel.gmtCreate = "2022年1月9日";
-            } else if (position == 1) {
-                viewModel.ownerName = "代小飞";
-                viewModel.title = "从老家带来精心酿制的白酒 -> " + i;
-                viewModel.address = "西海岸小区东区大门旁边 -> 进行中";
-                viewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-06-19%2F5eec6828e7880.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644322984&t=c22add22c2a7db042fe568f7063f15f1";
-                viewModel.gmtCreate = "2022年1月9日";
-            } else {
-                viewModel.ownerName = "代小飞";
-                viewModel.title = "从老家带来精心酿制的白酒 -> " + i;
-                viewModel.address = "西海岸小区东区大门旁边 -> 已结束";
-                viewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-06-19%2F5eec6828e7880.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644322984&t=c22add22c2a7db042fe568f7063f15f1";
-                viewModel.gmtCreate = "2022年1月9日";
-            }
-            viewModels.add(viewModel);
+        LogUtils.d("laodai", "position：" + position);
+        switch (position) {
+            case 0:
+                listChargeDetail();
+                break;
+            case 1:
+                position = 0;
+                likeChargeDetailStatus();
+                break;
+            case 2:
+                position = 1;
+                likeChargeDetailStatus();
+                break;
+            default:
+                position = 2;
+                likeChargeDetailStatus();
+                break;
         }
-        loadSuccess((T) viewModels, viewModels.size() == 0, isRefresh);
+
     }
 
-    public void loadMore() {
-        isRefresh = false;
-        loadSuccess(null, true, isRefresh);
+    private void listChargeDetail() {
+        disposable = EasyHttp.get(ApiInterface.URL_SUPPLY_INFO)
+                .params(GlobalKey.PAGE_NUM, String.valueOf(pageNum))
+                .params(GlobalKey.PAGE_ROW, String.valueOf(GlobalConstant.PAGE_NUM))
+                .cacheMode(CacheMode.NO_CACHE)
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        loadFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        parseJson(s);
+                    }
+                });
     }
 
-    public void refresh() {
-        isRefresh = true;
-        load();
+    protected void likeChargeDetailStatus() {
+        disposable = EasyHttp.get(ApiInterface.URL_LIKE_SUPPLY_INFO)
+                .params("status", String.valueOf(position))
+                .params(GlobalKey.PAGE_NUM, String.valueOf(pageNum))
+                .params(GlobalKey.PAGE_ROW, String.valueOf(GlobalConstant.PAGE_NUM))
+                .cacheMode(CacheMode.NO_CACHE)
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        loadFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        parseJson(s);
+                    }
+                });
+    }
+
+    private void parseJson(String data) {
+        try {
+            JSONObject jsonObject = new JSONObject(data);
+            String dataObj = jsonObject.getString("data");
+            jsonObject = new JSONObject(dataObj);
+            JSONArray list = jsonObject.optJSONArray("list");
+            if (list == null) {
+                hasNextPage = false;
+                return;
+            }
+            hasNextPage = true;
+            List<BaseCustomViewModel> viewModels = new ArrayList<>();
+            for (int i = 0; i < list.length(); i++) {
+                JSONObject currentObject = list.getJSONObject(i);
+                TradeBean bean = GsonUtils.fromLocalJson(currentObject.toString(), TradeBean.class);
+                if (bean != null) {
+                    TradeCustomViewModel viewModel = new TradeCustomViewModel();
+                    viewModel.id = bean.getId();
+                    viewModel.ownerName = bean.getOwnerName();
+                    viewModel.title = bean.getTitle();
+                    viewModel.content = bean.getContent();
+                    viewModel.status = "0".equals(bean.getStatus()) ? "未开始" : ("1".equals(bean.getStatus()) ? "进行中" : "已结束");
+                    viewModel.address = "地点：" + bean.getAddress();
+                    viewModel.imageUrl = bean.getImageUrl();
+                    viewModel.version = list.length();
+                    viewModel.startTime = bean.getStartTime();
+                    viewModels.add(viewModel);
+                }
+            }
+            loadSuccess((T) viewModels, viewModels.isEmpty(), isRefresh);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void cancel() {
         super.cancel();
+        EasyHttp.cancelSubscription(disposable);
+    }
+
+    public void refresh() {
+        isRefresh = true;
+        pageNum = 1;
+        load();
+    }
+
+    public void loadMore() {
+        isRefresh = false;
+        if (!hasNextPage) {
+            loadSuccess(null, true, false);
+            return;
+        }
+        pageNum++;
+        load();
     }
 }

@@ -13,13 +13,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
         android:background="@color/common_color_white"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp">
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_marginTop="8dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/user_bill_tag_blue"
+                android:src="@drawable/common_cost_tag_blue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
@@ -63,26 +63,34 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="8dp"
-                android:text="@string/user_bill_status_paid"
+                android:background="@drawable/title_label_shape_sea_green"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_4"
+                android:text="@{viewModel.payStatus}"
                 android:textColor="@color/light_sea_green"
                 android:textSize="@dimen/sp_14"
                 app:layout_constraintBaseline_toBaselineOf="@+id/user_bill_charge_name"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="未缴费" />
 
             <TextView
                 android:id="@+id/user_bill_money"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:padding="@dimen/dp_4"
                 android:lineSpacingMultiplier="1.2"
                 android:text="@{viewModel.chargeStandard}"
-                android:textColor="@color/common_color_red"
+                android:textColor="@color/common_color_black"
                 android:textSize="@dimen/sp_14"
                 android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
                 app:layout_constraintEnd_toStartOf="@+id/user_bill_status"
-                app:layout_constraintStart_toStartOf="@+id/user_bill_charge_name"
+                app:layout_constraintStart_toStartOf="@+id/item_todo_tag"
                 app:layout_constraintTop_toBottomOf="@+id/user_bill_line"
-                tools:text="来一起打王者啊？" />
+                tools:text="￥：来一起打王者啊？" />
 
             <Button
                 android:id="@+id/user_bill_pay"
@@ -127,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@{viewModel.gmtCreate}"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toStartOf="@+id/btn_bill_details"
                 app:layout_constraintStart_toStartOf="@+id/user_bill_money"
                 app:layout_constraintTop_toBottomOf="@+id/user_bill_money" />

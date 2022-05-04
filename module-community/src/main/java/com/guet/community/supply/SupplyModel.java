@@ -72,12 +72,13 @@ public class SupplyModel<T> extends BasePagingModel<T> {
                 if (bean != null) {
                     SupplyCustomViewModel viewModel = new SupplyCustomViewModel();
                     viewModel.id = bean.getId();
+                    viewModel.ownerId = bean.getOwnerId();
                     viewModel.ownerName = bean.getOwnerName();
-                    viewModel.avatarUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2F4d%2F63%2Fbd%2F4d63bd0b3bf8cc9aa0dc3e1111646b1c.jpeg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1649831803&t=9195c463a04d7e724b3f79c75c74a801";
+                    viewModel.avatarUrl = "http://192.168.1.105:8080/images/2022.04.22/c26a79a8-05c1-4565-8582-3880c678d972.jpg";
                     viewModel.title = bean.getTitle();
                     viewModel.content = bean.getContent();
                     viewModel.status = bean.getStatus();
-                    viewModel.imageUrl = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F9d82d158ccbf6c81800ad31e7b76a63533fa838beaa6&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652064495&t=640e60969df5187a720cae6d0c102d8d";
+                    viewModel.imageUrl = bean.getImageUrl();
                     viewModel.startTime = bean.getStartTime();
                     viewModelList.add(viewModel);
                 }

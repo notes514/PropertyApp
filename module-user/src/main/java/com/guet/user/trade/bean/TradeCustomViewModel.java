@@ -26,6 +26,11 @@ public class TradeCustomViewModel extends BaseCustomViewModel {
     public String ownerName;
 
     /**
+     * 用户头像Url
+     */
+    public String avatarUrl;
+
+    /**
      * 供求标题
      */
     public String title;

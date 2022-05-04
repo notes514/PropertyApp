@@ -54,6 +54,11 @@ public class RouterActivityPath {
          * 通知页面
          */
         public static final String PAGE_ADD_SUPPLY = COMMUNITY + "/add_supply";
+
+        /**
+         * 公告详情页
+         */
+        public static final String PAGE_SUPPLY_DETAILS = COMMUNITY + "/supply_details";
     }
 
     /**
@@ -116,6 +121,11 @@ public class RouterActivityPath {
          * 账单页面
          */
         public static final String PAGER_BILL = USER + "/bill";
+
+        /**
+         * 账单页面
+         */
+        public static final String PAGER_COMPLAINT = USER + "/complaint";
 
         /**
          * 消息管理页面

@@ -104,8 +104,8 @@ public class LoginActivity extends MvvmBaseActivity<UserActivityLoginBinding, Lo
         iLoginService.saveStatus(false);
         viewModel.initModel();
         viewDataBinding.included.titleBar.setTitle(R.string.login);
-        viewDataBinding.editUsername.setText("admin");
-        viewDataBinding.editPassword.setText("123456");
+//        viewDataBinding.editUsername.setText("admin");
+//        viewDataBinding.editPassword.setText("123456");
     }
 
     /**
